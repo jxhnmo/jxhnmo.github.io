@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Rubik:wght@300;500;700&display=swap');
+
+body {
+  position: relative;
+  margin: 0;
+  background: #2A1A38;
+  font-family: 'Rubik', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-weight: bold;
+  color: #A991E0;
+  font-size: calc(100% + 7vw);
+  margin: 0 8% 16px;
+  text-transform: uppercase;
+  text-shadow: -0.4vw 0.2vw 0px #2A1A38,
+    -0.6vw 0.4vw 0px #FFF,
+    -0.8vw 0.6vw 0px #774A9E;
+}
+
+h2 {
+  color: #A991E0;
+  font-weight: bold;
+  font-size: calc(100% + 3vw);
+  margin: 0 5% 8px;
+
+  text-transform: uppercase;
+  text-shadow:
+    -0.4vw 0px 0px #774A9E;
+}
+
+h3 {
+  color: #2A1A38;
+  font-weight: lighter;
+  font-size: calc(100% + 1vw);
+  margin: 0 0 8px;
+}
+
+p {
+  color: #FFFFFF;
+  font-weight: 300;
+  line-height: 140%;
+  font-size: calc(100% + 0.3vw);
+  margin: 0 0 0;
+}
+
+#footer p {
+  font-size: calc(0.5vw + 0.5vh);
+}
+
+#darkTxt p {
+  color: #2A1A38;
+  font-weight: 300;
+
+}
+
+a {
+  text-decoration: none;
+  font-size: calc(0.5vw + 0.5vh);
+  color: #2A1A38;
+  font-weight: normal;
+}
+
+#footerIcon a {
+  font-size: calc(1vw + 1vh);
+  color: #2A1A38;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #937FC3;
+}
+
+#footerIcon a:hover {
+  text-decoration: underline;
+  color: #937FC3;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+  font-weight: normal;
+  color: #937FC3;
+}
+
+img {
+  border: solid 5px #774A9E;
+  overflow: 'hidden';
+  border-radius: 40px;
+}
+
+#noBorder img {
+  border: 0px;
+}
+
+.main {
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whiteBg {
+  background: #b8b8b8;
+  width: 100%;
+}
+
+.blackBg {
+  background: #000;
+  width: 100%;
+}
+
+div.lightBg {
+  background-color: #A991E0;
+}
+
+#page-container {
+  min-height: 88vh;
+}
+
+@media (min-width: 768px) {
+
+  .col-sm-3half,
+  .col-sm-8half {
+    float: left;
+  }
+
+  .col-md-3half {
+    width: 29.16666667%;
+  }
+
+  .col-md-8half {
+    width: 70.83333333%;
+  }
+}
