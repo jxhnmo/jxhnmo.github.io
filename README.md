@@ -3,7 +3,7 @@
 uses:
 - react
 - radix-ui
-- mui icons
+- mui
 
 # TODO:
 - links
@@ -11,3 +11,4 @@ uses:
 - resume
 - projects
 - light mode
+- fix navigation bar popup ui
