@@ -40,7 +40,7 @@ const Navbar = () => {
                 </NavigationMenu.Link>
               </li>
 
-              <ListItem href="/about" title="About">
+              <ListItem onClick={() => navigate('/about')} title="About">
                 a longer description of me by me!
               </ListItem>
               <ListItem href="/links" title="Links">
