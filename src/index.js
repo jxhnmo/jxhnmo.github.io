@@ -21,7 +21,7 @@ import {
 } from "./pages";
 
 ReactDOM.render(
-  <Router basename={window.location.pathname || ''}>
+  <Router basename={process.env.PUBLIC_URL}>
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
@@ -33,7 +33,7 @@ ReactDOM.render(
       <Route path="*" element={<Construction />} />
     </Routes>
     <Footer />
-  </ Router>,
+  </Router>,
 
   document.getElementById("root")
 );
