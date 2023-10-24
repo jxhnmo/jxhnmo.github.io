@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // components
 import {
@@ -21,10 +21,10 @@ import {
 } from "./pages";
 
 ReactDOM.render(
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Navbar />
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/jxhnmo.github.io/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/links" element={<Links />} />
       <Route path="/experience" element={<Experience />} />
