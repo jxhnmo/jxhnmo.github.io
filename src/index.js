@@ -21,7 +21,7 @@ import {
 } from "./pages";
 
 ReactDOM.render(
-  <Router basename="/jxhnmo.github.io/">
+  <Router basename={window.location.pathname || ''}>
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
@@ -33,7 +33,7 @@ ReactDOM.render(
       <Route path="*" element={<Construction />} />
     </Routes>
     <Footer />
-  </Router>,
+  </ Router>,
 
   document.getElementById("root")
 );
