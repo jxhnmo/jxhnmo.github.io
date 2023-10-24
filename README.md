@@ -3,7 +3,7 @@
 uses:
 - react
 - radix-ui
-- mui
+- react-social-icons
 
 # TODO:
 - links
