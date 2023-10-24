@@ -18,9 +18,9 @@ h1 {
   font-size: calc(100% + 7vw);
   margin: 0 8% 16px;
   text-transform: uppercase;
-  text-shadow: -0.4vw 0.2vw 0px #2A1A38,
-    -0.6vw 0.4vw 0px #FFF,
-    -0.8vw 0.6vw 0px #774A9E;
+  text-shadow: -0.2vw 0.2vw 0px #2A1A38,
+    -0.4vw 0.4vw 0px #FFF,
+    -0.6vw 0.6vw 0px #774A9E;
 }
 
 h2 {
@@ -49,10 +49,6 @@ p {
   margin: 0 0 0;
 }
 
-#footer p {
-  font-size: calc(0.5vw + 0.5vh);
-}
-
 #darkTxt p {
   color: #2A1A38;
   font-weight: 300;
@@ -61,29 +57,13 @@ p {
 
 a {
   text-decoration: none;
-  font-size: calc(0.5vw + 0.5vh);
+  font-size: calc(2px + 0.5vw + 0.5vh);
   color: #2A1A38;
   font-weight: normal;
-}
-
-#footerIcon a {
-  font-size: calc(1vw + 1vh);
-  color: #2A1A38;
 }
 
 a:hover {
   text-decoration: none;
-  color: #937FC3;
-}
-
-#footerIcon a:hover {
-  text-decoration: underline;
-  color: #937FC3;
-}
-
-#footer a:hover {
-  text-decoration: underline;
-  font-weight: normal;
   color: #937FC3;
 }
 
@@ -105,18 +85,54 @@ img {
   align-items: center;
 }
 
-.whiteBg {
+.justify-start {
+  margin-right: auto;
+}
+
+div.whiteBg {
   background: #b8b8b8;
   width: 100%;
 }
 
-.blackBg {
+div.blackBg {
   background: #000;
   width: 100%;
 }
 
 div.lightBg {
   background-color: #A991E0;
+}
+
+div.lightContainer {
+  background: #A991E0;
+  width: 80%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 20px;
+  box-shadow: -0.4vw 0px 0px #774A9E;
+}
+
+div.parent {
+  /* background: #000; */
+  width: 100%;
+}
+
+.child {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+}
+
+.filler {
+  display: inline-block;
+  vertical-align: middle;
+  background: #774A9E;
+  border-radius: 50px;
+  padding-right: 1%;
+  width: 80%;
+  height: 5%;
 }
 
 #page-container {

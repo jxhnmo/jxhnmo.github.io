@@ -4,7 +4,31 @@ import TypeIt from "typeit-react";
 function Home() {
   return (
     <div id="page-container" class="my-3">
-      <h1>Hey! It's <br /> &emsp;&emsp; John Mo</h1>
+      <h1>
+        <TypeIt
+          options={{
+            loop: true,
+            breakLines: false,
+            cursor: false,
+            lifeLike: false,
+            // loopDelay: [500, 500],
+            nextStringDelay: [1000, 0],
+            loopDelay: 2000,
+            pause: 500,
+            speed: 500,
+            strings: [
+              'Hey!',
+              '你好!',
+              '안녕!',
+              'Hai!',
+              'Ciao!',
+              '!اهلا', //ahlan
+            ],
+            waitUntilVisible: true,
+          }}
+        />
+        <br /> &emsp;It's  John Mo
+      </h1>
 
       <div class="main mt-5">
         <p>
@@ -19,7 +43,7 @@ function Home() {
               lifeLike: true,
               loopDelay: [0, 1000],
               startDelay: 0,
-              cursorSpeed: 200,
+              cursorSpeed: 1000,
               speed: 50,
               strings: [
                 'looking for an internship 💼',

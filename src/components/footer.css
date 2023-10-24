@@ -11,3 +11,17 @@
     width: 100vw;
     z-index: 1;
 }
+
+#footer p {
+    font-size: calc(2px + 0.5vw + 0.5vh);
+}
+
+#footer a:hover {
+    text-decoration: underline;
+    font-weight: normal;
+    color: #937FC3;
+}
+
+#footer img {
+    width: calc(30px + 2vw + 2vh);
+}

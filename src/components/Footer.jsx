@@ -11,10 +11,9 @@ export default function Footer() {
     <div class="footer">
       <div class="justify-start">
         <IconButton aria-label="delete">
-          <th id="noBorder">
+          <th id="footer">
             <img
               src={logo}
-              height="40px"
               onClick={() => navigate('/')}
             />
           </th>
