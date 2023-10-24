@@ -21,10 +21,10 @@ import {
 } from "./pages";
 
 ReactDOM.render(
-  <Router basename="/jxhnmo.github.io">
+  <Router basename={process.env.PUBLIC_URL}>
     <Navbar />
     <Routes>
-      <Route exact path="/" element={<Home />} />
+      <Route path="/jxhnmo.github.io/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/links" element={<Links />} />
       <Route path="/experience" element={<Experience />} />
