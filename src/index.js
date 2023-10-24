@@ -24,7 +24,7 @@ ReactDOM.render(
   <Router>
     <Navbar />
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/jxhnmo.github.io/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/links" element={<Links />} />
       <Route path="/experience" element={<Experience />} />
