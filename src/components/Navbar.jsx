@@ -43,7 +43,7 @@ const Navbar = () => {
               <ListItem onClick={() => navigate('/about')} title="About">
                 a longer description of me by me!
               </ListItem>
-              <ListItem href="/links" title="Links">
+              <ListItem onClick={() => navigate('/links')} title="Links">
                 relevant links of mine
               </ListItem>
             </ul>
@@ -56,10 +56,10 @@ const Navbar = () => {
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuList">
             <ul className="List two">
-              <ListItem title="Experience" href="/*">
+              <ListItem onClick={() => navigate('/*')} title="Experience">
                 my work experiences
               </ListItem>
-              <ListItem title="Resume" href="/*">
+              <ListItem onClick={() => navigate('/*')} title="Resume">
                 my resume !
               </ListItem>
             </ul>
@@ -67,13 +67,13 @@ const Navbar = () => {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Link className="NavigationMenuLink" href="/*">
+          <NavigationMenu.Link onClick={() => navigate('/*')} className="NavigationMenuLink">
             Projects
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Link className="NavigationMenuLink" href="/*">
+          <NavigationMenu.Link onClick={() => navigate('/about')} className="NavigationMenuLink">
             Contact
           </NavigationMenu.Link>
         </NavigationMenu.Item>
