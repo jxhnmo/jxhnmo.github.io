@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jxhnmo.github.io/static/css/main.2e4d3512.css",
+    "main.js": "/jxhnmo.github.io/static/js/main.c6714561.js",
+    "static/media/me1.jpg": "/jxhnmo.github.io/static/media/me1.b4266702c60f50025223.jpg",
+    "static/media/jm_logo.png": "/jxhnmo.github.io/static/media/jm_logo.6a9c1be80ecac5e95312.png",
+    "index.html": "/jxhnmo.github.io/index.html",
+    "main.2e4d3512.css.map": "/jxhnmo.github.io/static/css/main.2e4d3512.css.map",
+    "main.c6714561.js.map": "/jxhnmo.github.io/static/js/main.c6714561.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e4d3512.css",
+    "static/js/main.c6714561.js"
+  ]
+}
