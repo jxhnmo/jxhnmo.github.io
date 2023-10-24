@@ -51,15 +51,15 @@ const Navbar = () => {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger onClick={() => navigate('/experience')} className="NavigationMenuTrigger">
+          <NavigationMenu.Trigger onClick={() => navigate('/*')} className="NavigationMenuTrigger">
             Experience <CaretDownIcon className="CaretDown" aria-hidden />
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuList">
             <ul className="List two">
-              <ListItem title="Experience" href="/experience">
+              <ListItem title="Experience" href="/*">
                 my work experiences
               </ListItem>
-              <ListItem title="Resume" href="/experience">
+              <ListItem title="Resume" href="/*">
                 my resume !
               </ListItem>
             </ul>
@@ -67,13 +67,13 @@ const Navbar = () => {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Link className="NavigationMenuLink" href="/projects">
+          <NavigationMenu.Link className="NavigationMenuLink" href="/*">
             Projects
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Link className="NavigationMenuLink" href="/contact">
+          <NavigationMenu.Link className="NavigationMenuLink" href="/*">
             Contact
           </NavigationMenu.Link>
         </NavigationMenu.Item>

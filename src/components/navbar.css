@@ -20,10 +20,6 @@ button {
     z-index: 1;
 }
 
-.justify-start {
-    margin-right: auto;
-}
-
 .NavigationMenuList {
     display: flex;
     justify-content: center;
