@@ -45,6 +45,11 @@ button {
     color: #774A9E;
 }
 
+#nav a:hover {
+    text-decoration: none;
+    color: #774A9E;
+}
+
 .NavigationMenuTrigger:focus,
 .NavigationMenuLink:focus {
     box-shadow: 0 0 0 2px var(--violet-7);
@@ -53,6 +58,7 @@ button {
 .NavigationMenuTrigger:hover,
 .NavigationMenuLink:hover {
     background-color: #A991E0;
+    color: #774A9E;
     opacity: 69%;
 }
 
@@ -184,7 +190,7 @@ button {
 }
 
 .ListItemLink:hover {
-    background-color: #937FC3;
+    background-color: #A991E0;
 }
 
 .ListItemHeading {
