@@ -33,19 +33,25 @@ const Navbar = () => {
             <ul className="List one">
               <li style={{ gridRow: 'span 3' }}>
                 <NavigationMenu.Link asChild>
-                  <a className="Callout" href="/">
-                    <div className="CalloutHeading mt-5 mb-2">Me</div>
-                    <p className="CalloutText mt-3 mb-4">Passionate gamer and software dev</p>
-                  </a>
+                  <th id="nav">
+                    <a className="Callout" href="/">
+                      <div className="CalloutHeading mt-5 mb-2">Me</div>
+                      <p className="CalloutText mt-3 mb-4">Passionate gamer and software dev</p>
+                    </a>
+                  </th>
                 </NavigationMenu.Link>
               </li>
 
-              <ListItem href="/#/about" title="About">
-                a longer description of me by me!
-              </ListItem>
-              <ListItem href="/#/links" title="Links">
-                relevant links of mine
-              </ListItem>
+              <th id="nav">
+                <ListItem href="/#/about" title="About">
+                  a longer description of me by me!
+                </ListItem>
+              </th>
+              <th id="nav">
+                <ListItem href="/#/links" title="Links">
+                  relevant links of mine
+                </ListItem>
+              </th>
             </ul>
           </NavigationMenu.Content>
         </NavigationMenu.Item>
@@ -56,28 +62,35 @@ const Navbar = () => {
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuList">
             <ul className="List two">
-              <ListItem title="Experience" href="/#/*">
-                my work experiences
-              </ListItem>
-              <ListItem title="Resume" href="/#/*">
-                my resume !
-              </ListItem>
+              <th id="nav">
+                <ListItem title="Experience" href="/#/*">
+                  my work experiences
+                </ListItem>
+              </th>
+              <th id="nav">
+                <ListItem title="Resume" href="/#/*">
+                  my resume !
+                </ListItem>
+              </th>
             </ul>
           </NavigationMenu.Content>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Item>
-          <NavigationMenu.Link className="NavigationMenuLink" href="/#/*">
-            Projects
-          </NavigationMenu.Link>
-        </NavigationMenu.Item>
+        <th id="nav">
+          <NavigationMenu.Item>
+            <NavigationMenu.Link className="NavigationMenuLink" href="/#/*">
+              Projects
+            </NavigationMenu.Link>
+          </NavigationMenu.Item>
+        </th>
 
-        <NavigationMenu.Item>
-          <NavigationMenu.Link className="NavigationMenuLink" href="/#/*">
-            Contact
-          </NavigationMenu.Link>
-        </NavigationMenu.Item>
-
+        <th id="nav">
+          <NavigationMenu.Item>
+            <NavigationMenu.Link className="NavigationMenuLink" href="/#/*">
+              Contact
+            </NavigationMenu.Link>
+          </NavigationMenu.Item>
+        </th>
         <NavigationMenu.Indicator className="NavigationMenuIndicator">
           <div className="Arrow" />
         </NavigationMenu.Indicator>

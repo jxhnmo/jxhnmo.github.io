@@ -31,7 +31,7 @@ function Home() {
       </h1>
 
       <div class="main mt-5">
-        <p>
+        <p class="home">
           Welcome to my site! I'm John, a sophomore CS major @ Texas A&M with a passion for gaming, food, and startups.
           <br /> <br />
           You can catch me&nbsp;
