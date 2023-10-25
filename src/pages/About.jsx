@@ -20,7 +20,7 @@ function About() {
                             <br /><br />
                             My passions include games, technology, food, and startups. Growing up playing games, I have played Collegiate R6 for UNT and now play Apex casually (at one point I was a Valorant fiend).
                             <br /><br />
-                            Outside of this, I have a love for martial arts and the UFC, having trained Brazillian Jiu-Jitsu for 4 years and touched on others like Taekwondo, Karate, and Kung Fu. Fun fact: I lived in the Shao Lin temples when I was 5!
+                            Outside of these, I have a fondness for martial arts and the UFC, having trained Brazillian Jiu-Jitsu for 4 years and touched on others like Taekwondo, Karate, and Kung Fu. Fun fact: I lived in one of the Shaolin academies when I was 5!
                         </p>
                     </th>
                 </div>
