@@ -6,9 +6,9 @@ uses:
 - react-social-icons
 
 # TODO:
-- links
 - experience
 - resume
 - projects
 - light mode
 - fix navigation bar popup ui
+- decreasing photo file size?
