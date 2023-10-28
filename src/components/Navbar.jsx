@@ -33,12 +33,12 @@ const Navbar = () => {
             <ul className="List one">
               <li style={{ gridRow: 'span 3' }}>
                 <NavigationMenu.Link asChild>
-                  <th id="nav">
-                    <a className="Callout" href="/">
-                      <div className="CalloutHeading mt-5 mb-2">Me</div>
-                      <p className="CalloutText mt-3 mb-4">Passionate gamer and software dev</p>
-                    </a>
-                  </th>
+                  {/* <th id="nav"> */}
+                  <a className="Callout" href="/">
+                    <div className="CalloutHeading mt-5 mb-2">Me</div>
+                    <p className="CalloutText mt-3 mb-4">Passionate gamer and software dev</p>
+                  </a>
+                  {/* </th> */}
                 </NavigationMenu.Link>
               </li>
 
