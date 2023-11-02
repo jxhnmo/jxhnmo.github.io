@@ -224,6 +224,12 @@ div.loginSection {
   box-shadow: none;
 }
 
+iframe {
+  zoom: auto;
+  width: 100%;
+  height: 60vh;
+}
+
 #page-container {
   min-height: 88vh;
 }
