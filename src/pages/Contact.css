@@ -1,0 +1,142 @@
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/violet.css';
+@import '@radix-ui/colors/mauve.css';
+
+/* reset */
+input,
+textarea,
+button {
+    all: unset;
+    box-sizing: border-box;
+}
+
+.FormRoot {
+    width: 100%;
+}
+
+div.section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.FormField {
+    display: grid;
+    width: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 10px;
+}
+
+.FormLabel {
+    color: #2A1A38;
+    font-weight: bold;
+    font-size: calc(100% + 1vw);
+
+    text-transform: uppercase;
+    text-shadow: -0.2vw 0px 0px #774A9E;
+}
+
+.FormMessage {
+    font-size: 13px;
+    color: #2A1A38;
+    opacity: 0.8;
+}
+
+.Input,
+.Textarea {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+    font-size: 15px;
+    color: #774A9E;
+    background-color: #FFF;
+    border-color: #774A9E;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: -0.2vw 0.2vw 0px #774A9E;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #6F4694;
+    opacity: 50%;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #6F4694;
+    opacity: 50%;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #6F4694;
+    opacity: 50%;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #6F4694;
+    opacity: 50%;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #6F4694;
+    opacity: 50%;
+}
+
+::placeholder {
+    /* Most modern browsers support this now. */
+    color: #6F4694;
+    opacity: 50%;
+}
+
+.Input:hover,
+.Textarea:hover {
+    box-shadow: none;
+}
+
+.Input {
+    padding: 0 10px;
+    height: 35px;
+    line-height: 1;
+}
+
+.Textarea {
+    resize: none;
+    height: 300px;
+    padding: 10px;
+}
+
+.Button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 500;
+    height: 35px;
+    width: 40%;
+
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #FFF;
+    background-color: #241730;
+    border-color: #FFF;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: -0.2vw 0.2vw 0px #FFF;
+}
+
+.Button:hover {
+    color: #FFF;
+    background-color: #6F4694;
+    box-shadow: none;
+}

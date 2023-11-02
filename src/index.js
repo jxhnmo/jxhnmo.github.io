@@ -15,6 +15,8 @@ import {
   About,
   Links,
   Experience,
+  ResumeLogin,
+  Resume,
   Projects,
   Contact,
   Construction
@@ -28,8 +30,9 @@ ReactDOM.render(
       <Route path="/about" element={<About />} />
       <Route path="/links" element={<Links />} />
       <Route path="/experience" element={<Experience />} />
+      <Route path="/resume" element={<ResumeLogin />} />
       <Route path="/projects" element={<Projects />} />
-      <Route path="/contact" element={<Contact />} />
+      {/* <Route path="/contact" element={<Contact />} /> */}
       <Route path="*" element={<Construction />} />
     </Routes>
     <Footer />
