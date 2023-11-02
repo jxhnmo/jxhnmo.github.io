@@ -7,7 +7,6 @@ uses:
 
 # TODO:
 - experience
-- resume
 - projects
 - light mode
 - fix navigation bar popup ui
