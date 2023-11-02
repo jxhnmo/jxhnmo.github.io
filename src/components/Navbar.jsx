@@ -68,7 +68,7 @@ const Navbar = () => {
                 </ListItem>
               </th>
               <th id="nav">
-                <ListItem title="Resume" href="/#/*">
+                <ListItem title="Resume" href="/#/resume">
                   my resume !
                 </ListItem>
               </th>
@@ -84,13 +84,14 @@ const Navbar = () => {
           </NavigationMenu.Item>
         </th>
 
-        <th id="nav">
+        {/* <th id="nav">
           <NavigationMenu.Item>
-            <NavigationMenu.Link className="NavigationMenuLink" href="/#/*">
+            <NavigationMenu.Link className="NavigationMenuLink" href="/#/contact">
               Contact
             </NavigationMenu.Link>
           </NavigationMenu.Item>
-        </th>
+        </th> */}
+
         <NavigationMenu.Indicator className="NavigationMenuIndicator">
           <div className="Arrow" />
         </NavigationMenu.Indicator>
