@@ -17,7 +17,7 @@ const Navbar = () => {
           <th id="noBorder">
             <img
               src={logo}
-              height="40px"
+              height="50px"
               onClick={() => navigate('/')}
             />
           </th>
