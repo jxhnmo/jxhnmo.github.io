@@ -1,28 +1,95 @@
 import React from "react";
+import * as Accordion from '@radix-ui/react-accordion';
+import classNames from 'classnames';
+import { ChevronDownIcon } from '@radix-ui/react-icons';
+import './Experience.css';
 
 function Experience() {
   return (
-    <div class="my-5">
+    <div id="page-container" class="my-3">
       <h2>Experience</h2>
-      <div class="container my-5">
+      <div class="main">
+        <div class="row lightContainer">
 
-        <div class="main whiteBg">
+          <Accordion.Root className="AccordionRoot" type="single" defaultValue="" collapsible>
+            <Accordion.Item className="AccordionItem" value="item-1">
+              <AccordionTrigger>
+                <div class="date">2022-2023</div>
+                <div class="name">Supersocial</div>
+                <div class="title">Game Engineer Intern</div>
+                <div class="location">Remote</div>
+              </AccordionTrigger>
+              <AccordionContent>
+                Built the foundation of Supersocial's Fortnite department.
+                <li>Deep dive into UEFN's engine capabilities and created a fully-fledged brand IP prototype using Agile methodology, handling game design, programming, balance adjustments, and arranging playtests.</li>
+                <li>Authored entire technical documentation tree on Fortnite/UEFN/Verse with 50+ Verse scripts/functionality tutorials.</li>
+                <li>Presented prototypes and documentation at company all-hands and answered ad-hoc questions from PMs and designers.</li>
+                <li>Received return offer to continue internship during the school year.</li>
+              </AccordionContent>
+            </Accordion.Item>
+
+            <Accordion.Item className="AccordionItem" value="item-2">
+              <AccordionTrigger>
+                <div class="date">2021-2022</div>
+                <div class="name">Mercy Ships</div>
+                <div class="title">IS Product Administrator Intern</div>
+                <div class="location">Remote</div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <li>Created and updated automation applications and prototypes with 2 applications in use across global locations.</li>
+                <li>Provided software support for Microsoft 365 and Atlassian Suite, closing 100+ support tickets.</li>
+                <li>Received return offer to continue internship during the school year.</li>
+              </AccordionContent>
+            </Accordion.Item>
+
+            <Accordion.Item className="AccordionItem" value="item-3">
+              <AccordionTrigger>
+                <div class="date">2020-2021</div>
+                <div class="name">UNT CNS Lab</div>
+                <div class="title">Researcher</div>
+                <div class="location">Denton, Texas</div>
+              </AccordionTrigger>
 
 
-          <h3>
-            Hey! I'm John Mo :D
-          </h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of
-            type and scrambled it to make a type specimen book.
-          </p>
+
+              <Accordion.Content className="AccordionContent">
+                <div className="AccordionContentText">
+                  <li>Used neurogaming techniques to build XR environments in Unity to run psychological tests under the guidance of Dr. Thomas D. Parsons and Dr. Timothy (Fred) McMahan.</li>
+                  <li>Acquired a $4000 grant.</li>
+                </div>
+              </Accordion.Content>
+            </Accordion.Item>
+          </Accordion.Root>
+
 
         </div>
       </div>
     </div>
   );
 }
+
+const AccordionTrigger = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+  <Accordion.Header className="AccordionHeader">
+    <Accordion.Trigger
+      className={classNames('AccordionTrigger', className)}
+      {...props}
+      ref={forwardedRef}
+    >
+      {children}
+      <ChevronDownIcon className="AccordionChevron" aria-hidden />
+    </Accordion.Trigger>
+  </Accordion.Header>
+));
+
+const AccordionContent = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+  <Accordion.Content
+    className={classNames('AccordionContent', className)}
+    {...props}
+    ref={forwardedRef}
+  >
+    <div className="AccordionContentText">{children}</div>
+  </Accordion.Content>
+));
+
 
 export default Experience;

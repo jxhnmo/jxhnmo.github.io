@@ -57,13 +57,13 @@ const Navbar = () => {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger onClick={() => navigate('/*')} className="NavigationMenuTrigger">
+          <NavigationMenu.Trigger onClick={() => navigate('/experience')} className="NavigationMenuTrigger">
             Experience <CaretDownIcon className="CaretDown" aria-hidden />
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuList">
             <ul className="List two">
               <th id="nav">
-                <ListItem title="Experience" href="/#/*">
+                <ListItem title="Experience" href="/#/experience">
                   my work experiences
                 </ListItem>
               </th>

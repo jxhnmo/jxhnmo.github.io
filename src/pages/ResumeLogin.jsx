@@ -30,10 +30,10 @@ function ResumeLogin() {
                                 </div>
 
                                 <div class="parent center">
-                                    <h2 class="linkHead">Protected Page</h2>
+                                    <h2 class="linkHead mt-3">Protected Page</h2>
                                 </div>
 
-                                <div class="parent center">
+                                <div class="parent center mb-1">
                                     <p>Contact me for the code!</p>
                                 </div>
 

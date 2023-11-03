@@ -53,7 +53,7 @@ button {
 
 .NavigationMenuTrigger:focus,
 .NavigationMenuLink:focus {
-    box-shadow: 0 0 0 2px var(--violet-7);
+    /* box-shadow: 0 0 0 2px #000; */
 }
 
 .NavigationMenuTrigger:hover,
@@ -189,7 +189,7 @@ button {
 }
 
 .ListItemLink:focus {
-    box-shadow: 0 0 0 2px var(--violet-7);
+    /* box-shadow: 0 0 0 2px #FFF; */
 }
 
 .ListItemLink:hover {
@@ -224,7 +224,7 @@ button {
 }
 
 .Callout:focus {
-    box-shadow: 0 0 0 2px var(--violet-7);
+    /* box-shadow: 0 0 0 2px var(--violet-7); */
 }
 
 .CalloutHeading {

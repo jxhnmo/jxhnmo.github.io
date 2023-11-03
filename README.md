@@ -6,8 +6,8 @@ uses:
 - react-social-icons
 
 # TODO:
-- experience
 - projects
 - light mode
 - fix navigation bar popup ui
 - decreasing photo file size?
+- fix formatting for mobile view
