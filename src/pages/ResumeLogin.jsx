@@ -26,12 +26,17 @@ function ResumeLogin() {
                         <form onSubmit={checkPw} class="main">
                             <div class="row lightContainer">
                                 <div class="parent center">
-                                    <img src={me} width="15%" />
+                                    <img src={me} alt="Me @ Supersocial" width="35%" height="auto" />
                                 </div>
 
                                 <div class="parent center">
                                     <h2 class="linkHead">Protected Page</h2>
                                 </div>
+
+                                <div class="parent center">
+                                    <p>Contact me for the code!</p>
+                                </div>
+
                                 <div class="parent center mb-3">
                                     <input class="Input" type="password" id="password" name="password" placeholder="Magic word?" />
                                 </div>

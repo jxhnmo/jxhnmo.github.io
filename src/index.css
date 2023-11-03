@@ -218,6 +218,8 @@ div.loginSection {
   padding: 0 10px;
   height: 35px;
   line-height: 1;
+
+  text-align: center;
 }
 
 .Input:hover {
