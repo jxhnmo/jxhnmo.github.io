@@ -32,7 +32,7 @@ function Experience() {
               <AccordionTrigger>
                 <div class="date">2021-2022</div>
                 <div class="name">Mercy Ships</div>
-                <div class="title">IS Product Administrator Intern</div>
+                <div class="title">Product Engineering Intern</div>
                 <div class="location">Remote</div>
               </AccordionTrigger>
               <AccordionContent>
