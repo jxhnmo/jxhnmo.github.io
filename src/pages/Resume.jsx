@@ -1,5 +1,5 @@
 import React from "react";
-import Pdf from '../assets/test.pdf'
+import Pdf from '../assets/John Mo Resume.pdf'
 
 const PDFViewer = () => {
     return (
