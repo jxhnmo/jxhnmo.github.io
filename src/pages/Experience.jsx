@@ -21,7 +21,7 @@ function Experience() {
               </AccordionTrigger>
               <AccordionContent>
                 Built the foundation of Supersocial's Fortnite department.
-                <li>Deep dive into UEFN's engine capabilities and created a fully-fledged brand IP prototype using Agile methodology, handling game design, programming, balance adjustments, and arranging playtests.</li>
+                <li>Created a fully-fledged brand IP prototype using UEFN/Verse and Agile methodology, handling game design, programming, balance adjustments, and arranging playtests</li>
                 <li>Authored entire technical documentation tree on Fortnite/UEFN/Verse with 50+ Verse scripts/functionality tutorials.</li>
                 <li>Presented prototypes and documentation at company all-hands and answered ad-hoc questions from PMs and designers.</li>
                 <li>Received return offer to continue internship during the school year.</li>
@@ -37,7 +37,7 @@ function Experience() {
               </AccordionTrigger>
               <AccordionContent>
                 <li>Created and updated automation applications and prototypes with 2 applications in use across global locations.</li>
-                <li>Provided software support for Microsoft 365 and Atlassian Suite, closing 100+ support tickets.</li>
+                <li>Resolved 100+ support tickets for Microsoft 365 and Atlassian Suite.</li>
                 <li>Received return offer to continue internship during the school year.</li>
               </AccordionContent>
             </Accordion.Item>
@@ -49,12 +49,9 @@ function Experience() {
                 <div class="title">Researcher</div>
                 <div class="location">Denton, Texas</div>
               </AccordionTrigger>
-
-
-
               <Accordion.Content className="AccordionContent">
                 <div className="AccordionContentText">
-                  <li>Used neurogaming techniques to build XR environments in Unity to run psychological tests under the guidance of Dr. Thomas D. Parsons and Dr. Timothy (Fred) McMahan.</li>
+                  <li>Built XR environments in Unity with neurogaming techniques to run psychological tests under the guidance of Dr. Thomas D. Parsons and Dr. Timothy (Fred) McMahan.</li>
                   <li>Acquired a $4000 grant.</li>
                 </div>
               </Accordion.Content>
