@@ -1,17 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.cdd6a556.css",
-    "main.js": "/static/js/main.c451a006.js",
+    "main.css": "/static/css/main.08b4e02d.css",
+    "main.js": "/static/js/main.5da962ff.js",
+    "static/media/losalamos1.png": "/static/media/losalamos1.fe9dfbb3171b18bb6d1a.png",
+    "static/media/interviewpro.png": "/static/media/interviewpro.a39b0a35b26c125cd66c.png",
+    "static/media/nsa1.png": "/static/media/nsa1.7156687003311f048d5e.png",
+    "static/media/usnavy.png": "/static/media/usnavy.3c8b46f16b4a289fa39b.png",
+    "static/media/sandia.png": "/static/media/sandia.fdae8eaefecc00c4efd4.png",
     "static/media/me1.jpg": "/static/media/me1.b4266702c60f50025223.jpg",
+    "static/media/nsa2.png": "/static/media/nsa2.fba56c45c29c24a91881.png",
+    "static/media/personalsite1.png": "/static/media/personalsite1.baf38efa1d12906bf2ca.png",
+    "static/media/personalsite2.png": "/static/media/personalsite2.3208f8ac604220cd112f.png",
+    "static/media/losalamos2.png": "/static/media/losalamos2.e88d2c604d7d4a7713fc.png",
     "static/media/john_mo_supersocial.jpg": "/static/media/john_mo_supersocial.1cc2074bf6b8ae2a69cd.jpg",
+    "static/media/nsa3.png": "/static/media/nsa3.e6ade52b6af6d2cc6b74.png",
     "static/media/jm_logo.png": "/static/media/jm_logo.6a9c1be80ecac5e95312.png",
+    "static/media/personalsite.png": "/static/media/personalsite.b081abfcc6ab87fdd2e8.png",
     "static/media/John Mo Resume.pdf": "/static/media/John Mo Resume.8a140d8132526a33bec1.pdf",
+    "static/media/Mercy_Ships_Logo.jpg": "/static/media/Mercy_Ships_Logo.0c418833215c73717594.jpg",
+    "static/media/interviewprodata.png": "/static/media/interviewprodata.e365a0c3ec8c4a53403d.png",
     "index.html": "/index.html",
-    "main.cdd6a556.css.map": "/static/css/main.cdd6a556.css.map",
-    "main.c451a006.js.map": "/static/js/main.c451a006.js.map"
+    "main.08b4e02d.css.map": "/static/css/main.08b4e02d.css.map",
+    "main.5da962ff.js.map": "/static/js/main.5da962ff.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdd6a556.css",
-    "static/js/main.c451a006.js"
+    "static/css/main.08b4e02d.css",
+    "static/js/main.5da962ff.js"
   ]
 }
