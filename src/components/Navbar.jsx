@@ -78,7 +78,7 @@ const Navbar = () => {
 
         <th id="nav">
           <NavigationMenu.Item>
-            <NavigationMenu.Link className="NavigationMenuLink" href="/#/*">
+            <NavigationMenu.Link className="NavigationMenuLink" href="/#/projects">
               Projects
             </NavigationMenu.Link>
           </NavigationMenu.Item>
