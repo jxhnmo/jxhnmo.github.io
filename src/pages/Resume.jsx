@@ -4,7 +4,7 @@ import Pdf from '../assets/John Mo Resume.pdf'
 const PDFViewer = () => {
     return (
         <div>
-            <iframe src={Pdf} />
+            <iframe title="Resume" src={Pdf} />
         </div>
     );
 };
