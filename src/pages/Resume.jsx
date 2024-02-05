@@ -1,5 +1,5 @@
 import React from "react";
-import Pdf from '../assets/test.pdf'
+import Pdf from '../assets/John Mo Resume.pdf'
 
 const PDFViewer = () => {
     return (
@@ -17,7 +17,7 @@ function Resume() {
                 <div class="col-md-3half pt-3 pb-3 text-center">
                     <p>Don't forget to save my resume!
                         <br />
-                        Last updated: November 1, 2023
+                        Last updated: February 2, 2024
                     </p>
 
                     <p>Download:</p>
