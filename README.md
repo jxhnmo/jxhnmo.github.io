@@ -6,7 +6,6 @@ uses:
 - react-social-icons
 
 # TODO:
-- projects
 - fix about me h3, affected by experience accordion h3 reset
 - light mode
 - fix navigation bar popup ui
@@ -15,3 +14,5 @@ uses:
 - encrypt resume login password?
 - add redirect from about to links
 - add redirect from experience to resume
+- navbar zindex?
+- add picture of tamuhack facial recognition
