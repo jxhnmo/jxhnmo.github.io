@@ -4,6 +4,10 @@ import classNames from 'classnames';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import './Experience.css';
 
+
+import supersocial from '../assets/work/supersocial_inc_logo.jpeg'
+import mercyships from '../assets/work/Mercy_Ships_Logo.jpg'
+
 function Experience() {
   return (
     <div id="page-container" class="my-3">
@@ -20,6 +24,7 @@ function Experience() {
                 <div class="location">Remote</div>
               </AccordionTrigger>
               <AccordionContent>
+                {/* <img src={supersocial} alt='supersocial logo' width="10%" height='auto' class="center" /><br /> */}
                 Built the foundation of Supersocial's Fortnite department.
                 <li>Created a fully-fledged brand IP prototype using UEFN/Verse and Agile methodology, handling game design, programming, balance adjustments, and arranging playtests</li>
                 <li>Authored entire technical documentation tree on Fortnite/UEFN/Verse with 50+ Verse scripts/functionality tutorials.</li>
@@ -36,6 +41,7 @@ function Experience() {
                 <div class="location">Remote</div>
               </AccordionTrigger>
               <AccordionContent>
+                {/* <img src={mercyships} alt='mercyships logo' width="20%" height='auto' class="center" /><br /> */}
                 <li>Created and updated automation applications and prototypes with 2 applications in use across global locations.</li>
                 <li>Resolved 100+ support tickets for Microsoft 365 and Atlassian Suite.</li>
                 <li>Received return offer to continue internship during the school year.</li>
