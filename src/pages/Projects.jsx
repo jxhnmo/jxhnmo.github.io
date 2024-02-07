@@ -15,6 +15,9 @@ import personalsite2 from '../assets/projects/personalsite2.png'
 //this website pix
 import thiswebsite from '../assets/projects/personalsite.png'
 
+//aa pix
+import aadata from '../assets/projects/aadata.png'
+
 //aggies invent pix
 import sandia from '../assets/projects/sandia.png'
 import losalamos1 from '../assets/projects/losalamos1.png'
@@ -103,6 +106,8 @@ function Projects() {
                 <div className="AccordionContentText">
                   Built, trained, and tested an ML model from 200,000 data points provided by AA that classifies passengers as leisure or business and presented the data and a plan to optimise profit margins.<br />
                   Check out the <a href="https://github.com/jxhnmo/american-airlines-challenge" target="_blank">GitHub!</a>
+
+                  <img src={aadata} alt='aadata' width="100%" height='auto' />
                 </div>
               </Accordion.Content>
             </Accordion.Item>
