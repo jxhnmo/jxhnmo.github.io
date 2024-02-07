@@ -42,7 +42,7 @@ function Experience() {
               </AccordionTrigger>
               <AccordionContent>
                 {/* <img src={mercyships} alt='mercyships logo' width="20%" height='auto' class="center" /><br /> */}
-                <li>Created and updated automation applications and prototypes with 2 applications in use across global locations.</li>
+                <li>Boosted global operational efficiency by creating full-stack applications such as automated housing, flight, medical, and managerial checks for travel requests.</li>
                 <li>Resolved 100+ support tickets for Microsoft 365 and Atlassian Suite.</li>
                 <li>Received return offer to continue internship during the school year.</li>
               </AccordionContent>
@@ -57,7 +57,7 @@ function Experience() {
               </AccordionTrigger>
               <Accordion.Content className="AccordionContent">
                 <div className="AccordionContentText">
-                  <li>Built XR environments in Unity with neurogaming techniques to run psychological tests under the guidance of Dr. Thomas D. Parsons and Dr. Timothy (Fred) McMahan.</li>
+                  <li>Built XR environments in Unity and wrote C# scripts to run psychological tests under the guidance of Dr. Thomas D. Parsons and Dr. Timothy (Fred) McMahan.</li>
                   <li>Acquired a $4000 grant.</li>
                 </div>
               </Accordion.Content>
