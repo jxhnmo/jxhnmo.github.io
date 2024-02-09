@@ -18,7 +18,8 @@ button {
     justify-content: right;
     width: 100vw;
     max-width: 100%;
-    z-index: 1;
+    /* keep at top */
+    z-index: 10;
 }
 
 .NavigationMenuList {
@@ -137,7 +138,7 @@ button {
     border-radius: 6px;
     overflow: hidden;
     /* box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px; */
-    height: 250px;
+    /* height: 250px; */
     /* HEIGHT OF BOX */
     transition: width, height, 300ms ease;
 }
@@ -153,6 +154,14 @@ button {
 @media only screen and (min-width: 600px) {
     .NavigationMenuViewport {
         width: var(--radix-navigation-menu-viewport-width);
+        height: var(--radix-navigation-menu-viewport-height);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .NavigationMenuViewport {
+        width: 100%;
+        height: var(--radix-navigation-menu-viewport-height);
     }
 }
 
@@ -173,7 +182,7 @@ button {
     .List.two {
         width: 300px;
         grid-auto-flow: column;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
     }
 }
 
@@ -217,8 +226,9 @@ button {
     height: 100%;
     background: linear-gradient(135deg, #774A9E 0%, #2A1A38 100%);
     border-radius: 6px;
-    padding: 25px;
-    text-decoration: none;
+    /* padding: 25px; */
+    padding: 5%;
+    text-decoration: none !important;
     outline: none;
     user-select: none;
 }
@@ -232,8 +242,8 @@ button {
     font-size: 18px;
     font-weight: 500;
     line-height: 1.2;
-    margin-top: 16px;
-    margin-bottom: 7px;
+    margin-top: 10%;
+    margin-bottom: 5%;
 }
 
 .CalloutText {

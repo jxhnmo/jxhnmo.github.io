@@ -7,6 +7,7 @@ import './Projects.css';
 // interview pro pix
 import interviewpro from '../assets/projects/interviewpro.png'
 import interviewprodata from '../assets/projects/interviewprodata.png'
+import facial from '../assets/projects/facial.png'
 
 //personal site pix
 import personalsite1 from '../assets/projects/personalsite1.png'
@@ -48,8 +49,9 @@ function Projects() {
                 <li>Backend using Pytorch, OpenCV, and SpeechRecognition, built, trained, and fine-tuned 4 ML models for facial recognition, expressions, eye tracking, and speech-to-text.</li>
                 <li>Integrated with OpenAI's API for data processing, question generation, and improvement summarisation.</li>
                 <li>Frontend model built and animated through Unity, and displayed through React.</li>
-                <img src={interviewpro} alt='iNterview Pro' width="50%" height='auto' />
-                <img src={interviewprodata} alt='iNterview Pro Data' width="50%" height='auto' />
+                <img src={interviewpro} alt='iNterview Pro' width="33%" height='auto' />
+                <img src={interviewprodata} alt='iNterview Pro Data' width="33%" height='auto' />
+                <img src={facial} alt='Facial' width="33%" height='auto' />
               </AccordionContent>
             </Accordion.Item>
 
