@@ -49,6 +49,13 @@ h3 {
   color: #2A1A38;
   font-weight: lighter;
   font-size: calc(100% + 1vw);
+  /* font-size: 2000px; */
+  margin: 0 0 8px;
+}
+
+h3.heads {
+  color: #2A1A38;
+  font-size: calc(100% + 1vw);
   margin: 0 0 8px;
 }
 

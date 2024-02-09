@@ -43,7 +43,7 @@ function Projects() {
               </AccordionTrigger>
               <AccordionContent>
                 Won 1st out of 800+<br />
-                Check out the <a href="https://www.youtube.com/watch?v=9A2LTzXo4qk" target="_blank">Demo Video</a> and <a href="https://devpost.com/software/interview-pro-igtp3z" target="_blank">DevPost!</a>
+                Check out the <a href="https://www.youtube.com/watch?v=9A2LTzXo4qk" target="_blank" rel="noreferrer">Demo Video</a> and <a href="https://devpost.com/software/interview-pro-igtp3z" target="_blank" rel="noreferrer">DevPost!</a>
                 <li>Full stack application to help prepare people for interviews by analyzing speech, emotions, and eye contact, while asking potential interview questions about the role that they are applying for.</li>
                 <li>Backend using Pytorch, OpenCV, and SpeechRecognition, built, trained, and fine-tuned 4 ML models for facial recognition, expressions, eye tracking, and speech-to-text.</li>
                 <li>Integrated with OpenAI's API for data processing, question generation, and improvement summarisation.</li>
@@ -61,7 +61,7 @@ function Projects() {
               </AccordionTrigger>
               <AccordionContent>
                 Website with two different styles through CSS manipulation with no JS Libraries.<br />
-                Check out the <a href="https://people.tamu.edu/~johnmo/index.html" target="_blank">Site!</a><br />
+                Check out the <a href="https://people.tamu.edu/~johnmo/index.html" target="_blank" rel="noreferrer">Site!</a><br />
                 <img src={personalsite1} alt='personalsite1' width="50%" height='auto' />
                 <img src={personalsite2} alt='personalsite2' width="50%" height='auto' />
               </AccordionContent>
@@ -90,7 +90,7 @@ function Projects() {
               <Accordion.Content className="AccordionContent">
                 <div className="AccordionContentText">
                   Placed 4th out of 50+<br />
-                  Check out the <a href="https://devpost.com/software/skribblio-demon" target="_blank">DevPost!</a>
+                  Check out the <a href="https://devpost.com/software/skribblio-demon" target="_blank" rel="noreferrer">DevPost!</a>
                   <li>Built, trained, and tested a convolutional neural network with TensorFlow and Keras off of Google's "Quick, Draw!" dataset as well as TAMU Datathon's custom classes to predict and classify drawings based on strokes.</li>
                 </div>
               </Accordion.Content>
@@ -105,7 +105,7 @@ function Projects() {
               <Accordion.Content className="AccordionContent">
                 <div className="AccordionContentText">
                   Built, trained, and tested an ML model from 200,000 data points provided by AA that classifies passengers as leisure or business and presented the data and a plan to optimise profit margins.<br />
-                  Check out the <a href="https://github.com/jxhnmo/american-airlines-challenge" target="_blank">GitHub!</a>
+                  Check out the <a href="https://github.com/jxhnmo/american-airlines-challenge" target="_blank" rel="noreferrer">GitHub!</a>
 
                   <img src={aadata} alt='aadata' width="100%" height='auto' />
                 </div>
@@ -127,7 +127,7 @@ function Projects() {
                   Sandia National Labs: AI/ML <br />
                   Sep 12, 2023<br />
                   Designed "ScanX", a deep learning software that identifies illicit contraband in x-ray content and extrapolates individual items into an easy-to-understand grid.<br />
-                  Check out the <a href="https://youtu.be/hA0vzJ25pFo?si=1yFTgo1Im6vkVnnc&t=6836" target="_blank">Presentation!</a><br />
+                  Check out the <a href="https://youtu.be/hA0vzJ25pFo?si=1yFTgo1Im6vkVnnc&t=6836" target="_blank" rel="noreferrer">Presentation!</a><br />
                   <img src={sandia} alt='sandia' width="100%" height='auto' />
                   <br />
                   <br />
@@ -143,7 +143,7 @@ function Projects() {
                   Los Alamos National Laboratory: Nuclear Security <br />
                   Oct 23, 2022<br />
                   Designed “Spy Kids” a spy bot swarm that detects nuclear radiation and other potential threats.<br />
-                  Check out the <a href="https://www.youtube.com/live/CvsA9LDOP4Q?si=YlQZuKxbPMZqMODZ&t=2978" target="_blank">Presentation!</a><br />
+                  Check out the <a href="https://www.youtube.com/live/CvsA9LDOP4Q?si=YlQZuKxbPMZqMODZ&t=2978" target="_blank" rel="noreferrer">Presentation!</a><br />
                   <img src={losalamos1} alt='losalamos1' width="50%" height='auto' />
                   <img src={losalamos2} alt='losalamos2' width="50%" height='auto' />
                   <br />
@@ -153,7 +153,7 @@ function Projects() {
                   4th Place<br />
                   Sep 25, 2022<br />
                   Designed "Mediator", an extension and app that evaluates the credibility of social media posts through machine learning.<br />
-                  Check out the <a href="https://www.youtube.com/live/jw86T8we1KM?si=aaFxC1TwVsBxEZhG&t=253" target="_blank">Presentation!</a><br />
+                  Check out the <a href="https://www.youtube.com/live/jw86T8we1KM?si=aaFxC1TwVsBxEZhG&t=253" target="_blank" rel="noreferrer">Presentation!</a><br />
                   <img src={nsa1} alt='nsa1' width="50%" height='auto' />
                   <img src={nsa2} alt='nsa2' width="25%" height='auto' />
                   <img src={nsa3} alt='nsa3' width="25%" height='auto' />
