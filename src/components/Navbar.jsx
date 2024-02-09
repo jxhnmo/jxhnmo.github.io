@@ -35,7 +35,7 @@ const Navbar = () => {
                 <NavigationMenu.Link asChild>
                   {/* <th id="nav"> */}
                   <a className="Callout" href="/">
-                    <div className="CalloutHeading mt-5 mb-2">Me</div>
+                    <div className="CalloutHeading">Me</div>
                     <p className="CalloutText mt-3 mb-4">Passionate gamer and software dev</p>
                   </a>
                   {/* </th> */}
@@ -60,7 +60,7 @@ const Navbar = () => {
           <NavigationMenu.Trigger onClick={() => navigate('/experience')} className="NavigationMenuTrigger">
             Experience <CaretDownIcon className="CaretDown" aria-hidden />
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="NavigationMenuList">
+          <NavigationMenu.Content className="NavigationMenuContent">
             <ul className="List two">
               <th id="nav">
                 <ListItem title="Experience" href="/#/experience">
