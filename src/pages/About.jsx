@@ -11,7 +11,7 @@ function About() {
                 </div>
 
                 <div class="col-md-8half pt-3 pb-3">
-                    <h3>
+                    <h3 class="heads">
                         Hey! I'm John Mo :D
                     </h3>
                     <th id="darkTxt">
