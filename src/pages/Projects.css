@@ -142,3 +142,9 @@ a:hover {
     text-decoration: underline;
     color: #2A1A38;
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
