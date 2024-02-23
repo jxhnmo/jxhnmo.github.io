@@ -36,7 +36,18 @@ function Projects() {
         <div class="row lightContainer">
 
           <Accordion.Root className="AccordionRoot" type="single" defaultValue="" collapsible>
-            <Accordion.Item className="AccordionItem" value="item-1">
+            <Accordion.Item className="AccordionItem" value="item-7">
+              <AccordionTrigger>
+                <div class="date">2023-Present</div>
+                <div class="name">Dream Boy Games</div>
+                <div class="title">Game Studio Startup</div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <li>500+ CCU with 11,000+ plays incubation game studio built on Fortnite with my Supersocial manager.</li>
+              </AccordionContent>
+            </Accordion.Item>
+
+            <Accordion.Item className="AccordionItem" value="item-6">
               <AccordionTrigger>
                 <div class="date">2024</div>
                 <div class="name">TAMUhack</div>
@@ -55,7 +66,7 @@ function Projects() {
               </AccordionContent>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-2">
+            <Accordion.Item className="AccordionItem" value="item-5">
               <AccordionTrigger>
                 <div class="date">2024</div>
                 <div class="name">Programming Studio</div>
@@ -69,7 +80,7 @@ function Projects() {
               </AccordionContent>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-3">
+            <Accordion.Item className="AccordionItem" value="item-4">
               <AccordionTrigger>
                 <div class="date">2023</div>
                 <div class="name">Personal Website</div>
@@ -83,7 +94,7 @@ function Projects() {
               </Accordion.Content>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-4">
+            <Accordion.Item className="AccordionItem" value="item-3">
               <AccordionTrigger>
                 <div class="date">2023</div>
                 <div class="name">TAMU Datathon</div>
@@ -98,7 +109,7 @@ function Projects() {
               </Accordion.Content>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-5">
+            <Accordion.Item className="AccordionItem" value="item-2">
               <AccordionTrigger>
                 <div class="date">2023</div>
                 <div class="name">American Airlines</div>
@@ -114,7 +125,7 @@ function Projects() {
               </Accordion.Content>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-6">
+            <Accordion.Item className="AccordionItem" value="item-1">
               <AccordionTrigger>
                 <div class="date">2022 - 2023</div>
                 <div class="name">Aggies Invent</div>
