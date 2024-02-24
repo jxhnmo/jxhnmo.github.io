@@ -14,6 +14,7 @@ export default function Footer() {
           <th id="footer">
             <img
               src={logo}
+              alt="jm logo"
               onClick={() => navigate('/')}
             />
           </th>

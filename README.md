@@ -11,4 +11,6 @@ uses:
 - encrypt resume login password?
 - add redirect from about to links
 - add redirect from experience to resume
-- add picture of tamuhack facial recognition
+- experience is using projects.css?
+- more refactoring
+- fix colour scheme? text colour for experience/projects for readability

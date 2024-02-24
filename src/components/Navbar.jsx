@@ -18,6 +18,7 @@ const Navbar = () => {
             <img
               src={logo}
               height="50px"
+              alt="jm logo"
               onClick={() => navigate('/')}
             />
           </th>

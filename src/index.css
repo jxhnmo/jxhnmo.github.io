@@ -111,11 +111,36 @@ img {
 }
 
 .main {
+  padding-top: 1%;
+  padding-bottom: 1%;
   padding-left: 5%;
   padding-right: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.btm30 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 5%;
+}
+
+.abtBtn {
+  color: #fff;
+  background-color: #A991E0;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+}
+
+.abtBtn:hover {
+  color: #A991E0;
+  background-color: #fff;
 }
 
 .justify-start {
@@ -178,33 +203,6 @@ div.loginSection {
   margin-left: 35%;
   margin-right: 35%;
   text-align: center;
-}
-
-.Button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  font-size: calc(80% + 0.3vw);
-  line-height: 1;
-  font-weight: 500;
-  height: 35px;
-  width: 40%;
-
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #FFF;
-  background-color: #241730;
-  border-color: #FFF;
-  border-style: solid;
-  border-width: 2px;
-  box-shadow: -0.2vw 0.2vw 0px #FFF;
-}
-
-.Button:hover {
-  color: #FFF;
-  background-color: #6F4694;
-  box-shadow: none;
 }
 
 .Input {
