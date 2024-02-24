@@ -1,7 +1,3 @@
-@import '@radix-ui/colors/black-alpha.css';
-@import '@radix-ui/colors/mauve.css';
-@import '@radix-ui/colors/violet.css';
-
 /* reset */
 button,
 h3 {
@@ -66,7 +62,7 @@ h3 {
     overflow: hidden;
     font-size: calc(30% + 0.3vw + 0.5vh);
     font-weight: 400;
-    color: #2A1A38;
+    color: #fff;
     background-color: #774A9E;
 }
 
@@ -145,4 +141,10 @@ a {
 a:hover {
     text-decoration: underline;
     color: #2A1A38;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

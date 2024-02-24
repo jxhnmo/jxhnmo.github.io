@@ -4,6 +4,9 @@ import classNames from 'classnames';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import './Projects.css';
 
+// dream boy
+import fn1 from '../assets/projects/fn1.jpg'
+
 // interview pro pix
 import interviewpro from '../assets/projects/interviewpro.png'
 import interviewprodata from '../assets/projects/interviewprodata.png'
@@ -36,7 +39,20 @@ function Projects() {
         <div class="row lightContainer">
 
           <Accordion.Root className="AccordionRoot" type="single" defaultValue="" collapsible>
-            <Accordion.Item className="AccordionItem" value="item-1">
+            <Accordion.Item className="AccordionItem" value="item-7">
+              <AccordionTrigger>
+                <div class="date">2023-Present</div>
+                <div class="name">Dream Boy Games</div>
+                <div class="title">Game Studio Startup</div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <li>500+ CCU with 11,000+ plays incubation game studio built on Fortnite.</li>
+                <li>In collaboration with my Supersocial Manager.</li>
+                <img src={fn1} alt='fn1' width="50%" height='auto' class="center" />
+              </AccordionContent>
+            </Accordion.Item>
+
+            <Accordion.Item className="AccordionItem" value="item-6">
               <AccordionTrigger>
                 <div class="date">2024</div>
                 <div class="name">TAMUhack</div>
@@ -55,7 +71,7 @@ function Projects() {
               </AccordionContent>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-2">
+            <Accordion.Item className="AccordionItem" value="item-5">
               <AccordionTrigger>
                 <div class="date">2024</div>
                 <div class="name">Programming Studio</div>
@@ -69,7 +85,7 @@ function Projects() {
               </AccordionContent>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-3">
+            <Accordion.Item className="AccordionItem" value="item-4">
               <AccordionTrigger>
                 <div class="date">2023</div>
                 <div class="name">Personal Website</div>
@@ -78,12 +94,12 @@ function Projects() {
               <Accordion.Content className="AccordionContent">
                 <div className="AccordionContentText">
                   The website you are currently on! Built with React and Radix-UI.<br />
-                  <img src={thiswebsite} alt='thissite' width="100%" height='auto' />
+                  <img src={thiswebsite} alt='thissite' width="50%" height='auto' class="center" />
                 </div>
               </Accordion.Content>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-4">
+            <Accordion.Item className="AccordionItem" value="item-3">
               <AccordionTrigger>
                 <div class="date">2023</div>
                 <div class="name">TAMU Datathon</div>
@@ -98,7 +114,7 @@ function Projects() {
               </Accordion.Content>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-5">
+            <Accordion.Item className="AccordionItem" value="item-2">
               <AccordionTrigger>
                 <div class="date">2023</div>
                 <div class="name">American Airlines</div>
@@ -109,12 +125,12 @@ function Projects() {
                   Built, trained, and tested an ML model from 200,000 data points provided by AA that classifies passengers as leisure or business and presented the data and a plan to optimise profit margins.<br />
                   Check out the <a href="https://github.com/jxhnmo/american-airlines-challenge" target="_blank" rel="noreferrer">GitHub!</a>
 
-                  <img src={aadata} alt='aadata' width="100%" height='auto' />
+                  <img src={aadata} alt='aadata' width="50%" height='auto' class="center" />
                 </div>
               </Accordion.Content>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-6">
+            <Accordion.Item className="AccordionItem" value="item-1">
               <AccordionTrigger>
                 <div class="date">2022 - 2023</div>
                 <div class="name">Aggies Invent</div>
@@ -138,7 +154,7 @@ function Projects() {
                   3rd Place<br />
                   Apr 16, 2023<br />
                   Designed "VTOLtally Awesome", a long-endurance VTOL capable aircraft that could be used for search and rescue, as well as reconnaissance.<br />
-                  <img src={usnavy} alt='usnavy' width="100%" height='auto' />
+                  <img src={usnavy} alt='usnavy' width="50%" height='auto' class="center" />
                   <br />
                   <br />
 
