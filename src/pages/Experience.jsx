@@ -24,12 +24,19 @@ function Experience() {
                 <div class="location">Remote</div>
               </AccordionTrigger>
               <AccordionContent>
-                {/* <img src={supersocial} alt='supersocial logo' width="10%" height='auto' class="center" /><br /> */}
-                Built the foundation of Supersocial's Fortnite department.
-                <li>Created a fully-fledged brand IP prototype using UEFN/Verse and Agile methodology, handling game design, programming, balance adjustments, and arranging playtests</li>
-                <li>Authored entire technical documentation tree on Fortnite/UEFN/Verse with 50+ Verse scripts/functionality tutorials.</li>
-                <li>Presented prototypes and documentation at company all-hands and answered ad-hoc questions from PMs and designers.</li>
-                <li>Received return offer to continue internship during the school year.</li>
+                <div class="container">
+                  <div class="left">
+                    Built the foundation of Supersocial's Fortnite department.
+                    <li>Created a fully-fledged brand IP prototype using UEFN/Verse and Agile methodology, handling game design, programming, balance adjustments, and arranging playtests</li>
+                    <li>Authored entire technical documentation tree on Fortnite/UEFN/Verse with 50+ Verse scripts/functionality tutorials.</li>
+                    <li>Presented prototypes and documentation at company all-hands and answered ad-hoc questions from PMs and designers.</li>
+                    <li>Received return offer to continue internship during the school year.</li>
+                  </div>
+
+                  <div class="right">
+                    <img src={supersocial} alt='supersocial logo' width="100%" height='auto' class="center" /><br />
+                  </div>
+                </div>
               </AccordionContent>
             </Accordion.Item>
 

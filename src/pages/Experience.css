@@ -138,3 +138,17 @@ div.location {
     padding-right: 1%;
     font-weight: 300;
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    width: 70%;
+}
+
+.right {
+    width: 20%;
+    align-items: right;
+}
