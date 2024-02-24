@@ -139,7 +139,7 @@ div.location {
     font-weight: 300;
 }
 
-.container {
+.companyContainer {
     display: flex;
     flex-direction: row;
 }
@@ -149,6 +149,7 @@ div.location {
 }
 
 .right {
-    width: 20%;
-    align-items: right;
+    width: 10%;
+    margin-right: 0;
+    margin-left: auto;
 }

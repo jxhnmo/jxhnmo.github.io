@@ -16,9 +16,9 @@ import {
   Links,
   Experience,
   ResumeLogin,
-  Resume,
+  // Resume,
   Projects,
-  Contact,
+  // Contact,
   Construction
 } from "./pages";
 

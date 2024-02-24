@@ -1,7 +1,9 @@
 import React from "react";
 import TypeIt from "typeit-react";
+import { useNavigate } from "react-router-dom"
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <div id="page-container" class="my-3">
       <h1>
@@ -30,7 +32,7 @@ function Home() {
         <br /> &emsp;It's  John Mo
       </h1>
 
-      <div class="main mt-5">
+      <div class="main">
         <p class="home">
           Welcome to my site! I'm John, a sophomore CS major @ Texas A&M with a passion for gaming, food, and startups.
           <br /> <br />
@@ -56,6 +58,16 @@ function Home() {
             }}
           />
         </p>
+      </div>
+
+      <div class="">
+
+      </div>
+
+      <div class="main btm30">
+        <button onClick={() => navigate('/about')} class="abtBtn">
+          Learn more about me!
+        </button>
       </div>
     </div>
   );

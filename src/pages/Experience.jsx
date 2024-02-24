@@ -7,6 +7,7 @@ import './Experience.css';
 
 import supersocial from '../assets/work/supersocial_inc_logo.jpeg'
 import mercyships from '../assets/work/Mercy_Ships_Logo.jpg'
+import unt from '../assets/work/unt.png'
 
 function Experience() {
   return (
@@ -24,7 +25,7 @@ function Experience() {
                 <div class="location">Remote</div>
               </AccordionTrigger>
               <AccordionContent>
-                <div class="container">
+                <div class="companyContainer">
                   <div class="left">
                     Built the foundation of Supersocial's Fortnite department.
                     <li>Created a fully-fledged brand IP prototype using UEFN/Verse and Agile methodology, handling game design, programming, balance adjustments, and arranging playtests</li>
@@ -34,7 +35,7 @@ function Experience() {
                   </div>
 
                   <div class="right">
-                    <img src={supersocial} alt='supersocial logo' width="100%" height='auto' class="center" /><br />
+                    <img src={supersocial} alt='supersocial logo' width="100%" height='auto' /><br />
                   </div>
                 </div>
               </AccordionContent>
@@ -48,10 +49,17 @@ function Experience() {
                 <div class="location">Remote</div>
               </AccordionTrigger>
               <AccordionContent>
-                {/* <img src={mercyships} alt='mercyships logo' width="20%" height='auto' class="center" /><br /> */}
-                <li>Boosted global operational efficiency by creating full-stack applications such as automated housing, flight, medical, and managerial checks for travel requests.</li>
-                <li>Resolved 100+ support tickets for Microsoft 365 and Atlassian Suite.</li>
-                <li>Received return offer to continue internship during the school year.</li>
+                <div class="companyContainer">
+                  <div class="left">
+                    <li>Boosted global operational efficiency by creating full-stack applications such as automated housing, flight, medical, and managerial checks for travel requests.</li>
+                    <li>Resolved 100+ support tickets for Microsoft 365 and Atlassian Suite.</li>
+                    <li>Received return offer to continue internship during the school year.</li>
+                  </div>
+
+                  <div class="right">
+                    <img src={mercyships} alt='mercyships logo' width="100%" height='auto' /><br />
+                  </div>
+                </div>
               </AccordionContent>
             </Accordion.Item>
 
@@ -62,12 +70,18 @@ function Experience() {
                 <div class="title">Researcher</div>
                 <div class="location">Denton, Texas</div>
               </AccordionTrigger>
-              <Accordion.Content className="AccordionContent">
-                <div className="AccordionContentText">
-                  <li>Built XR environments in Unity and wrote C# scripts to run psychological tests under the guidance of Dr. Thomas D. Parsons and Dr. Timothy (Fred) McMahan.</li>
-                  <li>Acquired a $4000 grant.</li>
+              <AccordionContent>
+                <div class="companyContainer">
+                  <div class="left">
+                    <li>Built XR environments in Unity and wrote C# scripts to run psychological tests under the guidance of Dr. Thomas D. Parsons and Dr. Timothy (Fred) McMahan.</li>
+                    <li>Acquired a $4000 grant.</li>
+                  </div>
+
+                  <div class="right">
+                    <img src={unt} alt='unt logo' width="100%" height='auto' /><br />
+                  </div>
                 </div>
-              </Accordion.Content>
+              </AccordionContent>
             </Accordion.Item>
           </Accordion.Root>
 
