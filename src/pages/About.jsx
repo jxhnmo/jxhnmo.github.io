@@ -33,11 +33,15 @@ function About() {
 
                     <div class="btnContainer">
                         <button onClick={() => navigate('/links')} class="abtBtn">
-                            Check out my links!
+                            >> links
                         </button>
 
                         <button onClick={() => navigate('/experience')} class="abtBtn">
-                            Check out my work!
+                            >> work
+                        </button>
+
+                        <button onClick={() => navigate('/projects')} class="abtBtn">
+                            >> projects
                         </button>
                     </div>
 
