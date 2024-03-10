@@ -65,7 +65,7 @@ function Home() {
       </div>
 
       <div class="main btm30">
-        <button onClick={() => navigate('/about')} class="abtBtn">
+        <button onClick={() => navigate('/about')} class="homeBtn">
           Learn more about me!
         </button>
       </div>

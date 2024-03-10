@@ -42,7 +42,7 @@ function ResumeLogin() {
                                 </div>
 
                                 <div class="parent center">
-                                    <button class="Button">SUBMIT</button>
+                                    <button class="loginBtn">SUBMIT</button>
                                 </div>
                             </div>
                         </form>
