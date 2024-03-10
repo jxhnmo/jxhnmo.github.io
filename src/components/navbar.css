@@ -38,12 +38,12 @@ button {
     line-height: 1;
     border-radius: 4px;
     font-size: 15px;
-    color: #774A9E;
+    color: var(--interact);
 }
 
 #nav a:hover {
     text-decoration: none;
-    color: #774A9E;
+    color: var(--interact);
 }
 
 .NavigationMenuTrigger:focus,
@@ -53,8 +53,8 @@ button {
 
 .NavigationMenuTrigger:hover,
 .NavigationMenuLink:hover {
-    background-color: #A991E0;
-    color: #774A9E;
+    background-color: var(--light);
+    color: var(--interact);
     opacity: 69%;
 }
 
@@ -128,7 +128,7 @@ button {
     margin-top: 10px;
     margin-right: 1%;
     width: 100%;
-    background-color: #937FC3;
+    background-color: var(--light2);
     border-radius: 6px;
     overflow: hidden;
     /* box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px; */
@@ -196,18 +196,18 @@ button {
 }
 
 .ListItemLink:hover {
-    background-color: #A991E0;
+    background-color: var(--light);
 }
 
 .ListItemHeading {
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: 5px;
-    color: #2A1A38;
+    color: var(--dark);
 }
 
 .ListItemText {
-    color: #fff;
+    color: var(--white);
     font-size: 15px;
     line-height: 1.4;
     font-weight: lighter;
@@ -218,7 +218,7 @@ button {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #774A9E 0%, #2A1A38 100%);
+    background: linear-gradient(135deg, var(--interact) 0%, var(--dark) 100%);
     border-radius: 6px;
     /* padding: 25px; */
     padding: 5%;
@@ -232,7 +232,7 @@ button {
 }
 
 .CalloutHeading {
-    color: white;
+    color: var(--white);
     font-size: 18px;
     font-weight: 500;
     line-height: 1.2;
@@ -241,7 +241,7 @@ button {
 }
 
 .CalloutText {
-    color: #fff;
+    color: var(--white);
     font-size: 14px;
     line-height: 1.3;
 }
@@ -258,7 +258,7 @@ button {
 
 .CaretDown {
     position: relative;
-    color: #774A9E;
+    color: var(--interact);
     top: 1px;
     transition: transform 250ms ease;
 }
@@ -270,7 +270,7 @@ button {
 .Arrow {
     position: relative;
     top: 70%;
-    background-color: #937FC3;
+    background-color: var(--light2);
     width: 10px;
     height: 10px;
     transform: rotate(45deg);

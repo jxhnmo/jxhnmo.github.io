@@ -1,7 +1,9 @@
 import React from "react";
 import Me from '../assets/me1.jpg'
+import { useNavigate } from "react-router-dom"
 
 function About() {
+    const navigate = useNavigate();
     return (
         <div id="page-container" class="my-3">
             <h2>About</h2>
@@ -14,15 +16,31 @@ function About() {
                     <h3 class="heads">
                         Hey! I'm John Mo :D
                     </h3>
+
                     <th id="darkTxt">
                         <p>
-                            I am a global citizen that has lived in 5 different countries! Born in Houston, Texas, I have lived in Oman, Brunei, China, and South Korea. I love meeting new people and interacting with different cultures.
+                            Welcome to my slice of the internet, where each click and scroll uncovers more of my journey through tech, games, and globe-trotting adventures. Born in Houston, Texas, my life's adventures have whisked me from Oman to Brunei, China, and South Korea. Each place has been a chapter in my story, crafting a unique lens through which I view technology and gaming, whilst on the unending quest for the perfect meal.
                             <br /><br />
-                            My passions include games, technology, food, and startups. Growing up playing games, I have played Collegiate R6 for UNT and now play Apex casually (at one point I was a Valorant fiend).
+                            My heart beats for games and my mind for technological wizardry as I spend days (and nights!) exploring virtual worlds and real-world puzzles. As an ex-collegiate R6 player and now casual gamer, my gaming journey has been one heck of a ride that started with Minecraft: Pocket Edition.
                             <br /><br />
-                            Outside of these, I have a fondness for martial arts and the UFC, having trained Brazillian Jiu-Jitsu for 4 years and touched on others like Taekwondo, Karate, and Kung Fu. Fun fact: I lived in one of the Shaolin academies when I was 5!
+                            Beyond pixels and code, I love martial arts, with a focus on Brazilian Jiu-Jitsu, which I've practiced for over 4 years. My adventures have led me to also dabble in Taekwondo, Karate, and Kung Fu. When I was 5, I lived at Shaolin NanYuan temple in the mountains to train with the masters!
+                            <br /><br />
+                            Known as a foodie among my friends, my travels are never complete without diving into the local cuisine. From street food stalls to Michelin-starred restaurants, my palate dances across a spectrum of flavours. And yes, I'm that person who yelps about every restaurant adventure, guiding my fellow foodies to their next yum!
+                            <br /><br />
+                            Here's to the adventures that are ahead and the stories they'll bring. Let's make some magic happen, together!
                         </p>
                     </th>
+
+                    <div class="btnContainer">
+                        <button onClick={() => navigate('/links')} class="abtBtn">
+                            Check out my links!
+                        </button>
+
+                        <button onClick={() => navigate('/experience')} class="abtBtn">
+                            Check out my work!
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>

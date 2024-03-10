@@ -9,7 +9,6 @@ uses:
 - light mode
 - decreasing photo file size?
 - encrypt resume login password?
-- add redirect from about to links
 - add redirect from experience to resume
 - experience is using projects.css?
 - more refactoring

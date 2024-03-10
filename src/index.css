@@ -3,7 +3,7 @@
 body {
   position: relative;
   margin: 0;
-  background: #2A1A38;
+  background: var(--dark);
   font-family: 'Rubik', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,39 +14,39 @@ body {
 
 h1 {
   font-weight: bold;
-  color: #A991E0;
+  color: var(--light);
   font-size: calc(100% + 7vw);
   margin: 0 8% 16px;
   text-transform: uppercase;
-  text-shadow: -0.2vw 0.2vw 0px #2A1A38,
-    -0.4vw 0.4vw 0px #FFF,
-    -0.6vw 0.6vw 0px #774A9E;
+  text-shadow: -0.2vw 0.2vw 0px var(--dark),
+    -0.4vw 0.4vw 0px var(--white),
+    -0.6vw 0.6vw 0px var(--interact);
 }
 
 h2 {
-  color: #A991E0;
+  color: var(--light);
   font-weight: bold;
   font-size: calc(100% + 3vw);
   margin: 0 5% 8px;
 
   text-transform: uppercase;
   text-shadow:
-    -0.4vw 0px 0px #774A9E;
+    -0.4vw 0px 0px var(--interact);
 }
 
 h2.linkHead {
-  color: #2A1A38;
+  color: var(--dark);
   font-weight: bold;
   font-size: calc(100% + 1.5vw);
   text-align: center;
 
   text-transform: uppercase;
   text-shadow:
-    -0.2vw 0px 0px #774A9E;
+    -0.2vw 0px 0px var(--interact);
 }
 
 h3 {
-  color: #2A1A38;
+  color: var(--dark);
   font-weight: lighter;
   font-size: calc(100% + 1vw);
   /* font-size: 2000px; */
@@ -54,13 +54,13 @@ h3 {
 }
 
 h3.heads {
-  color: #2A1A38;
+  color: var(--dark);
   font-size: calc(100% + 1vw);
   margin: 0 0 8px;
 }
 
 p {
-  color: #FFFFFF;
+  color: var(--white);
   font-weight: 300;
   line-height: 140%;
   font-size: calc(80% + 0.3vw);
@@ -68,7 +68,7 @@ p {
 }
 
 p.home {
-  color: #FFFFFF;
+  color: var(--white);
   font-weight: 300;
   line-height: 140%;
   font-size: calc(100% + 0.3vw);
@@ -76,7 +76,7 @@ p.home {
 }
 
 #darkTxt p {
-  color: #2A1A38;
+  color: var(--dark);
   font-weight: 300;
 
 }
@@ -84,24 +84,24 @@ p.home {
 a {
   text-decoration: none;
   font-size: calc(100% + 0.3vw);
-  color: #2A1A38;
+  color: var(--dark);
   font-weight: normal;
 }
 
 a.links {
   text-decoration: none;
   font-size: calc(80% + 0.3vw);
-  color: #2A1A38;
+  color: var(--dark);
   font-weight: normal;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #774A9E;
+  color: var(--interact);
 }
 
 img {
-  border: solid 5px #774A9E;
+  border: solid 5px var(--interact);
   overflow: 'hidden';
   border-radius: 40px;
 }
@@ -127,9 +127,9 @@ img {
   bottom: 5%;
 }
 
-.abtBtn {
-  color: #fff;
-  background-color: #A991E0;
+.homeBtn {
+  color: var(--white);
+  background-color: var(--light);
 
   padding-top: 10px;
   padding-bottom: 10px;
@@ -138,9 +138,61 @@ img {
   border-radius: 20px;
 }
 
+.homeBtn:hover {
+  color: var(--light);
+  background-color: var(--white);
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15%;
+  height: 100px;
+}
+
+.abtBtn {
+  color: var(--white);
+  background-color: var(--interact);
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+
+}
+
 .abtBtn:hover {
-  color: #A991E0;
-  background-color: #fff;
+  color: var(--interact);
+  background-color: var(--white);
+}
+
+.loginBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: calc(80% + 0.3vw);
+  line-height: 1;
+  font-weight: 500;
+  height: 35px;
+  width: 40%;
+
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--dark);
+  border-color: var(--white);
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: -0.2vw 0.2vw 0px var(--white);
+}
+
+.loginBtn:hover {
+  color: var(--white);
+  background-color: var(--interact);
+  box-shadow: none;
 }
 
 .justify-start {
@@ -148,28 +200,28 @@ img {
 }
 
 div.whiteBg {
-  background: #b8b8b8;
+  background: var(--white);
   width: 100%;
 }
 
 div.blackBg {
-  background: #000;
+  background: var(--black);
   width: 100%;
 }
 
 div.lightBg {
-  background-color: #A991E0;
+  background-color: var(--light);
 }
 
 div.lightContainer {
-  background: #A991E0;
+  background: var(--light);
   width: 80%;
   padding-left: 2%;
   padding-right: 2%;
   padding-top: 2%;
   padding-bottom: 2%;
   border-radius: 20px;
-  box-shadow: -0.4vw 0px 0px #774A9E;
+  box-shadow: -0.4vw 0px 0px var(--interact);
 }
 
 div.parent {
@@ -189,7 +241,7 @@ div.parent {
 
 .filler {
   flex: 1;
-  background: #774A9E;
+  background: var(--interact);
   border-radius: 50px;
   height: 5%;
 }
@@ -213,12 +265,12 @@ div.loginSection {
   border-radius: 4px;
 
   font-size: calc(80% + 0.3vw);
-  color: #774A9E;
-  background-color: #FFF;
-  border-color: #774A9E;
+  color: var(--interact);
+  background-color: var(--white);
+  border-color: var(--interact);
   border-style: solid;
   border-width: 2px;
-  box-shadow: -0.2vw 0.2vw 0px #774A9E;
+  box-shadow: -0.2vw 0.2vw 0px var(--interact);
 
   padding: 0 10px;
   height: 35px;

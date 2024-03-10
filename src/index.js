@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "./components/variables.css" // colour variables
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 // components
