@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <div class="footer">
       <div class="justify-start">
-        <IconButton aria-label="delete">
+        <IconButton aria-label="home">
           <th id="footer">
             <img
               src={logo}
