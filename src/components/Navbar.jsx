@@ -13,7 +13,7 @@ const Navbar = () => {
     <NavigationMenu.Root className="NavigationMenuRoot">
 
       <div class="justify-start">
-        <IconButton aria-label="delete">
+        <IconButton aria-label="home">
           <th id="noBorder">
             <img
               src={logo}
