@@ -203,7 +203,7 @@ button {
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: 5px;
-    color: var(--dark);
+    color: var(--black);
 }
 
 .ListItemText {
