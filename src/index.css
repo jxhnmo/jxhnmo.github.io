@@ -129,7 +129,7 @@ img {
 
 .homeBtn {
   color: var(--white);
-  background-color: var(--light);
+  background-color: var(--light2);
 
   padding-top: 10px;
   padding-bottom: 10px;
@@ -139,7 +139,7 @@ img {
 }
 
 .homeBtn:hover {
-  color: var(--light);
+  color: var(--light2);
   background-color: var(--white);
 }
 
