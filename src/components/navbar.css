@@ -38,12 +38,12 @@ button {
     line-height: 1;
     border-radius: 4px;
     font-size: 15px;
-    color: var(--interact);
+    color: var(--light);
 }
 
 #nav a:hover {
     text-decoration: none;
-    color: var(--interact);
+    color: var(--dark);
 }
 
 .NavigationMenuTrigger:focus,
@@ -54,7 +54,7 @@ button {
 .NavigationMenuTrigger:hover,
 .NavigationMenuLink:hover {
     background-color: var(--light);
-    color: var(--interact);
+    color: var(--dark);
     opacity: 69%;
 }
 
@@ -258,13 +258,14 @@ button {
 
 .CaretDown {
     position: relative;
-    color: var(--interact);
+    color: var(--light);
     top: 1px;
     transition: transform 250ms ease;
 }
 
 [data-state='open']>.CaretDown {
     transform: rotate(-180deg);
+    color: var(--dark);
 }
 
 .Arrow {
