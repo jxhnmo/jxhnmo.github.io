@@ -5,9 +5,9 @@ h3 {
 }
 
 .AccordionRoot {
-    border-radius: 6px;
+    /* border-radius: 6px;f */
     width: 100%;
-    background-color: var(--dark);
+    /* background-color: var(--dark); */
     /* box-shadow: 0 2px 10px var(--black-a4); */
 }
 
@@ -40,7 +40,7 @@ h3 {
 
 .AccordionTrigger {
     font-family: inherit;
-    background-color: var(--dark);
+    /* background-color: var(--dark); */
     padding: 0 20px;
     height: 45px;
     flex: 1;
@@ -54,7 +54,7 @@ h3 {
 }
 
 .AccordionTrigger:hover {
-    /* background-color: var(--interact);
+    /* background-color: var(--interfact);
     color: #241730; */
 }
 
@@ -63,7 +63,7 @@ h3 {
     font-size: calc(30% + 0.3vw + 0.5vh);
     font-weight: 400;
     color: var(--dark);
-    background-color: var(--interact);
+    /* background-color: var(--interact); */
 }
 
 .AccordionContent[data-state='open'] {
