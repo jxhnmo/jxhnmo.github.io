@@ -5,12 +5,13 @@
     --interact: #774A9E;
     --black: #000000;
     --white: #FFFFFF;
+}
 
-
-    /* --dark: #FBEBFB;
+[data-theme="light"] {
+    --dark: #FBEBFB;
     --light: #8145B5;
     --light2: #D1AFEC;
     --interact: #EAD5F9;
     --black: #FEFCFE;
-    --white: #53195D; */
+    --white: #53195D;
 }
