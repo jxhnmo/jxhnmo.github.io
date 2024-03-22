@@ -16,7 +16,7 @@ function Links() {
 
                     <div class="parent">
                         <div class="child">
-                            <SocialIcon network="instagram" url="https://www.instagram.com/jxhnmo/" target="_blank" style={{ width: 30 }} fgColor="#A991E0" bgColor="#2A1A38" />
+                            <SocialIcon network="instagram" url="https://www.instagram.com/jxhnmo/" target="_blank" style={{ width: 30 }} fgColor="var(--light)" bgColor="var(--dark)" />
                         </div>
                         <div class="child">
                             <a href="https://www.instagram.com/jxhnmo/" target="_blank" rel="noopener noreferrer" class="links">instagram</a>
@@ -31,7 +31,7 @@ function Links() {
 
                     <div class="parent">
                         <div class="child">
-                            <SocialIcon network="spotify" url="https://open.spotify.com/user/the_dark_dragon" target="_blank" style={{ width: 30 }} fgColor="#A991E0" bgColor="#2A1A38" />
+                            <SocialIcon network="spotify" url="https://open.spotify.com/user/the_dark_dragon" target="_blank" style={{ width: 30 }} fgColor="var(--light)" bgColor="var(--dark)" />
                         </div>
                         <div class="child">
                             <a href="https://open.spotify.com/user/the_dark_dragon" target="_blank" rel="noopener noreferrer" class="links">spotify</a>
@@ -46,7 +46,7 @@ function Links() {
 
                     <div class="parent">
                         <div class="child">
-                            <SocialIcon network="discord" url="https://discord.com/invite/CnzYRG6" target="_blank" style={{ width: 30 }} fgColor="#A991E0" bgColor="#2A1A38" />
+                            <SocialIcon network="discord" url="https://discord.com/invite/CnzYRG6" target="_blank" style={{ width: 30 }} fgColor="var(--light)" bgColor="var(--dark)" />
                         </div>
                         <div class="child">
                             <a href="https://discord.com/invite/CnzYRG6" target="_blank" rel="noopener noreferrer" class="links">discord</a>
@@ -61,7 +61,7 @@ function Links() {
 
                     <div class="parent">
                         <div class="child">
-                            <SocialIcon network="twitch" url="https://www.twitch.tv/jomgos" target="_blank" style={{ width: 30 }} fgColor="#A991E0" bgColor="#2A1A38" />
+                            <SocialIcon network="twitch" url="https://www.twitch.tv/jomgos" target="_blank" style={{ width: 30 }} fgColor="var(--light)" bgColor="var(--dark)" />
                         </div>
                         <div class="child">
                             <a href="https://www.twitch.tv/jomgos" target="_blank" rel="noopener noreferrer" class="links">twitch</a>
@@ -82,7 +82,7 @@ function Links() {
 
                     <div class="parent">
                         <div class="child">
-                            <SocialIcon network="linkedin" url="https://www.linkedin.com/in/john-mo/" target="_blank" style={{ width: 30 }} fgColor="#A991E0" bgColor="#2A1A38" />
+                            <SocialIcon network="linkedin" url="https://www.linkedin.com/in/john-mo/" target="_blank" style={{ width: 30 }} fgColor="var(--light)" bgColor="var(--dark)" />
                         </div>
                         <div class="child">
                             <a href="https://www.linkedin.com/in/john-mo/" target="_blank" rel="noopener noreferrer" class="links">linkedin</a>
@@ -97,7 +97,7 @@ function Links() {
 
                     <div class="parent">
                         <div class="child">
-                            <SocialIcon network="github" url="https://github.com/jxhnmo" target="_blank" style={{ width: 30 }} fgColor="#A991E0" bgColor="#2A1A38" />
+                            <SocialIcon network="github" url="https://github.com/jxhnmo" target="_blank" style={{ width: 30 }} fgColor="var(--light)" bgColor="var(--dark)" />
                         </div>
                         <div class="child">
                             <a href="https://github.com/jxhnmo" target="_blank" rel="noopener noreferrer" class="links">github</a>
