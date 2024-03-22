@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
+import * as Switch from '@radix-ui/react-switch';
+import { CaretDownIcon } from '@radix-ui/react-icons';
 import { useNavigate } from "react-router-dom"
 import classNames from 'classnames';
 import IconButton from '@mui/material/IconButton';
-import { CaretDownIcon } from '@radix-ui/react-icons';
 import './navbar.css';
 import logo from '../assets/jm_logo.png'
+
+const ThemeSwitch = () => {
+  const [isLightTheme, setIsLightTheme] = useState(document.body.getAttribute('data-theme') === 'light');
+
+  useEffect(() => {
+    if (isLightTheme) {
+      document.body.setAttribute('data-theme', 'light');
+    } else {
+      document.body.removeAttribute('data-theme');
+    }
+  }, [isLightTheme]);
+
+  const toggleTheme = () => {
+    setIsLightTheme(!isLightTheme);
+  };
+
+  return (
+    <Switch.Root className="SwitchRoot" id="theme" onCheckedChange={toggleTheme} checked={isLightTheme}>
+      <Switch.Thumb className="SwitchThumb" />
+    </Switch.Root>
+  );
+};
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -92,6 +115,12 @@ const Navbar = () => {
             </NavigationMenu.Link>
           </NavigationMenu.Item>
         </th> */}
+
+        <th id="nav">
+          <NavigationMenu.Item>
+            <ThemeSwitch />
+          </NavigationMenu.Item>
+        </th>
 
         <NavigationMenu.Indicator className="NavigationMenuIndicator">
           <div className="Arrow" />
