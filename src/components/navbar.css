@@ -373,28 +373,21 @@ button {
 .SwitchRoot {
     width: 42px;
     height: 25px;
-    background-color: var(--black);
+    background-color: var(--light);
     border-radius: 9999px;
     position: relative;
     box-shadow: 0 2px 10px var(--black);
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-.SwitchRoot:focus {
-    box-shadow: 0 0 0 2px var(--black);
-}
-
-.SwitchRoot[data-state='checked'] {
-    background-color: black;
+    margin-left: 10px;
+    margin-top: 2px;
 }
 
 .SwitchThumb {
     display: block;
     width: 21px;
     height: 21px;
-    background-color: white;
+    background-color: var(--dark);
     border-radius: 9999px;
-    box-shadow: 0 2px 2px var(--black-a7);
+    /* box-shadow: 0 2px 2px var(--black); */
     transition: transform 100ms;
     transform: translateX(2px);
     will-change: transform;
