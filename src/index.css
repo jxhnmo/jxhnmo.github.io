@@ -75,6 +75,15 @@ p.home {
   margin: 0 0 0;
 }
 
+p.links {
+  color: var(--black);
+  font-weight: 300;
+  line-height: 140%;
+  font-size: calc(80% + 0.3vw);
+  margin: 0 0 0;
+
+}
+
 #darkTxt p {
   color: var(--dark);
   font-weight: 300;
@@ -86,6 +95,7 @@ a {
   font-size: calc(100% + 0.3vw);
   color: var(--dark);
   font-weight: normal;
+  text-decoration: underline;
 }
 
 a.links {
@@ -93,11 +103,13 @@ a.links {
   font-size: calc(80% + 0.3vw);
   color: var(--dark);
   font-weight: normal;
+  text-decoration: underline;
 }
 
-a:hover {
-  text-decoration: underline;
-  color: var(--interact);
+a:hover,
+a.links:hover {
+  text-decoration: none;
+  color: var(--white);
 }
 
 img {
@@ -307,4 +319,9 @@ iframe {
   .col-md-8half {
     width: 70.83333333%;
   }
+}
+
+SocialIcon {
+  fgColor: "--light";
+  bgColor: "--dark";
 }

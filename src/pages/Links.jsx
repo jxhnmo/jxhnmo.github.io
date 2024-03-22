@@ -25,7 +25,7 @@ function Links() {
 
                         </div>
                         <div class="child">
-                            <p>my latest pix and flix!</p>
+                            <p class="links">my latest pix and flix!</p>
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@ function Links() {
 
                         </div>
                         <div class="child">
-                            <p>what im listening to</p>
+                            <p class="links">what im listening to</p>
                         </div>
                     </div>
 
@@ -55,7 +55,7 @@ function Links() {
 
                         </div>
                         <div class="child">
-                            <p>my community</p>
+                            <p class="links">my community</p>
                         </div>
                     </div>
 
@@ -70,7 +70,7 @@ function Links() {
 
                         </div>
                         <div class="child">
-                            <p>maybe ill stream again one day...</p>
+                            <p class="links">maybe ill stream again one day...</p>
                         </div>
                     </div>
 
@@ -91,7 +91,7 @@ function Links() {
 
                         </div>
                         <div class="child">
-                            <p>lets connect!</p>
+                            <p class="links">lets connect!</p>
                         </div>
                     </div>
 
@@ -106,7 +106,7 @@ function Links() {
 
                         </div>
                         <div class="child">
-                            <p>git happens</p>
+                            <p class="links">git happens</p>
                         </div>
                     </div>
 
