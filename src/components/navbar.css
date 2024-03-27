@@ -39,6 +39,8 @@ button {
     border-radius: 4px;
     font-size: 15px;
     color: var(--light);
+
+    text-shadow: 1px 1px 2px var(--dark);
 }
 
 #nav a:hover {
@@ -56,6 +58,8 @@ button {
     background-color: var(--light);
     color: var(--dark);
     opacity: 69%;
+
+    text-shadow: none;
 }
 
 .NavigationMenuTrigger {

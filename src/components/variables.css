@@ -5,6 +5,8 @@
     --interact: #774A9E;
     --black: #000000;
     --white: #FFFFFF;
+
+    --invert: 0%;
 }
 
 [data-theme="light"] {
@@ -14,4 +16,6 @@
     --interact: #EAD5F9;
     --black: #FEFCFE;
     --white: #53195D;
+
+    --invert: 100%;
 }

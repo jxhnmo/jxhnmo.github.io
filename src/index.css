@@ -120,6 +120,7 @@ img {
 
 #noBorder img {
   border: 0px;
+  filter: invert(var(--invert));
 }
 
 .main {
