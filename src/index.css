@@ -159,7 +159,9 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15%;
+  /* padding: 0 15%; */
+  padding-left: 10%;
+  padding-right: 10%;
   height: 100px;
 }
 
