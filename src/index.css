@@ -156,6 +156,7 @@ img {}
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 20px;
+  text-align: center;
 }
 
 .homeBtn:hover {
@@ -182,6 +183,7 @@ img {}
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 20px;
+  text-align: center;
 }
 
 .abtBtn:hover {
