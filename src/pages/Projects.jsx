@@ -48,7 +48,9 @@ function Projects() {
               <AccordionContent>
                 <li>500+ CCU with 11,000+ plays incubation game studio built on Fortnite.</li>
                 <li>In collaboration with my Supersocial Manager.</li>
-                <img src={fn1} alt='fn1' width="50%" height='auto' class="center" />
+                <th id="border">
+                  <img src={fn1} alt='fn1' width="50%" height='auto' class="center" />
+                </th>
               </AccordionContent>
             </Accordion.Item>
 
@@ -65,9 +67,11 @@ function Projects() {
                 <li>Backend using Pytorch, OpenCV, and SpeechRecognition, built, trained, and fine-tuned 4 ML models for facial recognition, expressions, eye tracking, and speech-to-text.</li>
                 <li>Integrated with OpenAI's API for data processing, question generation, and improvement summarisation.</li>
                 <li>Frontend model built and animated through Unity, and displayed through React.</li>
-                <img src={interviewpro} alt='iNterview Pro' width="33%" height='auto' />
-                <img src={interviewprodata} alt='iNterview Pro Data' width="33%" height='auto' />
-                <img src={facial} alt='Facial' width="33%" height='auto' />
+                <th id="border">
+                  <img src={interviewpro} alt='iNterview Pro' width="33%" height='auto' />
+                  <img src={interviewprodata} alt='iNterview Pro Data' width="33%" height='auto' />
+                  <img src={facial} alt='Facial' width="33%" height='auto' />
+                </th>
               </AccordionContent>
             </Accordion.Item>
 
@@ -80,8 +84,10 @@ function Projects() {
               <AccordionContent>
                 Website with two different styles through CSS manipulation with no JS Libraries.<br />
                 Check out the <a href="https://people.tamu.edu/~johnmo/index.html" target="_blank" rel="noreferrer">Site!</a><br />
-                <img src={personalsite1} alt='personalsite1' width="50%" height='auto' />
-                <img src={personalsite2} alt='personalsite2' width="50%" height='auto' />
+                <th id="border">
+                  <img src={personalsite1} alt='personalsite1' width="50%" height='auto' />
+                  <img src={personalsite2} alt='personalsite2' width="50%" height='auto' />
+                </th>
               </AccordionContent>
             </Accordion.Item>
 
@@ -94,7 +100,9 @@ function Projects() {
               <Accordion.Content className="AccordionContent">
                 <div className="AccordionContentText">
                   The website you are currently on! Built with React and Radix-UI.<br />
-                  <img src={thiswebsite} alt='thissite' width="50%" height='auto' class="center" />
+                  <th id="border">
+                    <img src={thiswebsite} alt='thissite' width="50%" height='auto' class="center" />
+                  </th>
                 </div>
               </Accordion.Content>
             </Accordion.Item>
@@ -125,7 +133,9 @@ function Projects() {
                   Built, trained, and tested an ML model from 200,000 data points provided by AA that classifies passengers as leisure or business and presented the data and a plan to optimise profit margins.<br />
                   Check out the <a href="https://github.com/jxhnmo/american-airlines-challenge" target="_blank" rel="noreferrer">GitHub!</a>
 
-                  <img src={aadata} alt='aadata' width="50%" height='auto' class="center" />
+                  <th id="border">
+                    <img src={aadata} alt='aadata' width="50%" height='auto' class="center" />
+                  </th>
                 </div>
               </Accordion.Content>
             </Accordion.Item>
@@ -146,7 +156,9 @@ function Projects() {
                   Sep 12, 2023<br />
                   Designed "ScanX", a deep learning software that identifies illicit contraband in x-ray content and extrapolates individual items into an easy-to-understand grid.<br />
                   Check out the <a href="https://youtu.be/hA0vzJ25pFo?si=1yFTgo1Im6vkVnnc&t=6836" target="_blank" rel="noreferrer">Presentation!</a><br />
-                  <img src={sandia} alt='sandia' width="100%" height='auto' />
+                  <th id="border">
+                    <img src={sandia} alt='sandia' width="100%" height='auto' />
+                  </th>
                   <br />
                   <br />
 
@@ -154,16 +166,22 @@ function Projects() {
                   3rd Place<br />
                   Apr 16, 2023<br />
                   Designed "VTOLtally Awesome", a long-endurance VTOL capable aircraft that could be used for search and rescue, as well as reconnaissance.<br />
-                  <img src={usnavy} alt='usnavy' width="50%" height='auto' class="center" />
+
+                  <th id="border">
+                    <img src={usnavy} alt='usnavy' width="50%" height='auto' class="center" />
+                  </th>
                   <br />
                   <br />
 
                   Los Alamos National Laboratory: Nuclear Security <br />
                   Oct 23, 2022<br />
                   Designed “Spy Kids” a spy bot swarm that detects nuclear radiation and other potential threats.<br />
-                  Check out the <a href="https://www.youtube.com/live/CvsA9LDOP4Q?si=YlQZuKxbPMZqMODZ&t=2978" target="_blank" rel="noreferrer">Presentation!</a><br />
-                  <img src={losalamos1} alt='losalamos1' width="50%" height='auto' />
-                  <img src={losalamos2} alt='losalamos2' width="50%" height='auto' />
+                  Check out the <a href="https://www.youtube.com/live/CvsA9LDOP4Q?si=YlQZuKxbPMZqMODZ&t=2978" target="_blank" rel="noreferrer">Presentation!</a><br />\
+
+                  <th id="border">
+                    <img src={losalamos1} alt='losalamos1' width="50%" height='auto' />
+                    <img src={losalamos2} alt='losalamos2' width="50%" height='auto' />
+                  </th>
                   <br />
                   <br />
 
@@ -172,9 +190,12 @@ function Projects() {
                   Sep 25, 2022<br />
                   Designed "Mediator", an extension and app that evaluates the credibility of social media posts through machine learning.<br />
                   Check out the <a href="https://www.youtube.com/live/jw86T8we1KM?si=aaFxC1TwVsBxEZhG&t=253" target="_blank" rel="noreferrer">Presentation!</a><br />
-                  <img src={nsa1} alt='nsa1' width="50%" height='auto' />
-                  <img src={nsa2} alt='nsa2' width="25%" height='auto' />
-                  <img src={nsa3} alt='nsa3' width="25%" height='auto' />
+
+                  <th id="border">
+                    <img src={nsa1} alt='nsa1' width="50%" height='auto' />
+                    <img src={nsa2} alt='nsa2' width="25%" height='auto' />
+                    <img src={nsa3} alt='nsa3' width="25%" height='auto' />
+                  </th>
                 </div>
               </Accordion.Content>
             </Accordion.Item>
