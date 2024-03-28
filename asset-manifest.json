@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.5a2d7fb8.css",
+    "main.css": "/static/css/main.96f93e5a.css",
     "main.js": "/static/js/main.4e60fed0.js",
     "static/media/losalamos1.png": "/static/media/losalamos1.fe9dfbb3171b18bb6d1a.png",
     "static/media/interviewpro.png": "/static/media/interviewpro.a39b0a35b26c125cd66c.png",
@@ -24,11 +24,11 @@
     "static/media/interviewprodata.png": "/static/media/interviewprodata.e365a0c3ec8c4a53403d.png",
     "static/media/unt.png": "/static/media/unt.6e89c21661997ca30dbf.png",
     "index.html": "/index.html",
-    "main.5a2d7fb8.css.map": "/static/css/main.5a2d7fb8.css.map",
+    "main.96f93e5a.css.map": "/static/css/main.96f93e5a.css.map",
     "main.4e60fed0.js.map": "/static/js/main.4e60fed0.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a2d7fb8.css",
+    "static/css/main.96f93e5a.css",
     "static/js/main.4e60fed0.js"
   ]
 }
