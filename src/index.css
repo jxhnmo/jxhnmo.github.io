@@ -157,11 +157,15 @@ img {}
   padding-right: 20px;
   border-radius: 20px;
   text-align: center;
+
+  transition: 0.5s;
 }
 
 .homeBtn:hover {
   color: var(--light2);
   background-color: var(--white);
+
+  transform: scale(1.1);
 }
 
 .btnContainer {
@@ -184,11 +188,15 @@ img {}
   padding-right: 20px;
   border-radius: 20px;
   text-align: center;
+
+  transition: 0.5s;
 }
 
 .abtBtn:hover {
   color: var(--interact);
   background-color: var(--white);
+
+  transform: scale(1.1);
 }
 
 .loginBtn {
