@@ -134,7 +134,7 @@ div.title {
 a {
     text-decoration: none;
     font-size: calc(100% + 0.3vw);
-    color: var(--dark);
+    color: var(--white);
     font-weight: normal;
     text-decoration: underline;
 }
