@@ -10,7 +10,9 @@ function About() {
             <div class="main">
                 <div class="row lightContainer">
                     <div class="col-md-3half pt-3 pb-3 text-center">
-                        <img src={Me} alt='John Mo' width="80%" height='auto' />
+                        <th id="border">
+                            <img src={Me} alt='John Mo' width="80%" height='auto' />
+                        </th>
                     </div>
 
                     <div class="col-md-8half pt-3 pb-3">

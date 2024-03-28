@@ -35,7 +35,9 @@ function Experience() {
                   </div>
 
                   <div class="right">
-                    <img src={supersocial} alt='supersocial logo' width="100%" height='auto' /><br />
+                    <th id="logo">
+                      <img src={supersocial} alt='supersocial logo' width="100%" height='auto' /><br />
+                    </th>
                   </div>
                 </div>
               </AccordionContent>
@@ -57,7 +59,9 @@ function Experience() {
                   </div>
 
                   <div class="right">
-                    <img src={mercyships} alt='mercyships logo' width="100%" height='auto' /><br />
+                    <th id="logo">
+                      <img src={mercyships} alt='mercyships logo' width="100%" height='auto' /><br />
+                    </th>
                   </div>
                 </div>
               </AccordionContent>
@@ -78,7 +82,9 @@ function Experience() {
                   </div>
 
                   <div class="right">
-                    <img src={unt} alt='unt logo' width="100%" height='auto' /><br />
+                    <th id="logo">
+                      <img src={unt} alt='unt logo' width="100%" height='auto' /><br />
+                    </th>
                   </div>
                 </div>
               </AccordionContent>
