@@ -168,21 +168,20 @@ img {}
   justify-content: space-between;
   align-items: center;
   /* padding: 0 15%; */
-  padding-left: 10%;
-  padding-right: 10%;
+  /* padding-left: 10%;
+  padding-right: 10%; */
   height: 100px;
 }
 
 .abtBtn {
   color: var(--white);
   background-color: var(--interact);
-
+  margin: 0 auto;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 20px;
-
 }
 
 .abtBtn:hover {
