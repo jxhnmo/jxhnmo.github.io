@@ -116,6 +116,7 @@ img {
   border: solid 5px var(--interact);
   overflow: 'hidden';
   border-radius: 40px;
+  border-color: transparent;
 }
 
 #noBorder img {
