@@ -4,6 +4,10 @@ import "./index.css";
 import "./components/variables.css" // colour variables
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
+// for scrolltotop
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 // components
 import {
   Navbar,
@@ -23,8 +27,19 @@ import {
   Construction
 } from "./pages";
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 ReactDOM.render(
   <Router basename={process.env.PUBLIC_URL}>
+    <ScrollToTop />{ }
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
@@ -41,3 +56,4 @@ ReactDOM.render(
 
   document.getElementById("root")
 );
+
