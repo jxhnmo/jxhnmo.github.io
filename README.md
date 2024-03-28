@@ -13,3 +13,4 @@ uses:
 - add recommendations to experience page ?
 - more refactoring
 - fix colour scheme? text colour for experience/projects for readability
+- projects AA picture not centered
