@@ -201,13 +201,18 @@ button {
 
 .ListItemLink:hover {
     background-color: var(--light);
+
+    .ListItemHeading,
+    .ListItemText {
+        color: var(--black);
+    }
 }
 
 .ListItemHeading {
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: 5px;
-    color: var(--black);
+    color: var(--white);
 }
 
 .ListItemText {
