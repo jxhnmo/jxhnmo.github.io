@@ -35,7 +35,7 @@ h2 {
 }
 
 h2.linkHead {
-  color: var(--dark);
+  color: var(--white);
   font-weight: bold;
   font-size: calc(100% + 1.5vw);
   text-align: center;
@@ -308,6 +308,10 @@ div.loginSection {
   line-height: 1;
 
   text-align: center;
+}
+
+.Input::placeholder {
+  color: var(--interact)
 }
 
 .Input:hover {
