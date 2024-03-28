@@ -37,7 +37,7 @@ const Navbar = () => {
 
       <div class="justify-start">
         <IconButton aria-label="home">
-          <th id="noBorder">
+          <th id="icon">
             <img
               src={logo}
               height="50px"
