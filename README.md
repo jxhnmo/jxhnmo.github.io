@@ -6,11 +6,10 @@ uses:
 - react-social-icons
 
 # TODO:
-- light mode
 - decreasing photo file size?
 - encrypt resume login password?
 - add redirect from experience to resume
 - experience is using projects.css?
+- add recommendations to experience page ?
 - more refactoring
 - fix colour scheme? text colour for experience/projects for readability
-- single file of variables to add second colour theme
