@@ -14,3 +14,4 @@ uses:
 - more refactoring
 - fix colour scheme? text colour for experience/projects for readability
 - projects AA picture not centered
+- add icon to light / dark mode switch
