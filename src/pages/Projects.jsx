@@ -131,8 +131,7 @@ function Projects() {
               <Accordion.Content className="AccordionContent">
                 <div className="AccordionContentText">
                   Built, trained, and tested an ML model from 200,000 data points provided by AA that classifies passengers as leisure or business and presented the data and a plan to optimise profit margins.<br />
-                  Check out the <a href="https://github.com/jxhnmo/american-airlines-challenge" target="_blank" rel="noreferrer">GitHub!</a>
-
+                  Check out the <a href="https://github.com/jxhnmo/american-airlines-challenge" target="_blank" rel="noreferrer">GitHub!</a> <br />
                   <th id="border">
                     <img src={aadata} alt='aadata' width="50%" height='auto' class="center" />
                   </th>
