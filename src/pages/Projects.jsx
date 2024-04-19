@@ -122,7 +122,7 @@ function Projects() {
                       however, so I have made a light mode toggle that switches to light theme. This also helps with accessibility.</li><br />
                     <li><b>Accordion</b><br />
                       I found that the accordion was a great way to display information in a clean and concise way. This can be
-                      seen on the projects and experience page.</li><br />
+                      seen on the projects and experience page.</li>
                   </ul>
                 </div>
               </Accordion.Content>
