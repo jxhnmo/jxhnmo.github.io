@@ -326,6 +326,7 @@ iframe {
 
 #page-container {
   min-height: 88vh;
+  background: var(--dark);
 }
 
 @media (min-width: 768px) {
