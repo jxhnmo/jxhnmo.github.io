@@ -38,7 +38,7 @@ function Projects() {
       <div class="main">
         <div class="row lightContainer">
 
-          <Accordion.Root className="AccordionRoot" type="single" defaultValue="" collapsible>
+          <Accordion.Root className="AccordionRoot" type="single" defaultValue="item-4" collapsible>
             <Accordion.Item className="AccordionItem" value="item-7">
               <AccordionTrigger>
                 <div class="date">2023-Present</div>
@@ -99,10 +99,31 @@ function Projects() {
               </AccordionTrigger>
               <Accordion.Content className="AccordionContent">
                 <div className="AccordionContentText">
-                  The website you are currently on! Built with React and Radix-UI.<br />
+                  The website you are currently on! Built with React and Radix-UI. <br />
+
                   <th id="border">
                     <img src={thiswebsite} alt='thissite' width="50%" height='auto' class="center" />
                   </th>
+
+                  I am still frequently updating the website with new features based on user testing and feedback!<br />
+                  Some examples of changes made:<br /><br />
+                  <ul>
+                    <li><b>This tab auto opens and has the content you are reading!</b><br />
+                      I attended a talk from a Google UX Designer, and learned that people don't care for personal
+                      sites as much as compared to when there is content about the design and thought process of features made.
+                      So after that, I thought about how I wanted to show some of those thoughts and found this to be the
+                      simplest way to display this information and have people see it! I had considered making an additional page,
+                      but thought it would be hard for people to find it or it may look out of place.</li><br />
+                    <li><b>Interactive navigation buttons</b><br />
+                      I learned that lot's of users don't like to use navigation bars which I found odd, but adding these interactive
+                      buttons does add to the enjoyment of the site. This can be seen on the homepage and the about page.</li><br />
+                    <li><b>Light mode toggle</b><br />
+                      This site started as a dark theme due to me personally liking dark themes. This is not the same for everyone,
+                      however, so I have made a light mode toggle that switches to light theme. This also helps with accessibility.</li><br />
+                    <li><b>Accordion</b><br />
+                      I found that the accordion was a great way to display information in a clean and concise way. This can be
+                      seen on the projects and experience page.</li><br />
+                  </ul>
                 </div>
               </Accordion.Content>
             </Accordion.Item>
