@@ -16,3 +16,4 @@ uses:
 - projects AA picture not centered
 - add icon to light / dark mode switch
 - mobile the background on top and bottom when dragged is white
+- fix colors on links page for light mode
