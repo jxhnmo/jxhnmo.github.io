@@ -17,3 +17,4 @@ uses:
 - add icon to light / dark mode switch
 - mobile the background on top and bottom when dragged is white
 - fix colors on links page for light mode
+- add initial website sketch next to the website photo
