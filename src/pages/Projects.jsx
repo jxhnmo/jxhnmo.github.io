@@ -46,8 +46,8 @@ function Projects() {
                 <div class="title">Game Studio Startup</div>
               </AccordionTrigger>
               <AccordionContent>
-                <li>500+ CCU with 11,000+ plays incubation game studio built on Fortnite.</li>
-                <li>In collaboration with my Supersocial Manager.</li>
+                <li>500+ CCU with 11,000+ plays incubation game studio built on Fortnite.</li><br />
+                <li>In collaboration with my Supersocial Manager.</li><br />
                 <th id="border">
                   <img src={fn1} alt='fn1' width="50%" height='auto' class="center" />
                 </th>
@@ -62,11 +62,11 @@ function Projects() {
               </AccordionTrigger>
               <AccordionContent>
                 Won 1st out of 800+<br />
-                Check out the <a href="https://www.youtube.com/watch?v=9A2LTzXo4qk" target="_blank" rel="noreferrer">Demo Video</a> and <a href="https://devpost.com/software/interview-pro-igtp3z" target="_blank" rel="noreferrer">DevPost!</a>
-                <li>Full stack application to help prepare people for interviews by analyzing speech, emotions, and eye contact, while asking potential interview questions about the role that they are applying for.</li>
-                <li>Backend using Pytorch, OpenCV, and SpeechRecognition, built, trained, and fine-tuned 4 ML models for facial recognition, expressions, eye tracking, and speech-to-text.</li>
-                <li>Integrated with OpenAI's API for data processing, question generation, and improvement summarisation.</li>
-                <li>Frontend model built and animated through Unity, and displayed through React.</li>
+                Check out the <a href="https://www.youtube.com/watch?v=9A2LTzXo4qk" target="_blank" rel="noreferrer">Demo Video</a> and <a href="https://devpost.com/software/interview-pro-igtp3z" target="_blank" rel="noreferrer">DevPost!</a><br />
+                <li>Full stack application to help prepare people for interviews by analyzing speech, emotions, and eye contact, while asking potential interview questions about the role that they are applying for.</li><br />
+                <li>Backend using Pytorch, OpenCV, and SpeechRecognition, built, trained, and fine-tuned 4 ML models for facial recognition, expressions, eye tracking, and speech-to-text.</li><br />
+                <li>Integrated with OpenAI's API for data processing, question generation, and improvement summarisation.</li><br />
+                <li>Frontend model built and animated through Unity, and displayed through React.</li><br />
                 <th id="border">
                   <img src={interviewpro} alt='iNterview Pro' width="33%" height='auto' />
                   <img src={interviewprodata} alt='iNterview Pro Data' width="33%" height='auto' />
@@ -199,7 +199,7 @@ function Projects() {
                   Los Alamos National Laboratory: Nuclear Security <br />
                   Oct 23, 2022<br />
                   Designed “Spy Kids” a spy bot swarm that detects nuclear radiation and other potential threats.<br />
-                  Check out the <a href="https://www.youtube.com/live/CvsA9LDOP4Q?si=YlQZuKxbPMZqMODZ&t=2978" target="_blank" rel="noreferrer">Presentation!</a><br />\
+                  Check out the <a href="https://www.youtube.com/live/CvsA9LDOP4Q?si=YlQZuKxbPMZqMODZ&t=2978" target="_blank" rel="noreferrer">Presentation!</a><br />
 
                   <th id="border">
                     <img src={losalamos1} alt='losalamos1' width="50%" height='auto' />
