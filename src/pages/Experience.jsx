@@ -28,9 +28,9 @@ function Experience() {
                 <div class="companyContainer">
                   <div class="left">
                     Built the foundation of Supersocial's Fortnite department.
-                    <li>Created a fully-fledged brand IP prototype using UEFN/Verse and Agile methodology, handling game design, programming, balance adjustments, and arranging playtests</li>
-                    <li>Authored entire technical documentation tree on Fortnite/UEFN/Verse with 50+ Verse scripts/functionality tutorials.</li>
-                    <li>Presented prototypes and documentation at company all-hands and answered ad-hoc questions from PMs and designers.</li>
+                    <li>Created a fully-fledged brand IP prototype using UEFN/Verse and Agile methodology, handling game design, programming, balance adjustments, and arranging playtests</li><br />
+                    <li>Authored entire technical documentation tree on Fortnite/UEFN/Verse with 50+ Verse scripts/functionality tutorials.</li><br />
+                    <li>Presented prototypes and documentation at company all-hands and answered ad-hoc questions from PMs and designers.</li><br />
                     <li>Received return offer to continue internship during the school year.</li>
                   </div>
 
@@ -53,8 +53,8 @@ function Experience() {
               <AccordionContent>
                 <div class="companyContainer">
                   <div class="left">
-                    <li>Boosted global operational efficiency by creating full-stack applications such as automated housing, flight, medical, and managerial checks for travel requests.</li>
-                    <li>Resolved 100+ support tickets for Microsoft 365 and Atlassian Suite.</li>
+                    <li>Boosted global operational efficiency by creating full-stack applications such as automated housing, flight, medical, and managerial checks for travel requests.</li><br />
+                    <li>Resolved 100+ support tickets for Microsoft 365 and Atlassian Suite.</li><br />
                     <li>Received return offer to continue internship during the school year.</li>
                   </div>
 
@@ -77,7 +77,7 @@ function Experience() {
               <AccordionContent>
                 <div class="companyContainer">
                   <div class="left">
-                    <li>Built XR environments in Unity and wrote C# scripts to run psychological tests under the guidance of Dr. Thomas D. Parsons and Dr. Timothy (Fred) McMahan.</li>
+                    <li>Built XR environments in Unity and wrote C# scripts to run psychological tests under the guidance of Dr. Thomas D. Parsons and Dr. Timothy (Fred) McMahan.</li><br />
                     <li>Acquired a $4000 grant.</li>
                   </div>
 
