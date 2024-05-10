@@ -36,7 +36,7 @@ function Experience() {
 
                   <div class="right">
                     <th id="logo">
-                      <img src={supersocial} alt='supersocial logo' width="100%" height='auto' /><br />
+                      <img src={supersocial} alt='supersocial logo' width="100%" height='auto' />
                     </th>
                   </div>
                 </div>
@@ -60,7 +60,7 @@ function Experience() {
 
                   <div class="right">
                     <th id="logo">
-                      <img src={mercyships} alt='mercyships logo' width="100%" height='auto' /><br />
+                      <img src={mercyships} alt='mercyships logo' width="100%" height='auto' />
                     </th>
                   </div>
                 </div>
@@ -83,7 +83,7 @@ function Experience() {
 
                   <div class="right">
                     <th id="logo">
-                      <img src={unt} alt='unt logo' width="100%" height='auto' /><br />
+                      <img src={unt} alt='unt logo' width="100%" height='auto' />
                     </th>
                   </div>
                 </div>
