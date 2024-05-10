@@ -144,7 +144,7 @@ img {}
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  bottom: 5%;
+  bottom: 15%;
 }
 
 .homeBtn {
