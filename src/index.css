@@ -35,14 +35,14 @@ h2 {
 }
 
 h2.linkHead {
-  color: var(--white);
+  color: var(--interact);
   font-weight: bold;
   font-size: calc(100% + 1.5vw);
   text-align: center;
 
   text-transform: uppercase;
   text-shadow:
-    -0.2vw 0px 0px var(--interact);
+    -0.2vw 0px 0px var(--white);
 }
 
 h3 {
