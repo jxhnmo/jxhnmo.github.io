@@ -30,8 +30,7 @@ function Experience() {
                     Built the foundation of Supersocial's Fortnite department.
                     <li>Created a fully-fledged brand IP prototype using UEFN/Verse and Agile methodology, handling game design, programming, balance adjustments, and arranging playtests</li><br />
                     <li>Authored entire technical documentation tree on Fortnite/UEFN/Verse with 50+ Verse scripts/functionality tutorials.</li><br />
-                    <li>Presented prototypes and documentation at company all-hands and answered ad-hoc questions from PMs and designers.</li><br />
-                    <li>Received return offer to continue internship during the school year.</li>
+                    <li>Presented prototypes and documentation at company all-hands and answered ad-hoc questions from PMs and designers.</li>
                   </div>
 
                   <div class="right">
@@ -53,9 +52,8 @@ function Experience() {
               <AccordionContent>
                 <div class="companyContainer">
                   <div class="left">
-                    <li>Boosted global operational efficiency by creating full-stack applications such as automated housing, flight, medical, and managerial checks for travel requests.</li><br />
-                    <li>Resolved 100+ support tickets for Microsoft 365 and Atlassian Suite.</li><br />
-                    <li>Received return offer to continue internship during the school year.</li>
+                    <li>Built full-stack applications that automated travel applications for housing, flight, medical, and managerial checks, and more, increasing global operational efficiency.</li><br />
+                    <li>Resolved 100+ support tickets for Microsoft 365 and Atlassian Suite.</li>
                   </div>
 
                   <div class="right">
