@@ -48,11 +48,11 @@ function Home() {
               cursorSpeed: 1000,
               speed: 50,
               strings: [
-                'looking for an internship 💼',
-                'developing a Fortnite game 👨‍💻',
-                'grinding Apex Legends 👾',
+                'applying to jobs 💼',
+                'developing a game 👨‍💻',
+                'exploring virtual worlds 👾',
                 'yelping my most recent restaurant 😋',
-                'hanging our with friends 👋',
+                'hanging out with friends 👋',
               ],
               waitUntilVisible: true,
             }}
