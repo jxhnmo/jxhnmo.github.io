@@ -34,7 +34,7 @@ function Home() {
 
       <div class="main">
         <p class="home">
-          Welcome to my site! I'm John, a sophomore CS major @ Texas A&M with a passion for gaming, food, and startups.
+          Welcome to my site! I'm John, a graduating CS major @ Texas A&M with a passion for gaming, food, and startups.
           <br /> <br />
           You can catch me&nbsp;
           <TypeIt

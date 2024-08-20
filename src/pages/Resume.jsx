@@ -17,7 +17,7 @@ function Resume() {
                 <div class="col-md-3half pt-3 pb-3 text-center">
                     <p>Don't forget to save my resume!
                         <br />
-                        Last updated: February 6, 2024
+                        Last updated: August 20, 2024
                     </p>
 
                     <p>Download:</p>

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import './Experience.css';
 
-
+import samsclub from '../assets/work/samsclub.png'
 import supersocial from '../assets/work/supersocial_inc_logo.jpeg'
 import mercyships from '../assets/work/Mercy_Ships_Logo.jpg'
 import unt from '../assets/work/unt.png'
@@ -17,7 +17,32 @@ function Experience() {
         <div class="row lightContainer">
 
           <Accordion.Root className="AccordionRoot" type="single" defaultValue="" collapsible>
-            <Accordion.Item className="AccordionItem" value="item-1">
+            <Accordion.Item className="AccordionItem" value="item-4">
+              <AccordionTrigger>
+                <div class="date">2023-2024</div>
+                <div class="name">Sam's Club</div>
+                <div class="title">Tech Product Management Intern</div>
+                <div class="location">Bentonville, Arkansas</div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div class="companyContainer">
+                  <div class="left">
+                    <li>Owned two initiatives targeting online and in-club associate fraud; authored PRDs that outlined strategic solutions, user stories, and product roadmap; aligned cross-functional teams; actively unblocked engineering dependencies.</li><br />
+                    <li>Developed and implemented data driven rules, resulting in a 60% reduction in online agent collusion fraud.</li><br />
+                    <li>Impacted bottom line by $3.6M in annualised estimated fraud cost savings.</li>
+                  </div>
+
+                  <div class="right">
+                    <th id="logo">
+                      <img src={samsclub} alt='samsclub logo' width="100%" height='auto' />
+                    </th>
+                  </div>
+                </div>
+              </AccordionContent>
+            </Accordion.Item>
+
+
+            <Accordion.Item className="AccordionItem" value="item-3">
               <AccordionTrigger>
                 <div class="date">2022-2023</div>
                 <div class="name">Supersocial</div>
@@ -65,7 +90,7 @@ function Experience() {
               </AccordionContent>
             </Accordion.Item>
 
-            <Accordion.Item className="AccordionItem" value="item-3">
+            <Accordion.Item className="AccordionItem" value="item-1">
               <AccordionTrigger>
                 <div class="date">2020-2021</div>
                 <div class="name">UNT CNS Lab</div>
