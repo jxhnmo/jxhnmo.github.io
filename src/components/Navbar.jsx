@@ -68,7 +68,7 @@ const Navbar = () => {
 
               <th id="nav">
                 <ListItem href="/#/about" title="About">
-                  a longer description of me by me!
+                  me!
                 </ListItem>
               </th>
               <th id="nav">
