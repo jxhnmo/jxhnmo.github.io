@@ -125,8 +125,16 @@ function Projects() {
                     <li><b>Accordion</b><br />
                       I've also put in an accordion layout on the projects and experience pages. It's a sleek way
                       to pack in information without overwhelming you. Just click and expand the section you're
-                      interested in!</li>
+                      interested in!</li><br />
                   </ul>
+
+                  Design inspiration sources!<br />
+                  <li><a href="https://vishwas-saini-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">https://vishwas-saini-portfolio.vercel.app/</a></li>
+                  <li><a href="https://www.rubens.design/" target="_blank" rel="noopener noreferrer">https://www.rubens.design/</a></li>
+                  <li><a href="https://caseypei.me/" target="_blank" rel="noopener noreferrer">https://caseypei.me/</a></li>
+                  <li><a href="https://lukeypookster.com/" target="_blank" rel="noopener noreferrer">https://lukeypookster.com/</a></li>
+                  <li><a href="https://webflow.com/made-in-webflow/website/COLIN-MOY" target="_blank" rel="noopener noreferrer">https://webflow.com/made-in-webflow/website/COLIN-MOY</a></li>
+
                 </div>
               </Accordion.Content>
             </Accordion.Item>
