@@ -24,7 +24,7 @@ export default function Footer() {
       <div class="text-right">
         <th id="footer">
           <p>Always down to chat! <br />
-            Feel free to reach out at <a href="mailto:peikaimo@gmail.com" target="_blank" rel="noopener noreferrer" >peikaimo@gmail.com</a> or at my <a href="https://www.linkedin.com/in/john-mo/" target="_blank" rel="noopener noreferrer">linkedIn</a> :D<br />
+            Reach out at <a href="mailto:peikaimo@gmail.com" target="_blank" rel="noopener noreferrer" >peikaimo@gmail.com</a> or at my <a href="https://www.linkedin.com/in/john-mo/" target="_blank" rel="noopener noreferrer">linkedIn</a> :D<br />
             Site made with care by John Mo</p>
         </th>
       </div>
