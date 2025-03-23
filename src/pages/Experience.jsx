@@ -31,7 +31,7 @@ function Experience() {
               </AccordionTrigger>
               <AccordionContent>
                 <div class="companyContainer">
-                  <div class="left">Part time developer.</div>
+                  <div class="left">Part time developer</div>
 
                   <div class="right">
                     <th id="logo">
@@ -60,7 +60,7 @@ function Experience() {
                     <li>
                       Reduced online agent collusion fraud by 60%, preventing
                       $3.6M in annualised estimated fraud losses by developing
-                      and implementing data-driven rules.
+                      and implementing data-driven rules
                     </li>
                     <br />
                     <li>
@@ -68,7 +68,7 @@ function Experience() {
                       associate fraud; authored PRDs that outlined strategic
                       solutions, user stories, and product roadmap; aligned
                       cross-functional teams; actively unblocked engineering
-                      dependencies.
+                      dependencies
                     </li>
                   </div>
 
@@ -100,7 +100,7 @@ function Experience() {
                     <li>
                       Designed and developed a fully-fledged brand IP prototype
                       using UEFN/Verse and Agile methodology, leading game
-                      design, programming, balance adjustments, and playtests.
+                      design, programming, balance adjustments, and playtests
                     </li>
                     <br />
                     <li>
@@ -111,7 +111,7 @@ function Experience() {
                     <li>
                       Presented prototypes and documentation at company
                       all-hands and answered ad-hoc questions from PMs and
-                      designers.
+                      designers
                     </li>
                   </div>
 
@@ -142,13 +142,12 @@ function Experience() {
                     <li>
                       Built full-stack applications that automated travel
                       applications for housing, flight, medical, and managerial
-                      checks, and more, increasing global operational
-                      efficiency.
+                      checks, and more, increasing global operational efficiency
                     </li>
                     <br />
                     <li>
                       Resolved 100+ support tickets for Microsoft 365 and
-                      Atlassian Suite, ensuring seamless technical operations.
+                      Atlassian Suite, ensuring seamless technical operations
                     </li>
                   </div>
 
@@ -178,7 +177,7 @@ function Experience() {
                   <div class="left">
                     <li>
                       Secured a $4000 grant and developed XR environments in
-                      Unity, implementing C# scripts for psychological testing.
+                      Unity, implementing C# scripts for psychological testing
                     </li>
                   </div>
 
