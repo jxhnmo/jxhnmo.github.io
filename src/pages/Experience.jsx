@@ -170,7 +170,7 @@ function Experience() {
               <AccordionTrigger>
                 <div class="date">2020-2021</div>
                 <div class="name">UNT CNS Lab</div>
-                <div class="title">Researcher</div>
+                <div class="title">Research Assistant</div>
                 <div class="location">Denton, Texas</div>
               </AccordionTrigger>
               <AccordionContent>
