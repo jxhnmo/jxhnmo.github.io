@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bf5d4157.css",
-    "main.js": "/static/js/main.2efc9325.js",
+    "main.js": "/static/js/main.16154789.js",
     "static/media/losalamos1.png": "/static/media/losalamos1.fe9dfbb3171b18bb6d1a.png",
     "static/media/interviewpro.png": "/static/media/interviewpro.a39b0a35b26c125cd66c.png",
     "static/media/nsa1.png": "/static/media/nsa1.7156687003311f048d5e.png",
@@ -10,6 +10,7 @@
     "static/media/sandia.png": "/static/media/sandia.fdae8eaefecc00c4efd4.png",
     "static/media/me1.jpg": "/static/media/me1.b4266702c60f50025223.jpg",
     "static/media/nsa2.png": "/static/media/nsa2.fba56c45c29c24a91881.png",
+    "static/media/djbestieteam.jpg": "/static/media/djbestieteam.af3063cbcfbd1d3a80b7.jpg",
     "static/media/personalsite1.png": "/static/media/personalsite1.baf38efa1d12906bf2ca.png",
     "static/media/personalsite2.png": "/static/media/personalsite2.3208f8ac604220cd112f.png",
     "static/media/losalamos2.png": "/static/media/losalamos2.e88d2c604d7d4a7713fc.png",
@@ -19,17 +20,19 @@
     "static/media/samsclub.png": "/static/media/samsclub.b00043ccd266b8206d81.png",
     "static/media/jm_logo.png": "/static/media/jm_logo.6a9c1be80ecac5e95312.png",
     "static/media/personalsite.png": "/static/media/personalsite.b081abfcc6ab87fdd2e8.png",
-    "static/media/John Mo Resume.pdf": "/static/media/John Mo Resume.f2a5911ef9919caf029d.pdf",
+    "static/media/John Mo Resume.pdf": "/static/media/John Mo Resume.5dadccd238c15f318a89.pdf",
     "static/media/aadata.png": "/static/media/aadata.2a924d353623d90b8b2d.png",
     "static/media/Mercy_Ships_Logo.jpg": "/static/media/Mercy_Ships_Logo.0c418833215c73717594.jpg",
+    "static/media/djbestie.jpg": "/static/media/djbestie.8a6f98d0d457f735c0ae.jpg",
     "static/media/interviewprodata.png": "/static/media/interviewprodata.e365a0c3ec8c4a53403d.png",
+    "static/media/powerdb.png": "/static/media/powerdb.a89e433118046a548e50.png",
     "static/media/unt.png": "/static/media/unt.6e89c21661997ca30dbf.png",
     "index.html": "/index.html",
     "main.bf5d4157.css.map": "/static/css/main.bf5d4157.css.map",
-    "main.2efc9325.js.map": "/static/js/main.2efc9325.js.map"
+    "main.16154789.js.map": "/static/js/main.16154789.js.map"
   },
   "entrypoints": [
     "static/css/main.bf5d4157.css",
-    "static/js/main.2efc9325.js"
+    "static/js/main.16154789.js"
   ]
 }
