@@ -98,9 +98,9 @@ function Experience() {
                   <div class="left">
                     Built the foundation of Supersocial's Fortnite department.
                     <li>
-                      Created a fully-fledged brand IP prototype using
-                      UEFN/Verse and Agile methodology, handling game design,
-                      programming, balance adjustments, and arranging playtests
+                      Designed and developed a fully-fledged brand IP prototype
+                      using UEFN/Verse and Agile methodology, leading game
+                      design, programming, balance adjustments, and playtests.
                     </li>
                     <br />
                     <li>
