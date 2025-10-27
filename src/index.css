@@ -81,6 +81,7 @@ p.home {
   line-height: 160%;
   font-size: calc(100% + 0.3vw);
   margin: 0 0 0;
+  min-height: 6.5em;
 }
 
 p.links {
@@ -118,9 +119,6 @@ a.links:hover {
   color: var(--white);
 }
 
-img {
-}
-
 #icon img {
   filter: invert(var(--invert));
 }
@@ -148,10 +146,10 @@ img {
 }
 
 .btm30 {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  bottom: 15%;
+  margin-top: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .homeBtn {
@@ -334,6 +332,16 @@ iframe {
   flex: 1;
   background: var(--dark);
   padding-bottom: 2rem;
+}
+
+@media (max-width: 767px) {
+  p.home {
+    min-height: 10em;
+  }
+
+  .btm30 {
+    margin-top: 3vh;
+  }
 }
 
 @media (min-width: 768px) {
