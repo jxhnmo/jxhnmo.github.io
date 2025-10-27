@@ -113,7 +113,6 @@ jxhnmo.github.io/
 
 - [ ] Center Projects AA picture properly
 - [ ] Fix mobile: white background on top/bottom when dragged
-- [ ] Fix mobile: footer position, sometiems not visible at all till scroll
 
 ### Code Quality
 
