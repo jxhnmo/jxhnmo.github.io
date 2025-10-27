@@ -42,12 +42,7 @@ const Navbar = () => {
     <NavigationMenu.Root className="NavigationMenuRoot">
       <div className="justify-start">
         <div id="icon" style={{ cursor: "pointer", padding: "8px" }}>
-          <img
-            src={logo}
-            height="50px"
-            alt="jm logo"
-            onClick={() => navigate("/")}
-          />
+          <img src={logo} alt="jm logo" onClick={() => navigate("/")} />
         </div>
       </div>
 

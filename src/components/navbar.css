@@ -3,6 +3,11 @@ button {
   all: unset;
 }
 
+#icon img {
+  height: 50px;
+  transition: height 0.2s ease;
+}
+
 .NavigationMenuRoot {
   position: sticky;
   top: 0;
@@ -405,4 +410,34 @@ button {
 
 .SwitchThumb[data-state="checked"] {
   transform: translateX(19px);
+}
+
+/* Mobile optimizations */
+@media only screen and (max-width: 600px) {
+  #icon {
+    padding: 4px !important;
+    padding-top: 8px !important;
+  }
+
+  #icon img {
+    height: 35px;
+  }
+
+  .NavigationMenuList {
+    padding: 4px;
+    padding-top: 12px;
+    padding-right: 12px;
+  }
+
+  .NavigationMenuTrigger,
+  .NavigationMenuLink {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+  #nav {
+    display: flex;
+    align-items: center;
+    margin-top: -2px;
+  }
 }
