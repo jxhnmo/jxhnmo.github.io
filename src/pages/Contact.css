@@ -2,137 +2,136 @@
 input,
 textarea,
 button {
-    all: unset;
-    box-sizing: border-box;
+  all: unset;
+  box-sizing: border-box;
 }
 
 .FormRoot {
-    width: 100%;
+  width: 100%;
 }
 
 div.section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .FormField {
-    display: grid;
-    width: 100%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 10px;
+  display: grid;
+  width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 10px;
 }
 
 .FormLabel {
-    color: #2A1A38;
-    font-weight: bold;
-    font-size: calc(100% + 1vw);
+  color: #2a1a38;
+  font-weight: 600;
+  font-size: calc(100% + 1vw);
 
-    text-transform: uppercase;
-    text-shadow: -0.2vw 0px 0px #774A9E;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(119, 74, 158, 0.3);
 }
 
 .FormMessage {
-    font-size: 13px;
-    color: #2A1A38;
-    opacity: 0.8;
+  font-size: 13px;
+  color: #2a1a38;
+  opacity: 0.8;
 }
 
 .Input,
 .Textarea {
-    width: 100%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 
-    font-size: 15px;
-    color: #774A9E;
-    background-color: #FFF;
-    border-color: #774A9E;
-    border-style: solid;
-    border-width: 2px;
-    box-shadow: -0.2vw 0.2vw 0px #774A9E;
+  font-size: 15px;
+  color: #774a9e;
+  background-color: #fff;
+  border-color: #774a9e;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: -0.2vw 0.2vw 0px #774a9e;
 }
 
 ::-webkit-input-placeholder {
-    /* WebKit, Blink, Edge */
-    color: #6F4694;
-    opacity: 50%;
+  /* WebKit, Blink, Edge */
+  color: #6f4694;
+  opacity: 50%;
 }
 
 :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: #6F4694;
-    opacity: 50%;
+  /* Mozilla Firefox 4 to 18 */
+  color: #6f4694;
+  opacity: 50%;
 }
 
 ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: #6F4694;
-    opacity: 50%;
+  /* Mozilla Firefox 19+ */
+  color: #6f4694;
+  opacity: 50%;
 }
 
 :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #6F4694;
-    opacity: 50%;
+  /* Internet Explorer 10-11 */
+  color: #6f4694;
+  opacity: 50%;
 }
 
 ::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: #6F4694;
-    opacity: 50%;
+  /* Microsoft Edge */
+  color: #6f4694;
+  opacity: 50%;
 }
 
 ::placeholder {
-    /* Most modern browsers support this now. */
-    color: #6F4694;
-    opacity: 50%;
+  /* Most modern browsers support this now. */
+  color: #6f4694;
+  opacity: 50%;
 }
 
 .Input:hover,
 .Textarea:hover {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .Input {
-    padding: 0 10px;
-    height: 35px;
-    line-height: 1;
+  padding: 0 10px;
+  height: 35px;
+  line-height: 1;
 }
 
 .Textarea {
-    resize: none;
-    height: 300px;
-    padding: 10px;
+  resize: none;
+  height: 300px;
+  padding: 10px;
 }
 
 .Button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    padding: 0 15px;
-    font-size: 15px;
-    line-height: 1;
-    font-weight: 500;
-    height: 35px;
-    width: 40%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  height: 35px;
+  width: 40%;
 
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #FFF;
-    background-color: #241730;
-    border-color: #FFF;
-    border-style: solid;
-    border-width: 2px;
-    box-shadow: -0.2vw 0.2vw 0px #FFF;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #241730;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: -0.2vw 0.2vw 0px #fff;
 }
 
 .Button:hover {
-    color: #FFF;
-    background-color: #6F4694;
-    box-shadow: none;
+  color: #fff;
+  background-color: #6f4694;
+  box-shadow: none;
 }

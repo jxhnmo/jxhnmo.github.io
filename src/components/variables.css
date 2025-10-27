@@ -1,21 +1,21 @@
 :root {
-    --dark: #2A1A38;
-    --light: #A991E0;
-    --light2: #937FC3;
-    --interact: #774A9E;
-    --black: #000000;
-    --white: #FFFFFF;
+  --dark: #2a1a38;
+  --light: #c4b0f0;
+  --light2: #b5a0dc;
+  --interact: #774a9e;
+  --black: #000000;
+  --white: #ffffff;
 
-    --invert: 0%;
+  --invert: 0%;
 }
 
 [data-theme="light"] {
-    --dark: #FBEBFB;
-    --light: #8145B5;
-    --light2: #D1AFEC;
-    --interact: #EAD5F9;
-    --black: #FEFCFE;
-    --white: #53195D;
+  --dark: #fbebfb;
+  --light: #8145b5;
+  --light2: #d1afec;
+  --interact: #ead5f9;
+  --black: #fefcfe;
+  --white: #53195d;
 
-    --invert: 100%;
+  --invert: 100%;
 }
