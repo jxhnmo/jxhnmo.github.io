@@ -1,11 +1,11 @@
 import React from "react";
 import TypeIt from "typeit-react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
   return (
-    <div id="page-container" class="my-3">
+    <div id="page-container" className="my-3">
       <h1>
         <TypeIt
           options={{
@@ -19,40 +19,41 @@ function Home() {
             pause: 500,
             speed: 500,
             strings: [
-              'Hey!',
-              '你好!',
-              '안녕!',
-              'Hai!',
-              'Ciao!',
-              '!اهلا', //ahlan
+              "Hey!",
+              "你好!",
+              "안녕!",
+              "Hai!",
+              "Ciao!",
+              "!اهلا", //ahlan
             ],
             waitUntilVisible: true,
           }}
         />
-        <br /> &emsp;It's  John Mo
+        <br /> &emsp;It's John Mo
       </h1>
 
-      <div class="main">
-        <p class="home">
-          Welcome to my site! I'm John, a graduating CS major @ Texas A&M with a passion for gaming, food, and startups.
+      <div className="main">
+        <p className="home">
+          Welcome to my site! I'm John, a graduating CS major @ Texas A&M with a
+          passion for gaming, food, and startups.
           <br /> <br />
           You can catch me&nbsp;
           <TypeIt
             options={{
               loop: true,
               breakLines: false,
-              cursorChar: '|',
+              cursorChar: "|",
               lifeLike: true,
               loopDelay: [0, 1000],
               startDelay: 0,
               cursorSpeed: 1000,
               speed: 50,
               strings: [
-                'applying to jobs 💼',
-                'developing a game 👨‍💻',
-                'exploring virtual worlds 👾',
-                'yelping my most recent restaurant 😋',
-                'hanging out with friends 👋',
+                "putting in the work 👨‍💻",
+                "exploring virtual worlds 👾",
+                "reviewing restaurants on beli 😋",
+                "hanging out with friends 👋",
+                "getting steezy on the slopes 🏂",
               ],
               waitUntilVisible: true,
             }}
@@ -60,12 +61,8 @@ function Home() {
         </p>
       </div>
 
-      <div class="">
-
-      </div>
-
-      <div class="main btm30">
-        <button onClick={() => navigate('/about')} class="homeBtn">
+      <div className="main btm30">
+        <button onClick={() => navigate("/about")} className="homeBtn">
           Learn more about me!
         </button>
       </div>

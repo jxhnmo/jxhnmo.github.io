@@ -1,5 +1,5 @@
 import React from "react";
-import Pdf from "../assets/John Mo Resume.pdf";
+import Pdf from "../assets/John_Mo_Resume.pdf";
 
 const PDFViewer = () => {
   return (
@@ -11,18 +11,18 @@ const PDFViewer = () => {
 
 function Resume() {
   return (
-    <div id="page-container" class="my-3">
+    <div id="page-container" className="my-3">
       <h2>Resume</h2>
-      <div class="main row lightBg">
-        <div class="col-md-3half pt-3 pb-3 text-center">
+      <div className="main row lightBg">
+        <div className="col-md-3half pt-3 pb-3 text-center">
           <p>
             Don't forget to save my resume!
             <br />
-            Last updated: March 23, 2025
+            Last updated: October 26, 2025
           </p>
 
           <p>Download:</p>
-          <a class="" href={Pdf} download="John Mo Resume">
+          <a className="" href={Pdf} download="John Mo Resume">
             <svg
               width="50px"
               height="50px"
@@ -41,7 +41,7 @@ function Resume() {
           </a>
         </div>
 
-        <div class="col-md-8half pt-3 pb-3">
+        <div className="col-md-8half pt-3 pb-3">
           <PDFViewer />
         </div>
       </div>
