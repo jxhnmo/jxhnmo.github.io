@@ -114,6 +114,7 @@ jxhnmo.github.io/
 - [ ] Fix CSS: Experience page using Projects.css and vice versa
 - [ ] Center Projects AA picture properly
 - [ ] Fix mobile: white background on top/bottom when dragged
+- [ ] Fix mobile: logo fitting issues
 
 ### Code Quality
 
