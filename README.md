@@ -108,11 +108,13 @@ jxhnmo.github.io/
 - [ ] Add recommendations section to experience page
 - [ ] Add icon to light/dark mode switch
 - [ ] Add initial website sketch next to website photo on projects page
+- [ ] Clickable images to expand into larger view
 
 ### Bug Fixes
 
 - [ ] Center Projects AA picture properly
 - [ ] Fix mobile: white background on top/bottom when dragged
+- [ ] Increase difference between bold and non bold text for experience/projects
 
 ### Code Quality
 

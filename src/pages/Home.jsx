@@ -34,8 +34,8 @@ function Home() {
 
       <div className="main">
         <p className="home">
-          Welcome to my site! I'm John, a graduating CS major @ Texas A&M with a
-          passion for gaming, food, and startups.
+          Welcome to my site! I'm John, a recent CS grad with a passion for
+          gaming, food, and startups.
           <br /> <br />
           You can catch me&nbsp;
           <TypeIt
@@ -51,6 +51,7 @@ function Home() {
               strings: [
                 "putting in the work 👨‍💻",
                 "exploring virtual worlds 👾",
+                "discovering bay area 🌉",
                 "reviewing restaurants on beli 😋",
                 "hanging out with friends 👋",
                 "getting steezy on the slopes 🏂",
