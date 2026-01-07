@@ -5,11 +5,20 @@ import me from '../assets/john_mo_supersocial.jpg'
 function ResumeLogin() {
     const [isVerified, setIsVerified] = useState(false);
 
-    const checkPw = () => {
+    const checkPw = async (e) => {
+        e.preventDefault();
         // gets the current input value
         const answer = document.getElementById("password").value;
 
-        if (answer === "jomsresume") {
+        // Hash the input password
+        const msgBuffer = new TextEncoder().encode(answer);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+        const correctHash = "c8f0ee051ab51fcb9a097fb8515234861eb4460dba82e37489cbfc38365c269d";
+
+        if (hashHex === correctHash) {
             setIsVerified(true);
         } else {
             alert("You were the chosen one! - Obi-Wan");
