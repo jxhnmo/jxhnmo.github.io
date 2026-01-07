@@ -69,27 +69,31 @@ function Projects() {
                 >
                   DevPost!
                 </a>
-                <li>
-                  Developed an AI-powered interactive DJ app that personalises
-                  music curation based on computer vision, generative AI
-                  conversational topics, and real-time music APIs.
-                </li>
-                <li>
-                  Built the frontend using React and Next.js, enabling a dynamic
-                  and responsive user experience.
-                </li>
+                <ul>
+                  <li>
+                    Developed an AI-powered interactive DJ app that personalises
+                    music curation based on computer vision, generative AI
+                    conversational topics, and real-time music APIs.
+                  </li>
+                  <li>
+                    Built the frontend using React and Next.js, enabling a dynamic
+                    and responsive user experience.
+                  </li>
+                </ul>
                 <div id="border">
                   <img
                     src={djbestie}
                     alt="DJ Bestie"
                     width="50%"
                     height="auto"
+                    style={{ aspectRatio: "806 / 408" }}
                   />
                   <img
                     src={djbestieteam}
                     alt="DJ Bestie Team"
                     width="50%"
                     height="auto"
+                    style={{ aspectRatio: "734 / 800" }}
                   />
                 </div>
               </AccordionContent>
@@ -111,6 +115,7 @@ function Projects() {
                     width="50%"
                     height="auto"
                     className="center"
+                    style={{ aspectRatio: "1920 / 1080" }}
                   />
                 </div>
               </AccordionContent>
@@ -139,39 +144,49 @@ function Projects() {
                 >
                   DevPost!
                 </a>
-                <li>
-                  Full stack application to help prepare people for interviews
-                  by analyzing speech, emotions, and eye contact, while asking
-                  potential interview questions about the role that they are
-                  applying for.
-                </li>
-                <li>
-                  Backend using Pytorch, OpenCV, and SpeechRecognition, built,
-                  trained, and fine-tuned 4 ML models for facial recognition,
-                  expressions, eye tracking, and speech-to-text.
-                </li>
-                <li>
-                  Integrated with OpenAI's API for data processing, question
-                  generation, and improvement summarisation.
-                </li>
-                <li>
-                  Frontend model built and animated through Unity, and displayed
-                  through React.
-                </li>
+                <ul>
+                  <li>
+                    Full stack application to help prepare people for interviews
+                    by analyzing speech, emotions, and eye contact, while asking
+                    potential interview questions about the role that they are
+                    applying for.
+                  </li>
+                  <li>
+                    Backend using Pytorch, OpenCV, and SpeechRecognition, built,
+                    trained, and fine-tuned 4 ML models for facial recognition,
+                    expressions, eye tracking, and speech-to-text.
+                  </li>
+                  <li>
+                    Integrated with OpenAI's API for data processing, question
+                    generation, and improvement summarisation.
+                  </li>
+                  <li>
+                    Frontend model built and animated through Unity, and displayed
+                    through React.
+                  </li>
+                </ul>
                 <div id="border">
                   <img
                     src={interviewpro}
                     alt="iNterview Pro"
                     width="33%"
                     height="auto"
+                    style={{ aspectRatio: "2552 / 1363" }}
                   />
                   <img
                     src={interviewprodata}
                     alt="iNterview Pro Data"
                     width="33%"
                     height="auto"
+                    style={{ aspectRatio: "851 / 389" }}
                   />
-                  <img src={facial} alt="Facial" width="33%" height="auto" />
+                  <img
+                    src={facial}
+                    alt="Facial"
+                    width="33%"
+                    height="auto"
+                    style={{ aspectRatio: "511 / 376" }}
+                  />
                 </div>
               </AccordionContent>
             </Accordion.Item>
@@ -198,12 +213,14 @@ function Projects() {
                     alt="personalsite1"
                     width="50%"
                     height="auto"
+                    style={{ aspectRatio: "1446 / 1351" }}
                   />
                   <img
                     src={personalsite2}
                     alt="personalsite2"
                     width="50%"
                     height="auto"
+                    style={{ aspectRatio: "1444 / 1351" }}
                   />
                 </div>
               </AccordionContent>
@@ -226,6 +243,7 @@ function Projects() {
                       width="50%"
                       height="auto"
                       className="center"
+                      style={{ aspectRatio: "2542 / 1360" }}
                     />
                   </div>
                   I am still frequently updating the website with new features
@@ -374,6 +392,7 @@ function Projects() {
                       width="50%"
                       height="auto"
                       className="center"
+                      style={{ aspectRatio: "1117 / 532" }}
                     />
                   </div>
                 </div>
@@ -413,7 +432,13 @@ function Projects() {
                     Presentation!
                   </a>
                   <div id="border">
-                    <img src={sandia} alt="sandia" width="100%" height="auto" />
+                    <img
+                      src={sandia}
+                      alt="sandia"
+                      width="100%"
+                      height="auto"
+                      style={{ aspectRatio: "2550 / 750" }}
+                    />
                   </div>
                   <br />
                   <br />
@@ -433,6 +458,7 @@ function Projects() {
                       width="50%"
                       height="auto"
                       className="center"
+                      style={{ aspectRatio: "1937 / 1089" }}
                     />
                   </div>
                   <br />
@@ -456,12 +482,14 @@ function Projects() {
                       alt="losalamos1"
                       width="50%"
                       height="auto"
+                      style={{ aspectRatio: "2538 / 1309" }}
                     />
                     <img
                       src={losalamos2}
                       alt="losalamos2"
                       width="50%"
                       height="auto"
+                      style={{ aspectRatio: "1946 / 1095" }}
                     />
                   </div>
                   <br />
@@ -483,9 +511,27 @@ function Projects() {
                     Presentation!
                   </a>
                   <div id="border">
-                    <img src={nsa1} alt="nsa1" width="50%" height="auto" />
-                    <img src={nsa2} alt="nsa2" width="25%" height="auto" />
-                    <img src={nsa3} alt="nsa3" width="25%" height="auto" />
+                    <img
+                      src={nsa1}
+                      alt="nsa1"
+                      width="50%"
+                      height="auto"
+                      style={{ aspectRatio: "2537 / 1306" }}
+                    />
+                    <img
+                      src={nsa2}
+                      alt="nsa2"
+                      width="25%"
+                      height="auto"
+                      style={{ aspectRatio: "695 / 1438" }}
+                    />
+                    <img
+                      src={nsa3}
+                      alt="nsa3"
+                      width="25%"
+                      height="auto"
+                      style={{ aspectRatio: "701 / 1434" }}
+                    />
                   </div>
                 </div>
               </Accordion.Content>

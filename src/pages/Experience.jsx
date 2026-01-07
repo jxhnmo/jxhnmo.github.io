@@ -58,20 +58,22 @@ function Experience() {
               <AccordionContent>
                 <div className="companyContainer">
                   <div className="left">
-                    <li>
-                      Founding engineer led AI tool development, game production,
-                      and sprint execution for the U.S. team.
-                    </li>
-                    <li>
-                      Prototyped a 0 to 1 automated mobile game QA system using
-                      multilayer ML and computer vision, reducing manual QA effort
-                      and enabling faster iteration cycles.
-                    </li>
-                    <li>
-                      Designed and built an end-to-end AIGC ad pipeline that
-                      ingests Meta Ads data, generates scripts, and produces video
-                      creatives, achieving &gt;20% lower CPI.
-                    </li>
+                    <ul>
+                      <li>
+                        Founding engineer led AI tool development, game production,
+                        and sprint execution for the U.S. team.
+                      </li>
+                      <li>
+                        Prototyped a 0 to 1 automated mobile game QA system using
+                        multilayer ML and computer vision, reducing manual QA effort
+                        and enabling faster iteration cycles.
+                      </li>
+                      <li>
+                        Designed and built an end-to-end AIGC ad pipeline that
+                        ingests Meta Ads data, generates scripts, and produces video
+                        creatives, achieving &gt;20% lower CPI.
+                      </li>
+                    </ul>
                   </div>
 
                   <div className="right">
@@ -98,21 +100,23 @@ function Experience() {
               <AccordionContent>
                 <div className="companyContainer">
                   <div className="left">
-                    <li>
-                      Built and deployed a dynamic equipment tracking system in
-                      C#, WPF (.NET), and SQL Server, automating XML data
-                      parsing to accelerate QA reporting by 50%.
-                    </li>
-                    <li>
-                      Increased equipment assignment workflow performance by 10X
-                      through refactoring MVVM architecture and optimising data
-                      lookups with dictionary-based mappings.
-                    </li>
-                    <li>
-                      Redesigned company website with Framer, React, and CMS
-                      integration, enhancing user experience and decreasing
-                      customer support inquiries.
-                    </li>
+                    <ul>
+                      <li>
+                        Built and deployed a dynamic equipment tracking system in
+                        C#, WPF (.NET), and SQL Server, automating XML data
+                        parsing to accelerate QA reporting by 50%.
+                      </li>
+                      <li>
+                        Increased equipment assignment workflow performance by 10X
+                        through refactoring MVVM architecture and optimising data
+                        lookups with dictionary-based mappings.
+                      </li>
+                      <li>
+                        Redesigned company website with Framer, React, and CMS
+                        integration, enhancing user experience and decreasing
+                        customer support inquiries.
+                      </li>
+                    </ul>
                   </div>
                   <div className="right">
                     <div id="logo">
@@ -138,15 +142,17 @@ function Experience() {
               <AccordionContent>
                 <div className="companyContainer">
                   <div className="left">
-                    <li>
-                      Owned two fraud initiatives that prevented $3.6MM annual
-                      fraud losses (60% reduction) through implementation of
-                      data-driven fraud detection rules using SQL and Salesforce.
-                    </li>
-                    <li>
-                      Authored PRDs defining user stories and roadmap; aligned
-                      cross-functional teams and unblocked dependencies.
-                    </li>
+                    <ul>
+                      <li>
+                        Owned two fraud initiatives that prevented $3.6MM annual
+                        fraud losses (60% reduction) through implementation of
+                        data-driven fraud detection rules using SQL and Salesforce.
+                      </li>
+                      <li>
+                        Authored PRDs defining user stories and roadmap; aligned
+                        cross-functional teams and unblocked dependencies.
+                      </li>
+                    </ul>
                   </div>
 
                   <div className="right">
@@ -173,14 +179,16 @@ function Experience() {
               <AccordionContent>
                 <div className="companyContainer">
                   <div className="left">
-                    <li>
-                      Spearheaded a full IP prototype using Unreal Engine
-                      (UEFN/Verse) with Agile sprints
-                    </li>
-                    <li>
-                      Led programming, game balancing, playtesting, and
-                      documentation.
-                    </li>
+                    <ul>
+                      <li>
+                        Spearheaded a full IP prototype using Unreal Engine
+                        (UEFN/Verse) with Agile sprints
+                      </li>
+                      <li>
+                        Led programming, game balancing, playtesting, and
+                        documentation.
+                      </li>
+                    </ul>
                   </div>
 
                   <div className="right">
@@ -207,10 +215,12 @@ function Experience() {
               <AccordionContent>
                 <div className="companyContainer">
                   <div className="left">
-                    <li>
-                      Built internal full-stack applications automating travel
-                      and medical workflows; managed 100+ Jira tickets.
-                    </li>
+                    <ul>
+                      <li>
+                        Built internal full-stack applications automating travel
+                        and medical workflows; managed 100+ Jira tickets.
+                      </li>
+                    </ul>
                   </div>
 
                   <div className="right">
@@ -237,10 +247,12 @@ function Experience() {
               <AccordionContent>
                 <div className="companyContainer">
                   <div className="left">
-                    <li>
-                      Engineered Unity XR test environments with C# for
-                      psychological research; awarded $4K research grant.
-                    </li>
+                    <ul>
+                      <li>
+                        Engineered Unity XR test environments with C# for
+                        psychological research; awarded $4K research grant.
+                      </li>
+                    </ul>
                   </div>
 
                   <div className="right">

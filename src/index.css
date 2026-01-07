@@ -123,16 +123,30 @@ a.links:hover {
   filter: invert(var(--invert));
 }
 
+/* Fix Layout: Use Flexbox to handle image rows/columns stably */
+#border {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 #border img {
   border: solid 5px var(--interact);
-  overflow: "hidden";
+  overflow: hidden;
   border-radius: 40px;
+  box-sizing: border-box;
+  height: auto;
 }
 
 #logo img {
   border: solid 5px transparent;
-  overflow: "hidden";
+  overflow: hidden;
   border-radius: 40px;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  height: auto;
 }
 
 .main {
