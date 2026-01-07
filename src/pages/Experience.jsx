@@ -4,6 +4,7 @@ import { AccordionTrigger, AccordionContent } from "../components";
 import "./Experience.css";
 
 import firstfun from "../assets/work/firstfunlogo.jpeg";
+import morsl from "../assets/work/morsl.png";
 import powerdb from "../assets/work/powerdb.png";
 import samsclub from "../assets/work/samsclub.png";
 import supersocial from "../assets/work/supersocial_inc_logo.jpeg";
@@ -22,16 +23,56 @@ function Experience() {
             defaultValue=""
             collapsible
           >
-            <Accordion.Item className="AccordionItem" value="item-6">
+            <Accordion.Item className="AccordionItem" value="item-7">
               <AccordionTrigger>
                 <div className="date">2025-Present</div>
-                <div className="name">First Fun</div>
-                <div className="title">AI Software Engineer</div>
-                <div className="location">Santa Clara, California</div>
+                <div className="name">Morsl</div>
+                <div className="title">Founder</div>
+                <div className="location">Remote</div>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="companyContainer">
-                  <div className="left">ai's mentor 🤓</div>
+                  <div className="left">ring ring</div>
+
+                  <div className="right">
+                    <div id="logo">
+                      <img
+                        src={morsl}
+                        alt="morsl logo"
+                        width="100%"
+                        height="auto"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </AccordionContent>
+            </Accordion.Item>
+
+            <Accordion.Item className="AccordionItem" value="item-6">
+              <AccordionTrigger>
+                <div className="date">2025-2025</div>
+                <div className="name">First Fun</div>
+                <div className="title">AI Software Engineer</div>
+                <div className="location">Santa Clara, CA</div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="companyContainer">
+                  <div className="left">
+                    <li>
+                      Founding engineer led AI tool development, game production,
+                      and sprint execution for the U.S. team.
+                    </li>
+                    <li>
+                      Prototyped a 0 to 1 automated mobile game QA system using
+                      multilayer ML and computer vision, reducing manual QA effort
+                      and enabling faster iteration cycles.
+                    </li>
+                    <li>
+                      Designed and built an end-to-end AIGC ad pipeline that
+                      ingests Meta Ads data, generates scripts, and produces video
+                      creatives, achieving &gt;20% lower CPI.
+                    </li>
+                  </div>
 
                   <div className="right">
                     <div id="logo">
@@ -52,7 +93,7 @@ function Experience() {
                 <div className="date">2025-2025</div>
                 <div className="name">PowerDB</div>
                 <div className="title">Software Developer</div>
-                <div className="location">College Station, Texas</div>
+                <div className="location">College Station, TX</div>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="companyContainer">
@@ -63,12 +104,12 @@ function Experience() {
                       parsing to accelerate QA reporting by 50%.
                     </li>
                     <li>
-                      Increased equipment assigning workflow performance by 10X
+                      Increased equipment assignment workflow performance by 10X
                       through refactoring MVVM architecture and optimising data
                       lookups with dictionary-based mappings.
                     </li>
                     <li>
-                      Redesigning company website with Framer, React, and CMS
+                      Redesigned company website with Framer, React, and CMS
                       integration, enhancing user experience and decreasing
                       customer support inquiries.
                     </li>
@@ -91,22 +132,20 @@ function Experience() {
               <AccordionTrigger>
                 <div className="date">2023-2024</div>
                 <div className="name">Sam's Club</div>
-                <div className="title">Tech Product Management Intern</div>
-                <div className="location">Bentonville, Arkansas</div>
+                <div className="title">Product Manager Intern</div>
+                <div className="location">Bentonville, AR</div>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="companyContainer">
                   <div className="left">
                     <li>
-                      Prevented $3.6M annual fraud losses (60% reduction)
-                      through implementation of data-driven fraud detection
-                      rules using SQL and Salesforce.
+                      Owned two fraud initiatives that prevented $3.6MM annual
+                      fraud losses (60% reduction) through implementation of
+                      data-driven fraud detection rules using SQL and Salesforce.
                     </li>
                     <li>
-                      Owned two strategic fraud initiatives; authored PRDs that
-                      outlined strategic solutions, user stories, and product
-                      roadmap; aligned cross-functional teams; actively
-                      unblocked engineering dependencies.
+                      Authored PRDs defining user stories and roadmap; aligned
+                      cross-functional teams and unblocked dependencies.
                     </li>
                   </div>
 
@@ -128,22 +167,19 @@ function Experience() {
               <AccordionTrigger>
                 <div className="date">2022-2023</div>
                 <div className="name">Supersocial</div>
-                <div className="title">Game Engineer Intern</div>
-                <div className="location">Remote</div>
+                <div className="title">Game Developer Intern</div>
+                <div className="location">Los Angeles, CA</div>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="companyContainer">
                   <div className="left">
-                    Built the foundation of Supersocial's Fortnite department.
                     <li>
                       Spearheaded a full IP prototype using Unreal Engine
-                      (UEFN/Verse) with Agile sprints; led programming, game
-                      balancing, playtesting, and documentation.
+                      (UEFN/Verse) with Agile sprints
                     </li>
                     <li>
-                      Authored comprehensive technical documentation and
-                      onboarding scripts; collaborated with designers and PMs
-                      across product lifecycle.
+                      Led programming, game balancing, playtesting, and
+                      documentation.
                     </li>
                   </div>
 
@@ -196,7 +232,7 @@ function Experience() {
                 <div className="date">2020-2021</div>
                 <div className="name">UNT CNS Lab</div>
                 <div className="title">Research Assistant</div>
-                <div className="location">Denton, Texas</div>
+                <div className="location">Denton, TX</div>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="companyContainer">

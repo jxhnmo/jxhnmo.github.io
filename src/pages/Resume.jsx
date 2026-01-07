@@ -18,7 +18,7 @@ function Resume() {
           <p>
             Don't forget to save my resume!
             <br />
-            Last updated: October 26, 2025
+            Last updated: January 6, 2026
           </p>
 
           <p>Download:</p>
