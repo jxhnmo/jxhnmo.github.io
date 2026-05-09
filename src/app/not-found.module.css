@@ -1,0 +1,22 @@
+.wrap {
+  min-height: 45vh;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.wrap p {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.wrap h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 5rem);
+}
+
+.wrap a {
+  color: var(--muted);
+}

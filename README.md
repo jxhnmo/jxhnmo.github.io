@@ -1,146 +1,60 @@
-# John Mo - Personal Portfolio Website
+# John Mo - Personal Site
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://jxhnmo.github.io)
-[![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
-[![License](https://img.shields.io/badge/license-MIT-green)]()
+Static portfolio site built with Next.js App Router and exported for GitHub Pages.
 
-A modern, responsive personal portfolio website showcasing my professional experience, projects, and contact information. Built with React and deployed on GitHub Pages.
+## Stack
 
-**Feel free to use this as inspiration or a baseline for your own portfolio!** If you do, I'd appreciate a mention or link back, but it's not required.
+- Next.js App Router
+- React 18
+- TypeScript
+- Radix UI primitives for accordion, navigation menu, and theme switch
+- `next/image` with static-export-compatible unoptimized images
+- ESLint, Prettier, and TypeScript checks
 
-## 🌐 Live Demo
+## Commands
 
-Visit the live site: [https://jxhnmo.github.io](https://jxhnmo.github.io)
-
-## ✨ Features
-
-- **Responsive Design**: Fully responsive layout that works on desktop, tablet, and mobile devices
-- **Multiple Pages**:
-  - 🏠 Home - Landing page with introduction
-  - 👤 About - Personal background and skills
-  - 💼 Experience - Professional work history with accordion components
-  - 🚀 Projects - Portfolio of projects with descriptions and images
-  - 🔗 Links - Social media and professional links
-  - 📄 Resume - Password-protected resume access
-- **Dark/Light Mode**: Theme toggle for user preference
-- **Google Analytics**: Integrated analytics for traffic tracking
-- **Smooth Navigation**: Client-side routing with automatic scroll-to-top
-- **SEO Optimized**: Includes sitemap and robots.txt
-- **Social Integration**: Social media icons with react-social-icons
-
-## 🛠️ Tech Stack
-
-### Core
-
-- **React** (v18.2.0) - UI library
-- **React Router DOM** (v6.0.2) - Client-side routing
-- **React Scripts** (v5.0.1) - Build tooling
-
-### UI Components
-
-- **Radix UI** - Accessible component primitives
-  - Accordion
-  - Navigation Menu
-  - Switch (theme toggle)
-  - Form components
-  - Icons
-- **React Social Icons** (v6.4.0) - Social media icons
-- **TypeIt React** (v2.6.4) - Typing animation effects
-- **classnames** (v2.3.2) - Conditional CSS classes
-
-### Analytics & SEO
-
-- **React GA4** (v2.1.0) - Google Analytics 4 integration
-
-### Development & Deployment
-
-- **gh-pages** (v6.0.0) - GitHub Pages deployment
-- **Create React App** - Project scaffolding
-
-## 📁 Project Structure
-
-```
-jxhnmo.github.io/
-├── public/              # Static files
-│   ├── index.html
-│   ├── sitemap.xml
-│   ├── robots.txt
-│   └── 404.html
-├── src/
-│   ├── assets/          # Images and media files
-│   │   ├── projects/    # Project screenshots
-│   │   └── work/        # Work/company logos
-│   ├── components/      # Reusable components
-│   │   ├── Navbar.jsx
-│   │   ├── Footer.jsx
-│   │   ├── AccordionComponents.jsx
-│   │   └── variables.css
-│   ├── pages/           # Page components
-│   │   ├── Home.jsx
-│   │   ├── About.jsx
-│   │   ├── Experience.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Links.jsx
-│   │   ├── ResumeLogin.jsx
-│   │   └── Construction.jsx
-│   ├── utils/           # Utility functions
-│   │   └── analytics.js
-│   ├── index.js         # App entry point
-│   └── index.css        # Global styles
-├── package.json
-└── README.md
+```bash
+npm run dev
+npm run check
+npm run build
+npm run deploy
 ```
 
-## 📝 TODO
+`npm run check` runs typecheck, lint, and a production static build.
 
-### Performance
+## Project Structure
 
-- [ ] Decrease photo file sizes for faster loading
-- [ ] Optimize image formats (consider WebP)
+```text
+src/
+  app/          App Router pages and metadata
+  assets/       imported images used by Next components
+  components/   reusable UI and shell components
+  content/      typed site, nav, resume, experience, project, and link data
+  types/        static asset declarations
+public/         files served directly, including resume PDF and SEO files
+```
 
-### Security
+The site exports to `out/` via `next build` because `next.config.js` uses `output: "export"`.
 
-- [ ] Encrypt resume login password
+## Content Model
 
-### Features
+Content lives in typed TypeScript files under `src/content`. Pages and components should render these data structures instead of hard-coding repeated project, job, link, or navigation content.
 
-- [ ] Add redirect from experience page to resume
-- [ ] Add recommendations section to experience page
-- [ ] Add icon to light/dark mode switch
-- [ ] Add initial website sketch next to website photo on projects page
-- [ ] Clickable images to expand into larger view
+## Resume Gate
 
-### Bug Fixes
+The resume password prompt is a soft client-side gate only. The PDF and password hash ship with the static site, so this should not be treated as real access control or private document storage.
 
-- [ ] Center Projects AA picture properly
-- [ ] Fix mobile: white background on top/bottom when dragged
-- [ ] Increase difference between bold and non bold text for experience/projects
+## Deployment
 
-### Code Quality
+Current deployment script:
 
-- [ ] More refactoring and code cleanup
+```bash
+npm run build
+npm run deploy
+```
 
-## 💡 Using This Project
+`deploy` publishes the static `out/` directory with `gh-pages`.
 
-This project is open for anyone to use as:
+## Frontend Overhaul Notes
 
-- 🎨 **Inspiration** for your own portfolio design
-- 🏗️ **Starting point** to build your own site
-- 📚 **Learning resource** for React and portfolio development
-
-If you build something cool with it or use it as inspiration, I'd love to know! A mention or link back is appreciated but not required.
-
-## 📄 License
-
-MIT License - Feel free to use this project however you'd like!
-
-## 👤 Author
-
-**John Mo**
-
-- Website: [https://jxhnmo.github.io](https://jxhnmo.github.io)
-- GitHub: [@jxhnmo](https://github.com/jxhnmo)
-
----
-
-_Built with ❤️ using React_
+The current styling intentionally preserves the pre-refactor visual design. Before a major redesign, keep the content/data layer stable and change the component/style layer deliberately.
