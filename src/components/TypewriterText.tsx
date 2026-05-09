@@ -9,6 +9,7 @@ type TypewriterTextProps = {
   cursorChar?: string;
   cursorSpeed?: number;
   loopDelay?: number | [number, number];
+  minVisibleLength?: number;
   nextStringDelay?: number | [number, number];
   speed?: number;
 };
@@ -31,6 +32,7 @@ export function TypewriterText({
   cursorChar = "|",
   cursorSpeed = 1000,
   loopDelay = 1000,
+  minVisibleLength = 0,
   nextStringDelay = 750,
   speed = 80,
 }: TypewriterTextProps) {
@@ -50,7 +52,7 @@ export function TypewriterText({
 
     if (!isDeleting && visibleLength === current.length) {
       delay = getDelay(nextStringDelay, 750);
-    } else if (isDeleting && visibleLength === 0) {
+    } else if (isDeleting && visibleLength === minVisibleLength) {
       delay = getDelay(loopDelay, 1000);
     }
 
@@ -65,7 +67,7 @@ export function TypewriterText({
         return;
       }
 
-      if (visibleLength > 0) {
+      if (visibleLength > minVisibleLength) {
         setVisibleLength((length) => length - 1);
         return;
       }
@@ -80,6 +82,7 @@ export function TypewriterText({
     index,
     isDeleting,
     loopDelay,
+    minVisibleLength,
     nextStringDelay,
     safeStrings.length,
     speed,

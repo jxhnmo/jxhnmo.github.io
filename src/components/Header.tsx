@@ -1,11 +1,12 @@
 "use client";
 
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import { CaretDownIcon } from "@radix-ui/react-icons";
+import { CaretDownIcon, Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { navMenus, siteConfig } from "@/content/site";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -32,12 +33,15 @@ const ListItem = ({
 
 export function Header() {
   const router = useRouter();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <NavigationMenu.Root className="NavigationMenuRoot">
       <div className="justify-start">
         <div id="icon" style={{ cursor: "pointer", padding: "8px" }}>
-          <Link href="/" aria-label="John Mo home">
+          <Link href="/" aria-label="John Mo home" onClick={closeMobileMenu}>
             <Image
               src={siteConfig.logo}
               alt="jm logo"
@@ -49,11 +53,30 @@ export function Header() {
         </div>
       </div>
 
-      <NavigationMenu.List className="NavigationMenuList">
+      <button
+        type="button"
+        className="MobileMenuButton"
+        aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={isMobileMenuOpen}
+        aria-controls="site-navigation"
+        onClick={() => setIsMobileMenuOpen((open) => !open)}
+      >
+        {isMobileMenuOpen ? <Cross2Icon /> : <HamburgerMenuIcon />}
+      </button>
+
+      <NavigationMenu.List
+        id="site-navigation"
+        className={classNames("NavigationMenuList", {
+          isMobileMenuOpen,
+        })}
+      >
         {navMenus.map((menu) => (
           <NavigationMenu.Item key={menu.href}>
             <NavigationMenu.Trigger
-              onClick={() => router.push(menu.href)}
+              onClick={() => {
+                closeMobileMenu();
+                router.push(menu.href);
+              }}
               className="NavigationMenuTrigger"
             >
               {menu.label} <CaretDownIcon className="CaretDown" aria-hidden />
@@ -63,7 +86,11 @@ export function Header() {
                 {menu.callout ? (
                   <li style={{ gridRow: "span 3" }}>
                     <NavigationMenu.Link asChild>
-                      <Link className="Callout" href={menu.callout.href}>
+                      <Link
+                        className="Callout"
+                        href={menu.callout.href}
+                        onClick={closeMobileMenu}
+                      >
                         <div className="CalloutHeading">
                           {menu.callout.label}
                         </div>
@@ -76,7 +103,12 @@ export function Header() {
                 ) : null}
 
                 {menu.items.map((item) => (
-                  <ListItem href={item.href} title={item.label} key={item.href}>
+                  <ListItem
+                    href={item.href}
+                    title={item.label}
+                    key={item.href}
+                    className="MobileMenuNestedLink"
+                  >
                     {item.description}
                   </ListItem>
                 ))}
@@ -87,7 +119,11 @@ export function Header() {
 
         <NavigationMenu.Item className="navItem">
           <NavigationMenu.Link asChild>
-            <Link className="NavigationMenuLink" href="/projects">
+            <Link
+              className="NavigationMenuLink"
+              href="/projects"
+              onClick={closeMobileMenu}
+            >
               Projects
             </Link>
           </NavigationMenu.Link>

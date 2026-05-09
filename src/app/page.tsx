@@ -1,54 +1,162 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+import heroAvatar from "@/assets/hero-avatar-3d.png";
 import { TypewriterText } from "@/components/TypewriterText";
+import { siteConfig } from "@/content/site";
 
 export default function HomePage() {
-  const router = useRouter();
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      return;
+    }
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (event.pointerType === "touch") {
+        return;
+      }
+
+      const hero = heroRef.current;
+
+      if (!hero) {
+        return;
+      }
+
+      const bounds = hero.getBoundingClientRect();
+      const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+      const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+
+      hero.style.setProperty("--hero-cursor-x", `${Math.min(100, Math.max(0, x))}%`);
+      hero.style.setProperty("--hero-cursor-y", `${Math.min(100, Math.max(0, y))}%`);
+    };
+
+    window.addEventListener("pointermove", handlePointerMove);
+
+    return () => window.removeEventListener("pointermove", handlePointerMove);
+  }, []);
 
   return (
-    <div id="page-container" className="my-3">
-      <h1>
-        <TypewriterText
-          breakLines={false}
-          cursor={false}
-          nextStringDelay={[1000, 0]}
-          loopDelay={2000}
-          speed={500}
-          strings={["Hey!", "你好!", "안녕!", "Hai!", "Ciao!", "!اهلا"]}
-        />
-        <br /> &emsp;It&apos;s John Mo
-      </h1>
+    <main
+      ref={heroRef}
+      id="page-container"
+      className="homeHeroPage"
+    >
+      <section className="homeHero" aria-labelledby="home-hero-title">
+        <div className="homeHeroCopy">
+          <h1 id="home-hero-title" className="homeHeroTitle">
+            <span className="homeHeroGreeting">
+              <span className="homeHeroGreetingWord">
+                <TypewriterText
+                  breakLines={false}
+                  cursor={false}
+                  nextStringDelay={1200}
+                  loopDelay={250}
+                  speed={500}
+                  strings={["Hi,", "你好,", "안녕,", "Hai,", "Ciao,", "!اهلا,"]}
+                />
+              </span>
+            </span>
+            <span>it&apos;s John Mo</span>
+          </h1>
 
-      <div className="main">
-        <p className="home">
-          Welcome to my site! I&apos;m John, a recent CS grad with a passion for
-          gaming, food, and startups.
-          <br /> <br />
-          You can catch me&nbsp;
-          <TypewriterText
-            breakLines={false}
-            cursorChar="|"
-            loopDelay={[0, 1000]}
-            cursorSpeed={1000}
-            speed={50}
-            strings={[
-              "putting in the work 👨‍💻",
-              "exploring virtual worlds 👾",
-              "discovering bay area 🌉",
-              "reviewing restaurants on beli 😋",
-              "hanging out with friends 👋",
-              "getting steezy on the slopes 🏂",
-            ]}
-          />
-        </p>
-      </div>
+          <p className="homeHeroIntro">
+            Welcome to my site! I&apos;m John, a recent CS grad with a passion
+            for gaming, food, and startups.
+          </p>
 
-      <div className="main btm30">
-        <button onClick={() => router.push("/about")} className="homeBtn">
-          Learn more about me!
-        </button>
-      </div>
-    </div>
+          <p className="homeHeroStatus">
+            <span className="homeHeroStatusAccent" aria-hidden="true" />
+            You can catch me&nbsp;
+            <TypewriterText
+              breakLines={false}
+              cursorChar="|"
+              loopDelay={[0, 1000]}
+              cursorSpeed={1000}
+              speed={50}
+              strings={[
+                "putting in the work 👨‍💻",
+                "exploring virtual worlds 👾",
+                "discovering bay area 🌉",
+                "reviewing restaurants on beli 😋",
+                "hanging out with friends 👋",
+                "getting steezy on the slopes 🏂",
+              ]}
+            />
+          </p>
+
+          <div className="homeHeroActions" aria-label="Landing page actions">
+            <Link href="/about" className="homeHeroButton homeHeroButtonPrimary">
+              Learn more about me
+              <span aria-hidden="true">→</span>
+            </Link>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="homeHeroButton homeHeroButtonSecondary"
+            >
+              <svg
+                className="homeHeroButtonIcon"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="5" width="18" height="14" rx="2.5" />
+                <path d="m4 7 8 6 8-6" />
+              </svg>
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        <div className="homeHeroVisual" aria-label="John Mo 3D avatar">
+          <div className="homeHeroAtomScene">
+            <div className="homeHeroAtomRing homeHeroAtomRingOne" aria-hidden="true">
+              <span className="homeHeroOrbitNode">
+                <span className="homeHeroNodeFace" />
+              </span>
+            </div>
+            <div className="homeHeroAtomRing homeHeroAtomRingTwo" aria-hidden="true">
+              <span className="homeHeroOrbitNode">
+                <span className="homeHeroNodeFace" />
+              </span>
+            </div>
+            <div className="homeHeroAtomRing homeHeroAtomRingThree" aria-hidden="true">
+              <span className="homeHeroOrbitNode">
+                <span className="homeHeroNodeFace" />
+              </span>
+            </div>
+            <div className="homeHeroAtomRing homeHeroAtomRingFour" aria-hidden="true">
+              <span className="homeHeroOrbitNode">
+                <span className="homeHeroNodeFace" />
+              </span>
+            </div>
+            <div className="homeHeroAtomRing homeHeroAtomRingFive" aria-hidden="true">
+              <span className="homeHeroOrbitNode">
+                <span className="homeHeroNodeFace" />
+              </span>
+            </div>
+
+            <div className="homeHeroAvatarWrap">
+              <Image
+                src={heroAvatar}
+                alt="3D avatar of John Mo"
+                className="homeHeroAvatar"
+                priority
+                sizes="(max-width: 760px) 78vw, 42vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
