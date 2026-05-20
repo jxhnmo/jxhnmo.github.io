@@ -70,22 +70,24 @@ export default function HomePage() {
 
           <p className="homeHeroStatus">
             <span className="homeHeroStatusAccent" aria-hidden="true" />
-            You can catch me&nbsp;
-            <TypewriterText
-              breakLines={false}
-              cursorChar="|"
-              loopDelay={[0, 1000]}
-              cursorSpeed={1000}
-              speed={50}
-              strings={[
-                "putting in the work 👨‍💻",
-                "exploring virtual worlds 👾",
-                "discovering bay area 🌉",
-                "reviewing restaurants on beli 😋",
-                "hanging out with friends 👋",
-                "getting steezy on the slopes 🏂",
-              ]}
-            />
+            <span className="homeHeroStatusText">
+              You can catch me{" "}
+              <TypewriterText
+                breakLines
+                cursorChar="|"
+                loopDelay={[0, 1000]}
+                cursorSpeed={1000}
+                speed={50}
+                strings={[
+                  "putting in the work 👨‍💻",
+                  "exploring virtual worlds 👾",
+                  "discovering bay area 🌉",
+                  "reviewing restaurants on beli 😋",
+                  "hanging out with friends 👋",
+                  "getting steezy on the slopes 🏂",
+                ]}
+              />
+            </span>
           </p>
 
           <div className="homeHeroActions" aria-label="Landing page actions">

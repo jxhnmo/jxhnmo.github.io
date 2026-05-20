@@ -1,6 +1,7 @@
 "use client";
 
 import * as Switch from "@radix-ui/react-switch";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
@@ -23,7 +24,13 @@ export function ThemeToggle() {
       className="SwitchRoot"
       aria-label="Toggle light theme"
     >
-      <Switch.Thumb className="SwitchThumb" />
+      <Switch.Thumb className="SwitchThumb">
+        {isLight ? (
+          <SunIcon className="SwitchIcon" aria-hidden />
+        ) : (
+          <MoonIcon className="SwitchIcon" aria-hidden />
+        )}
+      </Switch.Thumb>
     </Switch.Root>
   );
 }

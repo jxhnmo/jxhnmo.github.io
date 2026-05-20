@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning>
         <Analytics measurementId="G-RSHG17DF86" />
         <SiteShell>{children}</SiteShell>
       </body>
