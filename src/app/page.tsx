@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import heroAvatar from "@/assets/hero-avatar-3d.png";
 import { TypewriterText } from "@/components/TypewriterText";
 import { siteConfig } from "@/content/site";
 
@@ -119,42 +117,32 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="homeHeroVisual" aria-label="John Mo 3D avatar">
+        <div className="homeHeroVisual" aria-hidden="true">
           <div className="homeHeroAtomScene">
-            <div className="homeHeroAtomRing homeHeroAtomRingOne" aria-hidden="true">
+            <div className="homeHeroAtomRing homeHeroAtomRingOne">
               <span className="homeHeroOrbitNode">
                 <span className="homeHeroNodeFace" />
               </span>
             </div>
-            <div className="homeHeroAtomRing homeHeroAtomRingTwo" aria-hidden="true">
+            <div className="homeHeroAtomRing homeHeroAtomRingTwo">
               <span className="homeHeroOrbitNode">
                 <span className="homeHeroNodeFace" />
               </span>
             </div>
-            <div className="homeHeroAtomRing homeHeroAtomRingThree" aria-hidden="true">
+            <div className="homeHeroAtomRing homeHeroAtomRingThree">
               <span className="homeHeroOrbitNode">
                 <span className="homeHeroNodeFace" />
               </span>
             </div>
-            <div className="homeHeroAtomRing homeHeroAtomRingFour" aria-hidden="true">
+            <div className="homeHeroAtomRing homeHeroAtomRingFour">
               <span className="homeHeroOrbitNode">
                 <span className="homeHeroNodeFace" />
               </span>
             </div>
-            <div className="homeHeroAtomRing homeHeroAtomRingFive" aria-hidden="true">
+            <div className="homeHeroAtomRing homeHeroAtomRingFive">
               <span className="homeHeroOrbitNode">
                 <span className="homeHeroNodeFace" />
               </span>
-            </div>
-
-            <div className="homeHeroAvatarWrap">
-              <Image
-                src={heroAvatar}
-                alt="3D avatar of John Mo"
-                className="homeHeroAvatar"
-                priority
-                sizes="(max-width: 760px) 78vw, 42vw"
-              />
             </div>
           </div>
         </div>

@@ -1365,17 +1365,6 @@ div.location {
   transition: filter 260ms ease;
 }
 
-.homeHeroVisual::before {
-  position: absolute;
-  inset: 14%;
-  content: "";
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 52% 46%, rgba(148, 82, 255, 0.7), transparent 48%),
-    radial-gradient(circle at 50% 50%, rgba(43, 231, 220, 0.16), transparent 64%);
-  filter: blur(8px);
-}
-
 .homeHeroVisual:hover {
   filter: saturate(1.08);
 }
@@ -1536,30 +1525,6 @@ div.location {
   --node-glow: rgba(255, 255, 255, 0.45);
 }
 
-.homeHeroAvatarWrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: grid;
-  place-items: end center;
-  width: 74%;
-  height: 88%;
-  overflow: hidden;
-  border-radius: 0 0 44% 44%;
-  transform: translate3d(-50%, -50%, 0);
-}
-
-.homeHeroAvatar {
-  width: 112%;
-  height: auto;
-  object-fit: contain;
-  filter:
-    drop-shadow(0 34px 46px rgba(0, 0, 0, 0.55))
-    drop-shadow(0 0 32px rgba(145, 87, 255, 0.28));
-  transform: translateY(4%);
-}
-
-
 @media (max-width: 760px) {
   .NavigationMenuRoot {
     justify-content: flex-start;
@@ -1684,10 +1649,6 @@ div.location {
   .homeHeroVisual {
     width: min(78vw, 340px);
     margin-top: 0.25rem;
-  }
-
-  .homeHeroAvatarWrap {
-    width: 76%;
   }
 }
 
