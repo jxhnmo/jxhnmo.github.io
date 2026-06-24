@@ -1312,9 +1312,9 @@ div.location {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.94fr);
   align-items: center;
-  gap: clamp(2rem, 5vw, 5.5rem);
-  width: min(1180px, calc(100% - 40px));
-  min-height: min(740px, calc(100vh - 180px));
+  gap: clamp(2rem, 5vw, 6rem);
+  width: min(1500px, calc(100% - 40px));
+  min-height: min(820px, calc(100vh - 160px));
   margin: 0 auto;
 }
 
@@ -1322,15 +1322,15 @@ div.location {
   position: relative;
   z-index: 2;
   min-width: 0;
-  max-width: 650px;
+  max-width: 760px;
   padding: clamp(1rem, 2vw, 1.5rem) 0;
 }
 
 .homeHeroTitle {
-  max-width: 700px;
+  max-width: 760px;
   margin: 0;
   color: var(--text-strong);
-  font-size: clamp(3.55rem, 6.15vw, 5.55rem);
+  font-size: clamp(3.55rem, 6.15vw, 6.4rem);
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: 0;
@@ -1363,10 +1363,10 @@ div.location {
 }
 
 .homeHeroIntro {
-  max-width: 560px;
+  max-width: 640px;
   margin-top: clamp(1.2rem, 2.2vw, 1.6rem);
   color: var(--text-body);
-  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  font-size: clamp(1.05rem, 1.6vw, 1.5rem);
   font-weight: 300;
   line-height: 1.55;
 }
@@ -1377,7 +1377,7 @@ div.location {
   min-height: 32px;
   margin-top: clamp(1.3rem, 2.2vw, 1.8rem);
   color: var(--text-muted);
-  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  font-size: clamp(1rem, 1.3vw, 1.3rem);
   line-height: 1.45;
 }
 
@@ -1471,7 +1471,7 @@ div.location {
   box-sizing: border-box;
   display: grid;
   place-items: center;
-  width: min(45vw, 560px);
+  width: min(42vw, 680px);
   min-width: 360px;
   aspect-ratio: 1 / 1;
   justify-self: end;
