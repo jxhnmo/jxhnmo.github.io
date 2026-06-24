@@ -92,15 +92,25 @@ export const projectItems: ProjectItem[] = [
   },
   {
     id: "react-portfolio",
-    year: "2023",
+    year: "2023 - Present",
     group: "Personal Website",
-    title: "React Portfolio",
+    title: "2026 Revamp",
     summary:
-      "The previous version of this site, built with React and Radix UI while iterating from user testing and feedback.",
-    intro:
-      "I am still frequently updating the website with new features based on user testing and feedback!",
-    sectionsHeading: "Here are some cool updates:",
+      "The site you're on right now - I revamped it in 2026 to be faster, cleaner, and a lot nicer to look at.",
+    sectionsHeading: "The thinking behind it (newest first):",
     sections: [
+      {
+        heading: "Why rebuild it... again?",
+        body: "Honestly, AI changed the math. The kind of refactor that used to eat a whole weekend now takes an afternoon, so I finally had the budget to redo the foundation properly. The old site was a Create React App single-page app - one big JS bundle that rendered everything in the browser. I migrated it to Next.js with a fully static export, so every page is pre-rendered to plain HTML (better for load speed and SEO) and still hosted on GitHub Pages with no server to babysit. I also pulled all the content - projects, experience, links - out into typed data files, so adding a project like this one is now literally just editing an array.",
+      },
+      {
+        heading: "Mobile-first, accessibility-first nav",
+        body: "On phones the menu opens into a full-screen overlay with a proper focus trap, so keyboard and screen-reader folks don't get stranded behind it. The desktop dropdowns got the same once-over: smoother open animations and no weird seams. The kind of stuff nobody notices unless it's broken, which is exactly why I sweated it.",
+      },
+      {
+        heading: "Ideas that survived the rebuild",
+        body: "Plenty of the old version's ideas were good enough to keep - just reskinned. Here's what I wrote about them last time:",
+      },
       {
         heading: "Design Process + Auto Open Tab",
         body: "When you landed here, you probably noticed this tab popped open right away. That's on purpose! I picked up some great insights from a talk by a Google UX Designer, who highlighted the importance of showing not just what a website offers, but also the thinking behind its features. Initially, I thought about creating a separate page to share these thoughts, but then it struck me - why not make it immediately visible? Easier for you to find and keeps the site looking neat!",
