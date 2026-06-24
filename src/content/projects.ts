@@ -97,6 +97,41 @@ export const projectItems: ProjectItem[] = [
     title: "React Portfolio",
     summary:
       "The previous version of this site, built with React and Radix UI while iterating from user testing and feedback.",
+    intro:
+      "I am still frequently updating the website with new features based on user testing and feedback!",
+    sectionsHeading: "Here are some cool updates:",
+    sections: [
+      {
+        heading: "Design Process + Auto Open Tab",
+        body: "When you landed here, you probably noticed this tab popped open right away. That's on purpose! I picked up some great insights from a talk by a Google UX Designer, who highlighted the importance of showing not just what a website offers, but also the thinking behind its features. Initially, I thought about creating a separate page to share these thoughts, but then it struck me - why not make it immediately visible? Easier for you to find and keeps the site looking neat!",
+      },
+      {
+        heading: "Interactive Navigation Buttons",
+        body: "Turns out, not everyone is a fan of traditional navigation bars (who knew, right?). So, I spiced things up with some fun, interactive buttons that you'll find on our homepage and about page. They're designed to make your experience not just smoother but more satisfying.",
+      },
+      {
+        heading: "Light Mode Toggle",
+        body: "I started off with a dark theme because, honestly, I just love how it looks. But, hey, it's not for everyone! So, I added a light mode toggle. Now, you can switch it up anytime you like, making the site more accessible and comfortable for all eyes.",
+      },
+      {
+        heading: "Accordion",
+        body: "I've also put in an accordion layout on the projects and experience pages. It's a sleek way to pack in information without overwhelming you. Just click and expand the section you're interested in!",
+      },
+    ],
+    resourcesHeading: "Design inspiration sources!",
+    resources: [
+      {
+        label: "https://vishwas-saini-portfolio.vercel.app/",
+        href: "https://vishwas-saini-portfolio.vercel.app/",
+      },
+      { label: "https://www.rubens.design/", href: "https://www.rubens.design/" },
+      { label: "https://caseypei.me/", href: "https://caseypei.me/" },
+      { label: "https://lukeypookster.com/", href: "https://lukeypookster.com/" },
+      {
+        label: "https://webflow.com/made-in-webflow/website/COLIN-MOY",
+        href: "https://webflow.com/made-in-webflow/website/COLIN-MOY",
+      },
+    ],
     images: [{ src: personalsite, alt: "Previous React portfolio screenshot" }],
   },
   {

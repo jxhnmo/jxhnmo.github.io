@@ -44,6 +44,11 @@ export type ExperienceItem = {
   logo: ContentImage;
 };
 
+export type ProjectSection = {
+  heading: string;
+  body: string;
+};
+
 export type ProjectItem = {
   id: string;
   year: string;
@@ -53,6 +58,11 @@ export type ProjectItem = {
   bullets?: string[];
   links?: ContentLink[];
   images?: ContentImage[];
+  intro?: string;
+  sectionsHeading?: string;
+  sections?: ProjectSection[];
+  resourcesHeading?: string;
+  resources?: ContentLink[];
 };
 
 export type SocialLink = {

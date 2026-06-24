@@ -19,7 +19,7 @@ export default function HomePage() {
                   nextStringDelay={1200}
                   loopDelay={250}
                   speed={500}
-                  strings={["Hi,", "你好,", "안녕,", "Hai,", "Ciao,", "!اهلا,"]}
+                  strings={["Hey,", "你好,", "안녕,", "Hai,", "Ciao,", "!اهلا,"]}
                 />
               </span>
             </span>

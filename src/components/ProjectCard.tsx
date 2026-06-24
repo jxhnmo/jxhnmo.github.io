@@ -26,6 +26,40 @@ function ProjectCard({ item }: { item: ProjectItem }) {
           ))}
         </ul>
       ) : null}
+      {item.intro ? (
+        <>
+          <br />
+          {item.intro}
+        </>
+      ) : null}
+      {item.sections?.length ? (
+        <>
+          {item.sectionsHeading ? <p>{item.sectionsHeading}</p> : null}
+          <ul>
+            {item.sections.map((section) => (
+              <li key={section.heading}>
+                <b>{section.heading}</b>
+                <br />
+                {section.body}
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+      {item.resources?.length ? (
+        <>
+          {item.resourcesHeading ? <p>{item.resourcesHeading}</p> : null}
+          <ul>
+            {item.resources.map((resource) => (
+              <li key={resource.href}>
+                <a href={resource.href} target="_blank" rel="noreferrer">
+                  {resource.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
       {item.images?.length ? (
         <div className="imageBorder">
           {item.images.map((image) => (

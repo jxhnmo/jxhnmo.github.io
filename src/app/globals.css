@@ -1232,8 +1232,8 @@ body.hasOpenMobileMenu #page-container {
 
 .AccordionContent {
   overflow: hidden;
-  font-size: calc(30% + 0.3vw + 0.5vh);
-  font-weight: 400;
+  font-size: clamp(0.95rem, 0.4vw + 0.85rem, 1.15rem);
+  font-weight: 300;
   color: var(--text-body);
   background: var(--glass-bg-strong);
   will-change: height;
@@ -1249,6 +1249,33 @@ body.hasOpenMobileMenu #page-container {
 
 .AccordionContentText {
   padding: 20px;
+}
+
+/* Keep every text node inside the accordion at one consistent size/weight
+   so paragraphs, list items, and links don't balloon past the body copy. */
+.AccordionContentText p,
+.AccordionContentText li,
+.AccordionContentText a {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.6;
+}
+
+.AccordionContentText p {
+  margin: 0.75em 0 0.25em;
+}
+
+.AccordionContentText ul {
+  margin: 0.25em 0 0;
+  padding-left: 1.25em;
+}
+
+.AccordionContentText li {
+  margin: 0.35em 0;
+}
+
+.AccordionContentText b {
+  font-weight: 600;
 }
 
 .AccordionChevron {
