@@ -1,3 +1,4 @@
+import creatorgames from "@/assets/work/creatorgames.png";
 import firstfun from "@/assets/work/firstfunlogo.jpeg";
 import mercyships from "@/assets/work/Mercy_Ships_Logo.jpg";
 import morsl from "@/assets/work/morsl.png";
@@ -8,6 +9,16 @@ import unt from "@/assets/work/unt.png";
 import type { ExperienceItem } from "./types";
 
 export const experienceItems: ExperienceItem[] = [
+  {
+    id: "creator-games",
+    period: "2026-Present",
+    company: "Creator Games",
+    role: "Lead Developer",
+    location: "San Francisco, CA / Remote",
+    summary: "Roblox VC — Data Analysis and Marketplace for Roblox Games",
+    bullets: [],
+    logo: { src: creatorgames, alt: "Creator Games logo" },
+  },
   {
     id: "morsl",
     period: "2025-Present",
@@ -36,6 +47,7 @@ export const experienceItems: ExperienceItem[] = [
     period: "2025",
     company: "PowerDB",
     role: "Software Developer",
+    note: "Part time during university",
     location: "College Station, TX",
     bullets: [
       "Built and deployed a dynamic equipment tracking system in C#, WPF (.NET), and SQL Server, automating XML data parsing to accelerate QA reporting by 50%.",

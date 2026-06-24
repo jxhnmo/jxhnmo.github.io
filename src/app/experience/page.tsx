@@ -18,6 +18,7 @@ export default function ExperiencePage() {
               <ExperienceCard.Header
                 company={item.company}
                 location={item.location}
+                note={item.note}
                 period={item.period}
                 role={item.role}
               />

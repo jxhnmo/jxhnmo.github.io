@@ -38,6 +38,7 @@ export type ExperienceItem = {
   period: string;
   company: string;
   role: string;
+  note?: string;
   location: string;
   summary?: string;
   bullets: string[];

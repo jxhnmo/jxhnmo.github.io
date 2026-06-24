@@ -27,14 +27,18 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
 function Header({
   company,
   location,
+  note,
   period,
   role,
-}: Pick<ExperienceItem, "company" | "location" | "period" | "role">) {
+}: Pick<ExperienceItem, "company" | "location" | "note" | "period" | "role">) {
   return (
     <>
       <div className="date">{period}</div>
       <div className="name">{company}</div>
-      <div className="title">{role}</div>
+      <div className="title">
+        {role}
+        {note ? <span className="roleNote">{note}</span> : null}
+      </div>
       <div className="location">{location}</div>
     </>
   );
