@@ -30,26 +30,28 @@ export function ResumeGate() {
 
   if (isVerified) {
     return (
-      <div className="main row lightBg">
-        <div className="col-md-3half pt-3 pb-3 text-center">
-          <p>
-            Don&apos;t forget to save my resume!
-            <br />
-            Last updated: {resumeConfig.lastUpdated}
-          </p>
+      <div className="main">
+        <div className="row glassCard">
+          <div className="col-md-3half pt-3 pb-3 text-center">
+            <p>
+              Don&apos;t forget to save my resume!
+              <br />
+              Last updated: {resumeConfig.lastUpdated}
+            </p>
 
-          <p>Download:</p>
-          <a href={resumeConfig.pdf} download="John Mo Resume">
-            Download PDF
-          </a>
-        </div>
+            <p>Download:</p>
+            <a href={resumeConfig.pdf} download="John Mo Resume">
+              Download PDF
+            </a>
+          </div>
 
-        <div className="col-md-8half pt-3 pb-3">
-          <iframe
-            className="resumeFrame"
-            title="Resume"
-            src={resumeConfig.pdf}
-          />
+          <div className="col-md-8half pt-3 pb-3">
+            <iframe
+              className="resumeFrame"
+              title="Resume"
+              src={resumeConfig.pdf}
+            />
+          </div>
         </div>
       </div>
     );
@@ -57,7 +59,7 @@ export function ResumeGate() {
 
   return (
     <form onSubmit={onSubmit} className="main">
-      <div className="row lightContainer">
+      <div className="row glassCard">
         <div className="imageBorder">
           <div className="parent center">
             <Image
@@ -90,7 +92,7 @@ export function ResumeGate() {
         </div>
 
         <div className="parent center">
-          <button className="loginBtn" type="submit">
+          <button className="btnPrimary" type="submit">
             SUBMIT
           </button>
         </div>

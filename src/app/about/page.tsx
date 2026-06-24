@@ -11,7 +11,7 @@ export default function AboutPage() {
     <div id="page-container" className="my-3">
       <h2>About</h2>
       <div className="main">
-        <div className="row lightContainer">
+        <div className="row glassCard">
           <div className="col-md-3half pt-3 pb-3 text-center">
             <div className="imageBorder">
               <Image src={Me} alt="John Mo" width={320} height={320} />
@@ -65,19 +65,19 @@ export default function AboutPage() {
               <div className="btnContainer">
                 <button
                   onClick={() => router.push("/links")}
-                  className="abtBtn"
+                  className="btnSecondary"
                 >
                   &gt;&gt; links
                 </button>
                 <button
                   onClick={() => router.push("/experience")}
-                  className="abtBtn"
+                  className="btnSecondary"
                 >
                   &gt;&gt; work
                 </button>
                 <button
                   onClick={() => router.push("/projects")}
-                  className="abtBtn"
+                  className="btnSecondary"
                 >
                   &gt;&gt; projects
                 </button>

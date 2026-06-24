@@ -11,7 +11,7 @@ export default function LinksPage() {
     <div id="page-container" className="my-3">
       <h2>Links</h2>
       <div className="main">
-        <div className="row lightContainer">
+        <div className="row glassCard">
           <div className="parent center">
             <h2 className="linkHead">Socials</h2>
           </div>
@@ -41,7 +41,7 @@ function LinkRow({
   label: string;
 }) {
   return (
-    <div className="parent">
+    <div className="parent glassRow">
       <div className="child">
         <SocialIcon
           network={

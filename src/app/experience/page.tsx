@@ -11,7 +11,7 @@ export default function ExperiencePage() {
     <div id="page-container" className="my-3">
       <h2>Experience</h2>
       <div className="main">
-        <div className="row lightContainer">
+        <div className="row glassCard">
           <AccordionList
             items={experienceItems.map((item) => ({
               id: item.id,

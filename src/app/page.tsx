@@ -1,45 +1,10 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 import { TypewriterText } from "@/components/TypewriterText";
 import { siteConfig } from "@/content/site";
 
 export default function HomePage() {
-  const heroRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-      return;
-    }
-
-    const handlePointerMove = (event: PointerEvent) => {
-      if (event.pointerType === "touch") {
-        return;
-      }
-
-      const hero = heroRef.current;
-
-      if (!hero) {
-        return;
-      }
-
-      const bounds = hero.getBoundingClientRect();
-      const x = ((event.clientX - bounds.left) / bounds.width) * 100;
-      const y = ((event.clientY - bounds.top) / bounds.height) * 100;
-
-      hero.style.setProperty("--hero-cursor-x", `${Math.min(100, Math.max(0, x))}%`);
-      hero.style.setProperty("--hero-cursor-y", `${Math.min(100, Math.max(0, y))}%`);
-    };
-
-    window.addEventListener("pointermove", handlePointerMove);
-
-    return () => window.removeEventListener("pointermove", handlePointerMove);
-  }, []);
-
   return (
     <main
-      ref={heroRef}
       id="page-container"
       className="homeHeroPage"
     >
