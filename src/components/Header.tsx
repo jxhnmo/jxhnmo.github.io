@@ -60,7 +60,25 @@ export function Header() {
 
     updateViewportOffset();
 
-    const observer = new MutationObserver(updateViewportOffset);
+    // On a fresh open (closed -> open), the viewport still carries the size
+    // of whichever menu was open last, so the width/height transition would
+    // animate from that stale size. Snap to the correct size without a
+    // transition on fresh opens; keep it for trigger-to-trigger moves.
+    let wasOpen = false;
+    const handleMutation = () => {
+      updateViewportOffset();
+      const viewport = root.querySelector<HTMLElement>(".NavigationMenuViewport");
+      const isOpen = viewport?.getAttribute("data-state") === "open";
+      if (viewport && isOpen && !wasOpen) {
+        viewport.classList.add("snapSize");
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => viewport.classList.remove("snapSize")),
+        );
+      }
+      wasOpen = isOpen;
+    };
+
+    const observer = new MutationObserver(handleMutation);
     observer.observe(root, {
       attributes: true,
       attributeFilter: ["data-state"],
