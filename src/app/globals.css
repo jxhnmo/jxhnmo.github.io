@@ -1,15 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Rubik:wght@300;500;700&display=swap");
 
-:root {
-  --dark: #2a1a38;
-  --light: #c4b0f0;
-  --light2: #b5a0dc;
-  --interact: #774a9e;
-  --black: #000000;
-  --white: #ffffff;
-  --invert: 0%;
-}
-
+:root,
 body {
   --dark: #2a1a38;
   --light: #c4b0f0;
@@ -18,6 +9,9 @@ body {
   --black: #000000;
   --white: #ffffff;
   --invert: 0%;
+  /* Navbar dropdown panel + caret + hover/open chip surface */
+  --nav-panel: #e4daf9;
+  --nav-panel-hover: #d7c7f5;
 }
 
 [data-theme="light"] {
@@ -28,6 +22,8 @@ body {
   --black: #fefcfe;
   --white: #53195d;
   --invert: 100%;
+  --nav-panel: var(--light);
+  --nav-panel-hover: #9559c9;
 }
 
 /* ===== New design-token layer (dark theme = the redesigned hero look) ===== */
@@ -648,7 +644,7 @@ body.hasOpenMobileMenu #page-container {
 .NavigationMenuTrigger:hover,
 .NavigationMenuLink:hover,
 .NavigationMenuTrigger[data-state="open"] {
-  background-color: var(--light);
+  background-color: var(--nav-panel);
   color: var(--dark);
   text-shadow: none;
 }
@@ -711,7 +707,7 @@ body.hasOpenMobileMenu #page-container {
   position: relative;
   width: 16px;
   height: 10px;
-  background-color: var(--light2);
+  background-color: var(--nav-panel);
   /* Overlap 1px into both the trigger (tip) and the box (base) so no
      subpixel gap or box-shadow seam shows at the join. */
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -729,7 +725,7 @@ body.hasOpenMobileMenu #page-container {
   transform: translateX(-50%);
   margin-top: 8px;
   width: 100%;
-  background-color: var(--light2);
+  background-color: var(--nav-panel);
   border-radius: 8px;
   overflow: hidden;
   box-shadow:
@@ -812,7 +808,7 @@ body.hasOpenMobileMenu #page-container {
 }
 
 .ListItemLink:hover {
-  background-color: var(--light);
+  background-color: var(--nav-panel-hover);
 }
 
 .ListItemLink:hover .ListItemHeading,
@@ -824,15 +820,26 @@ body.hasOpenMobileMenu #page-container {
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 4px;
-  color: var(--white);
+  color: var(--dark);
 }
 
 .ListItemText {
-  color: var(--white);
+  color: var(--dark);
   font-size: 13px;
   line-height: 1.4;
   font-weight: 300;
-  opacity: 0.85;
+  opacity: 0.92;
+}
+
+/* The panel/caret/chip surfaces are driven by --nav-panel(-hover), so only the
+   resting text needs flipping per theme: light mode uses a dark purple panel,
+   so its text is light. On hover the text stays light — base var(--black) is
+   near-white in light mode — over the --nav-panel-hover row. Each theme shifts
+   the hover row toward more lavender presence (light mode lifts lighter, dark
+   mode deepens) so the highlight is clearly visible on either panel. */
+[data-theme="light"] .ListItemHeading,
+[data-theme="light"] .ListItemText {
+  color: #ffffff;
 }
 
 .Callout {
