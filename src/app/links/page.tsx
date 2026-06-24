@@ -12,16 +12,16 @@ export default function LinksPage() {
       <h2>Links</h2>
       <div className="pageColumn">
         <div className="parent center">
-          <h2 className="linkHead">Socials</h2>
+          <h2 className="linkHead">work</h2>
         </div>
-        {socials.map((link) => (
+        {work.map((link) => (
           <LinkRow key={link.href} {...link} />
         ))}
 
         <div className="parent center">
-          <h2 className="linkHead">work</h2>
+          <h2 className="linkHead">Socials</h2>
         </div>
-        {work.map((link) => (
+        {socials.map((link) => (
           <LinkRow key={link.href} {...link} />
         ))}
       </div>

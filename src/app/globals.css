@@ -424,10 +424,12 @@ a.links:hover {
 }
 
 .filler {
+  flex: 1;
+  height: 5px;
+  padding-block: 0;
+  margin-inline: 0.75rem;
   background: var(--glass-border);
   border-radius: 50px;
-  flex: 1;
-  height: 2px;
 }
 
 .col-md-3half {
