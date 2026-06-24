@@ -37,6 +37,9 @@ body {
   --hero-cursor-x: 50%;
   --hero-cursor-y: 45%;
 
+  /* Centered content column width */
+  --content-max: 1320px;
+
   /* Dot-grid overlay */
   --dot-a: rgba(201, 174, 255, 0.58);
   --dot-b: rgba(41, 215, 216, 0.48);
@@ -187,6 +190,7 @@ button {
 .row {
   display: flex;
   flex-wrap: wrap;
+  gap: clamp(1.5rem, 4vw, 3rem);
 }
 
 h1 {
@@ -285,6 +289,7 @@ a.links:hover {
   overflow: hidden;
   border-radius: 40px;
   box-sizing: border-box;
+  max-width: 100%;
   height: auto;
 }
 
@@ -297,11 +302,9 @@ a.links:hover {
   height: auto;
 }
 
-.main {
-  padding: 1% 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.pageColumn {
+  width: min(var(--content-max), calc(100% - clamp(1.5rem, 4vw, 3rem)));
+  margin-inline: auto;
 }
 
 .btm30 {
@@ -323,18 +326,6 @@ a.links:hover {
 }
 
 /* ===== Shared glass surfaces + buttons (site-wide design language) ===== */
-.glassCard {
-  box-sizing: border-box;
-  width: 80%;
-  padding: clamp(1.25rem, 3vw, 2rem);
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 18px;
-  box-shadow: var(--glow-purple-lg), var(--glass-inset);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-}
-
 .glassRow {
   display: flex;
   align-items: center;
@@ -436,13 +427,13 @@ a.links:hover {
 }
 
 .col-md-3half {
-  flex: 0 0 29.166667%;
-  max-width: 29.166667%;
+  flex: 0 0 28%;
+  max-width: 28%;
 }
 
 .col-md-8half {
-  flex: 0 0 70.833333%;
-  max-width: 70.833333%;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .Input {
@@ -1742,6 +1733,11 @@ div.location {
   .row {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  /* Align the page title with the centered content column gutter on mobile */
+  #page-container > h2 {
+    margin-inline: clamp(0.75rem, 2vw, 1.5rem);
   }
 }
 

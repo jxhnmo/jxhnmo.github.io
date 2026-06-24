@@ -30,8 +30,8 @@ export function ResumeGate() {
 
   if (isVerified) {
     return (
-      <div className="main">
-        <div className="row glassCard">
+      <div className="pageColumn">
+        <div className="row">
           <div className="col-md-3half pt-3 pb-3 text-center">
             <p>
               Don&apos;t forget to save my resume!
@@ -58,44 +58,42 @@ export function ResumeGate() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="main">
-      <div className="row glassCard">
-        <div className="imageBorder">
-          <div className="parent center">
-            <Image
-              src={resumeConfig.portrait}
-              alt="Me @ Supersocial"
-              width={320}
-              height={320}
-              style={{ width: "35%", height: "auto" }}
-            />
-          </div>
-        </div>
-
+    <form onSubmit={onSubmit} className="pageColumn">
+      <div className="imageBorder">
         <div className="parent center">
-          <h2 className="linkHead mt-3">Protected Page</h2>
-        </div>
-
-        <div className="parent center mb-1">
-          <div id="darkTxt">
-            <p>Contact me for the code!</p>
-          </div>
-        </div>
-
-        <div className="parent center mb-3">
-          <input
-            className="Input"
-            type="password"
-            name="password"
-            placeholder="Magic word?"
+          <Image
+            src={resumeConfig.portrait}
+            alt="Me @ Supersocial"
+            width={320}
+            height={320}
+            style={{ width: "35%", height: "auto" }}
           />
         </div>
+      </div>
 
-        <div className="parent center">
-          <button className="btnPrimary" type="submit">
-            SUBMIT
-          </button>
+      <div className="parent center">
+        <h2 className="linkHead mt-3">Protected Page</h2>
+      </div>
+
+      <div className="parent center mb-1">
+        <div id="darkTxt">
+          <p>Contact me for the code!</p>
         </div>
+      </div>
+
+      <div className="parent center mb-3">
+        <input
+          className="Input"
+          type="password"
+          name="password"
+          placeholder="Magic word?"
+        />
+      </div>
+
+      <div className="parent center">
+        <button className="btnPrimary" type="submit">
+          SUBMIT
+        </button>
       </div>
     </form>
   );
