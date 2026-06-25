@@ -562,7 +562,11 @@ a.links:hover {
   );
 }
 
-body.hasOpenMobileMenu #page-container {
+/* The footer is a sibling of #page-container, so it must be de-emphasized
+   alongside it — otherwise it's the one piece of page chrome that keeps full
+   contrast and reads straight through the translucent menu. */
+body.hasOpenMobileMenu #page-container,
+body.hasOpenMobileMenu .footer {
   filter: blur(10px) brightness(0.55) saturate(0.9);
 }
 
@@ -1059,6 +1063,63 @@ body.hasOpenMobileMenu #page-container {
 
 .MobileNavTheme .SwitchRoot {
   margin-left: 0;
+}
+
+/* Dark mode darkens the page behind the menu, which deepens an already-dark
+   page and lets the panel glows pop. In light mode that same darkening crushes
+   the bright page to a muddy gray that bleeds through the translucent panel and
+   washes everything out — so keep the backdrop bright and just blur it. */
+body[data-theme="light"].hasOpenMobileMenu #page-container,
+body[data-theme="light"].hasOpenMobileMenu .footer {
+  filter: blur(12px);
+}
+
+[data-theme="light"] .MobileNavSectionHeading {
+  text-shadow: 0 1px 2px rgba(83, 25, 93, 0.18);
+}
+
+[data-theme="light"] .MobileNavSubLink:hover,
+[data-theme="light"] .MobileNavSubLink:focus-visible {
+  background: rgba(129, 69, 181, 0.1);
+}
+
+[data-theme="light"] .MobileNavFooter {
+  border-top-color: rgba(129, 69, 181, 0.18);
+}
+
+/* The mobile button + overlay are built on hardcoded dark glass, so in light
+   mode they read as a dark box on a light page with near-dark token text on a
+   dark panel. Swap the surfaces to light glass (the token-based text then sits
+   on a light panel and reads cleanly). Scoped to the mobile breakpoint to match
+   the dark rules these override — above it the elements are display:none. */
+@media (max-width: 760px) {
+  [data-theme="light"] .MobileMenuButton {
+    background: rgba(255, 255, 255, 0.72);
+    border-color: rgba(129, 69, 181, 0.3);
+    box-shadow: 0 10px 24px rgba(129, 69, 181, 0.18);
+  }
+
+  [data-theme="light"] .NavigationMenuRoot.hasOpenMobileMenu {
+    background-color: rgba(251, 235, 251, 0.7);
+  }
+
+  /* Glows are tuned to read as luminous blooms on a dark base; on a light panel
+     they need more weight and saturation or they vanish. The panel is kept
+     glassy (translucent) so the bright blurred backdrop reads through it. */
+  [data-theme="light"] .MobileNavOverlay {
+    background:
+      radial-gradient(
+        circle at 82% 18%,
+        rgba(140, 64, 214, 0.26),
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at -8% 112%,
+        rgba(26, 163, 156, 0.24),
+        transparent 46%
+      ),
+      rgba(250, 240, 255, 0.7);
+  }
 }
 
 @media (max-width: 760px) {
