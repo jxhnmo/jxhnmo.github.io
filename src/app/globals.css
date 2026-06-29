@@ -1707,8 +1707,6 @@ div.location {
   /* The hero pair is centered, so the visual no longer sits against the page edge
      and the rings (which overflow the box by ~5% per side) have room to breathe. */
   justify-self: center;
-  perspective: 1600px;
-  perspective-origin: 50% 46%;
   transition: filter 260ms ease;
 }
 
@@ -1719,7 +1717,6 @@ div.location {
 .homeHeroAtomScene {
   position: absolute;
   inset: 0;
-  transform-style: preserve-3d;
   pointer-events: none;
 }
 
@@ -1735,9 +1732,20 @@ div.location {
     0 0 30px rgba(122, 79, 255, 0.1),
     inset 0 0 18px rgba(43, 231, 220, 0.04);
   pointer-events: none;
-  transform-style: preserve-3d;
-  transform: translate3d(-50%, -50%, 0) rotateZ(var(--ring-rotate-z, 0deg))
-    rotateX(var(--ring-tilt-x, 70deg));
+  /* Flattened to 2D: the rings used to be real 3D circles tilted with
+     rotateX inside a preserve-3d scene, but co-centered tilted planes
+     intersect and z-fight, flickering on some GPUs. scaleY(cos(tilt))
+     squashes the circle into the same ellipse with zero depth, so there
+     is no depth buffer to fight over. cos() keeps the per-ring --ring-tilt-x
+     values meaningful (cos 70deg == the old foreshortening). --ring-tilt-x
+     must stay < 90deg: cos(90deg) is 0 and the node-face 1/cos() below would
+     divide by zero. Centering lives on the `translate` property, not inside
+     `transform`: if a browser lacks cos()-in-calc the whole `transform` is
+     dropped to none, but `translate` survives, so the rings stay centered and
+     degrade to plain circles instead of piling up in the corner. */
+  translate: -50% -50%;
+  transform: rotateZ(var(--ring-rotate-z, 0deg))
+    scaleY(cos(var(--ring-tilt-x, 70deg)));
 }
 
 .homeHeroAtomRingOne {
@@ -1779,7 +1787,6 @@ div.location {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  transform-style: preserve-3d;
   transform: rotateZ(var(--orbit-angle, 0deg));
   will-change: transform;
   animation: homeHeroOrbit var(--orbit-duration, 18s) linear infinite;
@@ -1823,9 +1830,21 @@ div.location {
   position: absolute;
   top: 50%;
   left: 100%;
-  transform: translate(-50%, -50%) rotateZ(calc(var(--orbit-angle, 0deg) * -1))
-    rotateX(calc(var(--ring-tilt-x, 0deg) * -1))
-    rotateZ(calc(var(--ring-rotate-z, 0deg) * -1));
+  /* The parent ring's scaleY would squash this dot into a flat sliver, so
+     undo it in the ring's own (rotated) frame: rotate back by the orbit angle,
+     un-squash, rotate forward again -> a perfectly round dot.
+     The final scale() is the fake depth cue that replaces 3D perspective:
+     sin(orbit-angle) peaks as the node swings to the front of the ellipse, so
+     it grows toward the viewer and shrinks at the back, just like before.
+     Centering is on `translate` (same as the ring) so it survives if a browser
+     drops this transform for lack of cos()/sin(); in that same case the ring's
+     scaleY is also dropped, so the un-squash is correctly absent too and the
+     dot just rides a plain circle. */
+  translate: -50% -50%;
+  transform: rotateZ(calc(var(--orbit-angle, 0deg) * -1))
+    scaleY(calc(1 / cos(var(--ring-tilt-x, 70deg))))
+    rotateZ(var(--orbit-angle, 0deg))
+    scale(calc(1 + 0.32 * sin(var(--orbit-angle, 0deg))));
 }
 
 .homeHeroOrbitNode .homeHeroNodeFace {
