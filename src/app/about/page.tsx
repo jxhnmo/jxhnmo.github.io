@@ -53,6 +53,12 @@ export default function AboutPage() {
                 they&apos;ll bring. Let&apos;s make some magic happen, together!
               </p>
             </div>
+          </div>
+
+          <div className="col-md-3half pt-3 pb-3 text-center">
+            <div className="imageBorder">
+              <Image src={Me} alt="John Mo" width={320} height={320} />
+            </div>
 
             <div className="btnContainer">
               <button
@@ -73,12 +79,6 @@ export default function AboutPage() {
               >
                 &gt;&gt; projects
               </button>
-            </div>
-          </div>
-
-          <div className="col-md-3half pt-3 pb-3 text-center">
-            <div className="imageBorder">
-              <Image src={Me} alt="John Mo" width={320} height={320} />
             </div>
           </div>
         </div>

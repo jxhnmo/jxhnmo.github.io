@@ -56,17 +56,38 @@ export function Header() {
       const triggerCenter = triggerRect.left + triggerRect.width / 2 - rootRect.left;
       root.style.setProperty("--viewport-top", `${triggerBottom}px`);
       root.style.setProperty("--viewport-anchor-x", `${triggerCenter}px`);
+
+      // Radix derives --radix-navigation-menu-viewport-width/height from a
+      // `null` initial size via a ResizeObserver, so on the first open frame
+      // the var is unset. Chrome resolves it before paint; Safari/WebKit
+      // paints one frame at width:0 — and since the panel is centered with
+      // translateX(-50%), a zero-width box collapses to a point and then
+      // expands, revealing the content "sliding" open. We run inside a
+      // MutationObserver (pre-paint), so measure the open content ourselves
+      // and seed the size vars synchronously — the first painted frame is
+      // then already full-size. Radix overwrites these with identical values
+      // a tick later, so there's no conflict.
+      const viewport = root.querySelector<HTMLElement>(".NavigationMenuViewport");
+      const content = viewport?.firstElementChild as HTMLElement | null;
+      if (viewport && content && content.offsetWidth > 0) {
+        viewport.style.setProperty(
+          "--radix-navigation-menu-viewport-width",
+          `${content.offsetWidth}px`,
+        );
+        viewport.style.setProperty(
+          "--radix-navigation-menu-viewport-height",
+          `${content.offsetHeight}px`,
+        );
+      }
     };
 
     updateViewportOffset();
 
-    // On a fresh open (closed -> open), the viewport still carries the size
-    // of whichever menu was open last, so the width/height transition would
-    // animate from that stale size. Snap to the correct size without a
-    // transition on fresh opens; keep it for trigger-to-trigger moves.
+    // Keep the viewport anchored + sized under whichever trigger is open. On a
+    // fresh open (closed -> open) snap to the seeded size (no width/height
+    // tween from the previously open menu); keep the glide for trigger moves.
     let wasOpen = false;
     const handleMutation = () => {
-      updateViewportOffset();
       const viewport = root.querySelector<HTMLElement>(".NavigationMenuViewport");
       const isOpen = viewport?.getAttribute("data-state") === "open";
       if (viewport && isOpen && !wasOpen) {
@@ -76,6 +97,7 @@ export function Header() {
         );
       }
       wasOpen = isOpen;
+      updateViewportOffset();
     };
 
     const observer = new MutationObserver(handleMutation);
