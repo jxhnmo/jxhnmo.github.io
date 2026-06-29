@@ -738,15 +738,19 @@ body.hasOpenMobileMenu #page-container {
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.28),
     0 2px 8px rgba(0, 0, 0, 0.18);
-  /* Only animate the size as it resizes between triggers — never `left`,
-     or the box slides across the screen on first open. */
+  /* Glide the size as it resizes between triggers. The fresh-open Safari
+     slide (the panel expanding from a zero-width point) is fixed in JS by
+     seeding --radix-navigation-menu-viewport-width before the first paint;
+     `.snapSize` below then disables this transition for the one frame of a
+     fresh open so the box doesn't tween up from the previously open menu's
+     size. Never animate `left`/`transform` — that's what slides it sideways. */
   transition:
     width 300ms ease,
     height 300ms ease;
 }
 
-/* Set just before a fresh open so the box sizes to the new content
-   instantly instead of animating up from the previous menu's size. */
+/* Added on a fresh open (closed -> open) so the box snaps to the new menu's
+   seeded size instead of tweening from the last menu's size. */
 .NavigationMenuViewport.snapSize {
   transition: none;
 }
