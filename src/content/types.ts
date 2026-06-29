@@ -48,6 +48,8 @@ export type ExperienceItem = {
 export type ProjectSection = {
   heading: string;
   body: string;
+  links?: ContentLink[];
+  images?: ContentImage[];
 };
 
 export type ProjectItem = {

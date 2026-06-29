@@ -25,7 +25,7 @@ export const experienceItems: ExperienceItem[] = [
     company: "Morsl",
     role: "Founder",
     location: "Remote",
-    summary: "ring ring",
+    summary: "reviving connection",
     bullets: [],
     logo: { src: morsl, alt: "Morsl logo" },
   },
@@ -75,7 +75,7 @@ export const experienceItems: ExperienceItem[] = [
     role: "Game Developer Intern",
     location: "Los Angeles, CA",
     bullets: [
-      "Spearheaded a full IP prototype using Unreal Engine, UEFN, and Verse with Agile sprints.",
+      "Spearheaded a full IP prototype using Unreal Engine (UEFN/Verse) with Agile sprints",
       "Led programming, game balancing, playtesting, and documentation.",
     ],
     logo: { src: supersocial, alt: "Supersocial logo" },
@@ -87,7 +87,7 @@ export const experienceItems: ExperienceItem[] = [
     role: "Product Engineering Intern",
     location: "Remote",
     bullets: [
-      "Built internal full-stack applications automating travel and medical workflows while managing 100+ Jira tickets.",
+      "Built internal full-stack applications automating travel and medical workflows; managed 100+ Jira tickets.",
     ],
     logo: { src: mercyships, alt: "Mercy Ships logo" },
   },
@@ -98,7 +98,7 @@ export const experienceItems: ExperienceItem[] = [
     role: "Research Assistant",
     location: "Denton, TX",
     bullets: [
-      "Engineered Unity XR test environments with C# for psychological research and received a $4K research grant.",
+      "Engineered Unity XR test environments with C# for psychological research; awarded $4K research grant.",
     ],
     logo: { src: unt, alt: "UNT logo" },
   },

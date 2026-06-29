@@ -1,24 +1,48 @@
 import Image from "next/image";
-import type { ProjectItem } from "@/content/types";
+import type { ContentImage, ContentLink, ProjectItem } from "@/content/types";
+
+function LinkRun({ links }: { links: ContentLink[] }) {
+  return (
+    <>
+      {" "}
+      {links.map((link, index) => (
+        <span key={link.href}>
+          {index === 0 ? "Check out the " : " and "}
+          <a href={link.href} target="_blank" rel="noreferrer">
+            {link.label}
+          </a>
+          {index === links.length - 1 ? "!" : ""}
+        </span>
+      ))}
+    </>
+  );
+}
+
+function ImageRow({ images }: { images: ContentImage[] }) {
+  return (
+    <div className="imageBorder">
+      {images.map((image) => (
+        <Image
+          key={`${image.alt}-${image.src.src}`}
+          src={image.src}
+          alt={image.alt}
+          width={image.src.width}
+          height={image.src.height}
+          style={{
+            width: images.length > 2 ? "33%" : "50%",
+            height: "auto",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 function ProjectCard({ item }: { item: ProjectItem }) {
   return (
     <>
       {item.summary}
-      {item.links?.length ? (
-        <>
-          {" "}
-          {item.links.map((link, index) => (
-            <span key={link.href}>
-              {index === 0 ? "Check out the " : " and "}
-              <a href={link.href} target="_blank" rel="noreferrer">
-                {link.label}
-              </a>
-              {index === item.links!.length - 1 ? "!" : ""}
-            </span>
-          ))}
-        </>
-      ) : null}
+      {item.links?.length ? <LinkRun links={item.links} /> : null}
       {item.bullets?.length ? (
         <ul>
           {item.bullets.map((bullet) => (
@@ -41,6 +65,10 @@ function ProjectCard({ item }: { item: ProjectItem }) {
                 <b>{section.heading}</b>
                 <br />
                 {section.body}
+                {section.links?.length ? <LinkRun links={section.links} /> : null}
+                {section.images?.length ? (
+                  <ImageRow images={section.images} />
+                ) : null}
               </li>
             ))}
           </ul>
@@ -60,23 +88,7 @@ function ProjectCard({ item }: { item: ProjectItem }) {
           </ul>
         </>
       ) : null}
-      {item.images?.length ? (
-        <div className="imageBorder">
-          {item.images.map((image) => (
-            <Image
-              key={`${image.alt}-${image.src.src}`}
-              src={image.src}
-              alt={image.alt}
-              width={image.src.width}
-              height={image.src.height}
-              style={{
-                width: item.images!.length > 2 ? "33%" : "50%",
-                height: "auto",
-              }}
-            />
-          ))}
-        </div>
-      ) : null}
+      {item.images?.length ? <ImageRow images={item.images} /> : null}
     </>
   );
 }

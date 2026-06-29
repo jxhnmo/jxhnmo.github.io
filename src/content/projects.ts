@@ -27,7 +27,7 @@ export const projectItems: ProjectItem[] = [
       "Won 3rd out of 700+ with an AI-powered interactive DJ app that personalizes music curation.",
     bullets: [
       "Used computer vision, generative AI conversation topics, and real-time music APIs.",
-      "Built a dynamic frontend with React and Next.js.",
+      "Built the frontend using React and Next.js, enabling a dynamic and responsive user experience.",
     ],
     links: [
       { label: "Demo Video", href: "https://youtu.be/uXpFiFYlSw4" },
@@ -44,7 +44,7 @@ export const projectItems: ProjectItem[] = [
     group: "Dream Boy Games",
     title: "Game Studio Startup",
     summary:
-      "Built an incubation game studio on Fortnite, reaching 500+ CCU and 11,000+ plays.",
+      "Built an incubation game studio on Fortnite achieving 500+ CCU and 11,000+ plays.",
     images: [{ src: fn1, alt: "Fortnite game environment" }],
   },
   {
@@ -55,8 +55,9 @@ export const projectItems: ProjectItem[] = [
     summary:
       "Won 1st out of 800+ with a full-stack interview prep app that analyzes speech, expression, and eye contact.",
     bullets: [
-      "Built and fine-tuned ML models for facial recognition, expressions, eye tracking, and speech-to-text.",
-      "Integrated OpenAI APIs for processing, question generation, and improvement summaries.",
+      "Full stack application to help prepare people for interviews by analyzing speech, emotions, and eye contact, while asking potential interview questions about the role that they are applying for.",
+      "Backend using Pytorch, OpenCV, and SpeechRecognition, built, trained, and fine-tuned 4 ML models for facial recognition, expressions, eye tracking, and speech-to-text.",
+      "Integrated with OpenAI's API for data processing, question generation, and improvement summarisation.",
       "Displayed an animated Unity frontend model through React.",
     ],
     links: [
@@ -150,7 +151,7 @@ export const projectItems: ProjectItem[] = [
     group: "TAMU Datathon",
     title: "Skribblio Demon",
     summary:
-      "Placed 4th out of 50+ with a TensorFlow/Keras drawing classifier built on Quick, Draw! data and custom classes.",
+      "Placed 4th out of 50+ with a TensorFlow/Keras CNN drawing classifier built on Quick, Draw! data and custom classes.",
     links: [
       {
         label: "Devpost",
@@ -179,34 +180,56 @@ export const projectItems: ProjectItem[] = [
     group: "Aggies Invent",
     title: "Pitch Competitions",
     summary:
-      "Led multidisciplinary teams across industry-sponsored pitch competitions for AI, robotics, aviation, and security concepts.",
-    bullets: [
-      "Designed ScanX for x-ray contraband identification.",
-      "Designed VTOLtally Awesome, a long-endurance VTOL search and rescue aircraft concept.",
-      "Designed a radiation-detection swarm robot concept and Mediator, a credibility evaluation extension/app.",
-    ],
-    links: [
+      "Led multidisciplinary teams across industry-sponsored pitch competitions to solve real-world problem statements for AI, robotics, aviation, and security concepts.",
+    intro:
+      "These competitions allow me to work with a diverse team to solve real-world problems and practice presenting to industry professionals. I have led each team and worked on concepts and design, as well as the video filming and editing.",
+    sectionsHeading: "The competitions (newest first):",
+    sections: [
       {
-        label: "Sandia Presentation",
-        href: "https://youtu.be/hA0vzJ25pFo?si=1yFTgo1Im6vkVnnc&t=6836",
+        heading: "Sandia National Labs: AI/ML — Sep 12, 2023",
+        body: 'Designed "ScanX," deep-learning software that identifies illicit contraband in x-ray content and extrapolates individual items into an easy-to-understand grid.',
+        links: [
+          {
+            label: "Presentation",
+            href: "https://youtu.be/hA0vzJ25pFo?si=1yFTgo1Im6vkVnnc&t=6836",
+          },
+        ],
+        images: [{ src: sandia, alt: "ScanX pitch board" }],
       },
       {
-        label: "Los Alamos Presentation",
-        href: "https://www.youtube.com/live/CvsA9LDOP4Q?si=YlQZuKxbPMZqMODZ&t=2978",
+        heading: "Sandia National Labs: AI/ML — 3rd Place — Apr 16, 2023",
+        body: 'Designed "VTOLtally Awesome," a long-endurance VTOL-capable aircraft that could be used for search and rescue as well as reconnaissance.',
+        images: [{ src: usnavy, alt: "VTOL aircraft concept" }],
       },
       {
-        label: "NSA Presentation",
-        href: "https://www.youtube.com/live/jw86T8we1KM?si=aaFxC1TwVsBxEZhG&t=253",
+        heading: "Los Alamos National Laboratory: Nuclear Security — Oct 23, 2022",
+        body: 'Designed "Spy Kids," a spy-bot swarm that detects nuclear radiation and other potential threats.',
+        links: [
+          {
+            label: "Presentation",
+            href: "https://www.youtube.com/live/CvsA9LDOP4Q?si=YlQZuKxbPMZqMODZ&t=2978",
+          },
+        ],
+        images: [
+          { src: losalamos1, alt: "Los Alamos concept slide one" },
+          { src: losalamos2, alt: "Los Alamos concept slide two" },
+        ],
       },
-    ],
-    images: [
-      { src: sandia, alt: "ScanX pitch board" },
-      { src: usnavy, alt: "VTOL aircraft concept" },
-      { src: losalamos1, alt: "Los Alamos concept slide one" },
-      { src: losalamos2, alt: "Los Alamos concept slide two" },
-      { src: nsa1, alt: "NSA project slide" },
-      { src: nsa2, alt: "Mediator app screen one" },
-      { src: nsa3, alt: "Mediator app screen two" },
+      {
+        heading: "National Security Agency: Informational Viz — 4th Place — Sep 25, 2022",
+        body: 'Designed "Mediator," an extension and app that evaluates the credibility of social media posts through machine learning.',
+        links: [
+          {
+            label: "Presentation",
+            href: "https://www.youtube.com/live/jw86T8we1KM?si=aaFxC1TwVsBxEZhG&t=253",
+          },
+        ],
+        images: [
+          { src: nsa1, alt: "Mediator project slide" },
+          { src: nsa2, alt: "Mediator app screen one" },
+          { src: nsa3, alt: "Mediator app screen two" },
+        ],
+      },
     ],
   },
 ];
