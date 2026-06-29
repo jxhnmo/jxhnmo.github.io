@@ -320,9 +320,14 @@ a.links:hover {
 
 .btnContainer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btnContainer .btnSecondary {
+  width: 100%;
 }
 
 .justify-start {
@@ -1904,6 +1909,18 @@ div.location {
   .row {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  /* Stacked layout: even out the text→picture and picture→buttons gaps.
+     With the columns stacked, the row gap doubles up with each column's
+     pt-3/pb-3 padding, making the text→picture gap much larger than the
+     1rem margin above the buttons. Drop the row gap and match both to 2rem. */
+  .pageColumn .row {
+    gap: 0;
+  }
+
+  .btnContainer {
+    margin-top: 2rem;
   }
 
   /* Align the page title with the centered content column gutter on mobile */
