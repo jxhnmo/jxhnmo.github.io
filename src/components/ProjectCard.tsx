@@ -18,7 +18,20 @@ function LinkRun({ links }: { links: ContentLink[] }) {
   );
 }
 
+// Keep the `gap` in sync with `.imageBorder { gap }` in globals.css.
+const IMAGE_ROW_GAP_REM = 1;
+
 function ImageRow({ images }: { images: ContentImage[] }) {
+  const count = images.length;
+  const perRow = count > 2 ? 3 : count;
+  // Each image gives up its share of the row's total gap so a full row still
+  // fits on one line (e.g. two 50% images + a 1rem gap would otherwise wrap).
+  const gapShareRem = ((perRow - 1) / perRow) * IMAGE_ROW_GAP_REM;
+  const width =
+    count > 1
+      ? `calc(${(100 / perRow).toFixed(4)}% - ${gapShareRem.toFixed(4)}rem)`
+      : "50%";
+
   return (
     <div className="imageBorder">
       {images.map((image) => (
@@ -28,10 +41,7 @@ function ImageRow({ images }: { images: ContentImage[] }) {
           alt={image.alt}
           width={image.src.width}
           height={image.src.height}
-          style={{
-            width: images.length > 2 ? "33%" : "50%",
-            height: "auto",
-          }}
+          style={{ width, height: "auto" }}
         />
       ))}
     </div>

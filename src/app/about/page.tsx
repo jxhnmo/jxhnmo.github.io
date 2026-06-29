@@ -12,7 +12,7 @@ export default function AboutPage() {
       <h2>About</h2>
       <div className="pageColumn">
         <div className="row">
-          <div className="col-md-8half pt-3 pb-3">
+          <div className="col-md-8half pt-3">
             <h3 className="heads">Hey! I&apos;m John Mo :D</h3>
 
             <div id="darkTxt">
@@ -55,7 +55,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="col-md-3half pt-3 pb-3 text-center">
+          <div className="col-md-3half text-center">
             <div className="imageBorder">
               <Image src={Me} alt="John Mo" width={320} height={320} />
             </div>
