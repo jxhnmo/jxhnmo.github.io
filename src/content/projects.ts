@@ -93,7 +93,7 @@ export const projectItems: ProjectItem[] = [
   },
   {
     id: "react-portfolio",
-    year: "2023 - Present",
+    year: "2023-Present",
     group: "Personal Website",
     title: "2026 Revamp",
     summary:

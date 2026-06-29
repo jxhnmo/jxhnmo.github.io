@@ -1291,7 +1291,7 @@ body[data-theme="light"].hasOpenMobileMenu .footer {
   display: flex;
   align-items: center;
   gap: clamp(0.75rem, 2vw, 2rem);
-  font-size: clamp(0.85rem, 0.4vw + 0.6vh, 1rem);
+  font-size: clamp(1rem, 0.4vw + 0.9rem, 1.2rem);
   line-height: 1.35;
   text-align: left;
   color: var(--text-strong);
@@ -1386,10 +1386,13 @@ body[data-theme="light"].hasOpenMobileMenu .footer {
 }
 
 div.date {
-  flex: 0 0 96px;
+  /* Wide enough to hold the longest range ("2023 - Present") on one line at the
+     larger trigger font; nowrap stops awkward mid-token breaks like "2023-\n2024". */
+  flex: 0 0 120px;
   min-width: 0;
   text-align: left;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 div.name {
