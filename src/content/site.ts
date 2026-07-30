@@ -3,9 +3,9 @@ import type { NavItem, NavMenu } from "./types";
 
 export const siteConfig = {
   name: "John Mo",
-  title: "John Mo's Site",
+  title: "john mo's site",
   description:
-    "John Mo is a software engineer, builder, gamer, and food person based around startups, games, and applied AI.",
+    "John Mo is a software engineer, builder, gamer, and foodie based in San Francisco working on startups, games, and applied AI.",
   url: "https://jxhnmo.github.io",
   email: "peikaimo@gmail.com",
   linkedIn: "https://www.linkedin.com/in/john-mo/",
