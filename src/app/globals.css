@@ -38,6 +38,19 @@ body {
   /* Centered content column width */
   --content-max: 1320px;
 
+  /* Total horizontal gutter the content column leaves around itself, and the
+     resulting distance from the page edge to the column's edge. Anything that
+     must line up with page content but sits outside .pageColumn (the page
+     titles) insets by --page-inset rather than a fixed or percentage value, so
+     it tracks the column at every width. The navbar deliberately opts out and
+     stays full-bleed. The `100%` inside resolves against whichever element uses
+     it — always full page width here. */
+  --page-gutter: clamp(1.5rem, 4vw, 3rem);
+  --page-inset: max(
+    calc(var(--page-gutter) / 2),
+    calc((100% - var(--content-max)) / 2)
+  );
+
   /* Gap between the navbar and the top of page content (shared across pages) */
   --page-top-gap: clamp(0.5rem, 1.5vw, 1.25rem);
 
@@ -221,7 +234,12 @@ h2 {
 h1.pageTitle {
   font-weight: 600;
   font-size: clamp(1.9rem, 3.5vw, 3rem);
-  margin: 0 5% 8px;
+  /* Sits outside .pageColumn (it's a direct child of #page-container), so it
+     has to reproduce the column's inset itself. A percentage margin used to do
+     this, but a percentage tracks the viewport while the column stops growing
+     at --content-max, so the title drifted further left of its own content the
+     wider the window got. */
+  margin: 0 var(--page-inset) 8px;
   line-height: 1.3;
 }
 
@@ -329,7 +347,7 @@ a.links:hover {
 }
 
 .pageColumn {
-  width: min(var(--content-max), calc(100% - clamp(1.5rem, 4vw, 3rem)));
+  width: min(var(--content-max), calc(100% - var(--page-gutter)));
   margin-inline: auto;
 }
 
@@ -1577,7 +1595,7 @@ div.location {
   justify-content: center;
   align-items: center;
   gap: clamp(1.75rem, 3vw, 3.25rem);
-  width: min(1500px, calc(100% - clamp(1.5rem, 4vw, 3rem)));
+  width: min(1500px, calc(100% - var(--page-gutter)));
   min-height: min(820px, calc(100vh - 160px));
   margin: 0 auto;
 }
@@ -2037,12 +2055,6 @@ div.location {
      gap equal to the picture→buttons gap. */
   .pageColumn .row {
     gap: 0;
-  }
-
-  /* Align the page title with the centered content column gutter on mobile */
-  #page-container > h1.pageTitle,
-  #page-container > h2 {
-    margin-inline: clamp(0.75rem, 2vw, 1.5rem);
   }
 }
 
