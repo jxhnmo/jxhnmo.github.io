@@ -35,7 +35,7 @@
     "verify:assets": "python3 scripts/optimize-images.py --check && node scripts/generate-og.mjs --check",
     "check": "npm run verify:assets && npm run format:check && npm run typecheck && npm run lint && npm run build",
     "predeploy": "rm -rf out/og-preview",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out --nojekyll"
   },
   "browserslist": {
     "production": [
