@@ -6,12 +6,13 @@ import { siteConfig } from "./site";
 export type RouteSeo = {
   path: string;
   /**
-   * The page's name in proper case ("About"). Used verbatim in share titles and
-   * lowercased for the document title; see shareTitle() and documentTitle().
+   * The page's name in proper case ("About"). Lowercased and suffixed by
+   * pageTitle(), which is the one title every tag uses.
+   *
+   * The home entry is the exception: its title is the bare site title, so its
+   * value here is a label only and appears in no output.
    */
   title: string;
-  /** Home page: its title is a full share title already, not a page name. */
-  useTitleAsIs?: boolean;
   description: string;
   sitemapPriority?: number;
   noindex?: boolean;
@@ -70,39 +71,94 @@ export function ogImagePath(routePath: string): string {
 }
 
 /**
- * Full title as it appears in a share card (og:title, twitter:title). Proper
- * case, and suffixed with the person's name rather than the site's, because a
- * platform prints this as an attribution line in a feed.
+ * The page's one title: the <title> element, og:title, and twitter:title all get
+ * this exact string. Lowercase, because that is the site's house style —
+ * "john mo's site", "about | john mo's site".
  *
- * Deliberately different from documentTitle() below. These were one value; the
- * lowercase house style is wanted in a browser tab and not in a LinkedIn feed,
- * and og:title is a separate tag from <title>, so they can differ.
- */
-function shareTitle(route: RouteSeo): string {
-  return route.useTitleAsIs
-    ? route.title
-    : `${route.title} | ${siteConfig.name}`;
-}
-
-/**
- * The <title> element: browser tab, and the link text Google prints in results.
- * Lowercase, because that is the site's house style — "john mo's site",
- * "about | john mo's site".
- *
- * Note that <title> does both of those jobs with one string, so this is not a
- * purely cosmetic choice: it is also the strongest on-page signal of what the
- * page is. The homepage trades the "software engineer" keyword here for the
- * house style, and keeps the keyword in og:title and in the meta description.
+ * These were briefly two values, a lowercase document title and a proper-case
+ * share title, on the theory that lowercase reads as a typo in a feed. Having a
+ * link's title change depending on where it was pasted was the worse of the two
+ * problems, so the house style now wins everywhere. og:site_name is still proper
+ * case — that is a name, not a title. What the split cost, and the only thing
+ * worth reconsidering it for, is the homepage: its share title was
+ * "John Mo — Software Engineer", and now it is "john mo's site", so the
+ * "software engineer" keyword lives in the meta description and the OG card
+ * alone.
  *
  * Inner pages lowercase their route title. Every current title is one ordinary
  * word, so that is safe; a route whose name carries meaningful capitals (an
  * acronym, a product name) should get an explicit lowercase form in routes.json
  * rather than be mangled here.
  */
-function documentTitle(route: RouteSeo): string {
+function pageTitle(route: RouteSeo): string {
   return route.path === "/"
     ? siteConfig.title
     : `${route.title.toLowerCase()} | ${siteConfig.title}`;
+}
+
+/**
+ * Every tag value a link scraper will read for a route, resolved to the exact
+ * strings that end up in the HTML.
+ *
+ * This exists so buildMetadata() below and the /og-preview unfurl mock are
+ * driven by one computation rather than two. The preview's whole job is to show
+ * what Discord or LinkedIn will show; if it composed its own titles it could
+ * agree with itself while disagreeing with the shipped page.
+ */
+export type ShareMeta = {
+  path: string;
+  /** One string for <title>, og:title, and twitter:title alike. */
+  title: string;
+  description: string;
+  /** Absolute, trailing-slashed: both rel=canonical and og:url. */
+  url: string;
+  siteName: string;
+  type: string;
+  locale: string;
+  image: {
+    /** Site-root-relative, e.g. `/about/og.png` — what <img> here wants. */
+    path: string;
+    /** Absolute — what scrapers fetch. */
+    url: string;
+    width: number;
+    height: number;
+    alt: string;
+    type: string;
+  };
+  twitterCard: "summary_large_image";
+  /** The robots directive, or null when no tag is emitted (i.e. indexable). */
+  robots: string | null;
+};
+
+export function shareMeta(path: string): ShareMeta {
+  const route = getRoute(path);
+  const title = pageTitle(route);
+  const imagePath = ogImagePath(route.path);
+
+  return {
+    path: route.path,
+    title,
+    description: route.description,
+    url: absoluteUrl(route.path),
+    // The person's name, not siteConfig.title: og:site_name is the attribution
+    // line a platform prints beside the card, and "john mo's site" is a title
+    // rather than a name. This is the one place proper case survives.
+    siteName: siteConfig.name,
+    type: "website",
+    locale: "en_US",
+    image: {
+      path: imagePath,
+      url: assetUrl(imagePath),
+      width: 1200,
+      height: 630,
+      // Conditional: the brand card has no blurb, and appending it
+      // unconditionally left the homepage's alt text ending in a dangling " — ".
+      alt: route.og.blurb ? `${title} — ${route.og.blurb}` : title,
+      type: "image/png",
+    },
+    twitterCard: "summary_large_image",
+    robots: route.noindex ? "noindex, follow" : null,
+  };
 }
 
 /**
@@ -111,45 +167,40 @@ function documentTitle(route: RouteSeo): string {
  * page claim the homepage), and the route's pre-rendered OG card.
  */
 export function buildMetadata(path: string): Metadata {
-  const route = getRoute(path);
-  const url = absoluteUrl(route.path);
-  const title = shareTitle(route);
+  const meta = shareMeta(path);
   const image = {
-    url: ogImagePath(route.path),
-    width: 1200,
-    height: 630,
-    // Conditional: the brand card has no blurb, and appending it unconditionally
-    // left the homepage's alt text ending in a dangling " — ".
-    alt: route.og.blurb ? `${title} — ${route.og.blurb}` : title,
-    type: "image/png",
+    url: meta.image.url,
+    width: meta.image.width,
+    height: meta.image.height,
+    alt: meta.image.alt,
+    type: meta.image.type,
   };
 
   return {
-    // Always absolute: documentTitle() composes the whole string, so the
-    // layout's `%s | ...` template must not also be applied on top of it.
-    title: { absolute: documentTitle(route) },
-    description: route.description,
-    alternates: { canonical: url },
+    // Always absolute: pageTitle() composes the whole string, so the layout's
+    // `%s | ...` template must not also be applied on top of it.
+    title: { absolute: meta.title },
+    description: meta.description,
+    alternates: { canonical: meta.url },
     openGraph: {
-      title,
-      description: route.description,
-      url,
-      // The person's name, not siteConfig.title. og:site_name is the attribution
-      // label a platform prints beside the card in a feed, where the lowercase
-      // "john mo's site" reads as a typo rather than as a house style. The
-      // lowercase form is still the browser-tab title (see layout.tsx).
-      siteName: siteConfig.name,
+      title: meta.title,
+      description: meta.description,
+      url: meta.url,
+      siteName: meta.siteName,
       type: "website",
-      locale: "en_US",
+      locale: meta.locale,
       images: [image],
     },
     twitter: {
-      card: "summary_large_image",
-      title,
-      description: route.description,
+      card: meta.twitterCard,
+      title: meta.title,
+      description: meta.description,
       images: [image],
     },
-    ...(route.noindex ? { robots: { index: false, follow: true } } : {}),
+    // Passed through as the string, not rebuilt as `{ index: false, follow: true }`:
+    // that form meant /og-preview could print a directive the page did not emit
+    // if the two ever disagreed. Next accepts the literal content value.
+    ...(meta.robots ? { robots: meta.robots } : {}),
   };
 }
 

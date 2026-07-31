@@ -126,26 +126,30 @@ Two naming details that are deliberate and easy to "fix" by mistake:
 - The `/` entry's `description` is the site description. It is both the homepage
   `<meta name="description">` and the Person JSON-LD `description`. There is no
   separate `siteConfig.description`; when there was, the two drifted.
-- Titles are split in two on purpose, and the lowercase is house style, not a
-  typo:
+- One title does every job, and the lowercase is house style, not a typo:
 
-  | Tag                     | Homepage                      | Inner page                | Source             |
-  | ----------------------- | ----------------------------- | ------------------------- | ------------------ |
-  | `<title>` (tab, Google) | `john mo's site`              | `about \| john mo's site` | `siteConfig.title` |
-  | `og:title` (share card) | `John Mo — Software Engineer` | `About \| John Mo`        | `siteConfig.name`  |
-  | `og:site_name`          | `John Mo`                     | `John Mo`                 | `siteConfig.name`  |
+  | Tag                                    | Homepage         | Inner page                | Source             |
+  | -------------------------------------- | ---------------- | ------------------------- | ------------------ |
+  | `<title>`, `og:title`, `twitter:title` | `john mo's site` | `about \| john mo's site` | `siteConfig.title` |
+  | `og:site_name`                         | `John Mo`        | `John Mo`                 | `siteConfig.name`  |
 
-  `<title>` is one string doing two jobs — browser tab and the blue link in
-  search results — so the homepage trades the "software engineer" keyword there
-  for the house style, and keeps it in `og:title` and the meta description.
-  Share tags stay proper case because a platform prints them as an attribution
-  line in a feed.
+  These were briefly two strings — lowercase for the browser tab, proper case for
+  share cards, on the theory that lowercase reads as a typo in a feed. A link
+  whose title changed depending on where it was pasted was the worse of the two
+  problems. `og:site_name` is the one tag still in proper case, because that is a
+  name rather than a title. The cost of collapsing them is the homepage: its
+  share title used to be `John Mo — Software Engineer`, so the "software
+  engineer" keyword now lives in the meta description and the card art only.
 
 ### /og-preview
 
 `/og-preview` is a dev-only contact sheet of all six cards over switchable
-backdrops. It is `noindex` and absent from the sitemap, and it is deleted from
-`out/` by both `postbuild` and `predeploy`, so neither `npm run build` nor
+backdrops, plus a second section that mocks each link as a Discord paste beside
+the tag values it is built from — the check for whether a title or description
+actually reads well in a feed. Both sections resolve their strings through
+`shareMeta()`, the function `buildMetadata()` uses, so the preview cannot show
+copy the pages do not serve. It is `noindex` and absent from the sitemap, and it
+is deleted from `out/` by both `postbuild` and `predeploy`, so neither `npm run build` nor
 `npm run deploy` can publish it. A bare `next build` invoked directly (bypassing
 npm's lifecycle scripts) would still emit it.
 

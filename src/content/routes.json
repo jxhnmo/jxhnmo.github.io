@@ -3,8 +3,8 @@
   "routes": [
     {
       "path": "/",
-      "title": "John Mo — Software Engineer",
-      "useTitleAsIs": true,
+      "$titleComment": "A label only. Home's title is the bare site title from site.ts, so nothing reads this field; every other route composes \"<title lowercased> | john mo's site\".",
+      "title": "Home",
       "description": "John Mo is a software engineer, builder, gamer, and foodie based in San Francisco working on startups, games, and applied AI.",
       "sitemapPriority": 1.0,
       "$ogComment": "Home deliberately leaves eyebrow/blurb empty: the renderer skips empty fields, collapsing the card to logo + bar + name as a clean brand card. Fill either in to get the same treatment as the inner pages.",
@@ -17,7 +17,7 @@
     {
       "path": "/about",
       "title": "About",
-      "description": "Houston-born and raised across Oman, Brunei, China, South Korea, and Singapore. CS grad, ex-collegiate Rainbow Six player, BJJ practitioner, and relentless foodie.",
+      "description": "Houston-born and raised across Oman, Brunei, China, South Korea, and Singapore. CS grad, gamer, martial artist, and relentless foodie.",
       "sitemapPriority": 0.8,
       "og": {
         "eyebrow": "John Mo",
@@ -39,7 +39,7 @@
     {
       "path": "/projects",
       "title": "Projects",
-      "description": "Hackathon wins, game studio work, and national lab pitch competitions — DJ Bestie, iNterview Pro, Sandia, Los Alamos, and NSA data visualization.",
+      "description": "Hackathon wins, game studio work, and pitch competitions — DJ Bestie, iNterview Pro, Sandia, Los Alamos, NSA, and more.",
       "sitemapPriority": 0.9,
       "og": {
         "eyebrow": "John Mo",
@@ -61,7 +61,7 @@
     {
       "path": "/resume",
       "title": "Resume",
-      "description": "John Mo's resume, behind a soft passcode gate. Contact me for the code.",
+      "description": "John Mo's resume. Contact me for the code.",
       "noindex": true,
       "og": {
         "eyebrow": "John Mo",

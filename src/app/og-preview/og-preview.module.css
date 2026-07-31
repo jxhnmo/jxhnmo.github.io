@@ -11,6 +11,18 @@
   padding-inline: clamp(0.75rem, 2vw, 1.5rem);
 }
 
+.sectionTitle {
+  margin: 2.5rem 0 0.75rem;
+  color: var(--text-strong);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sectionTitle:first-of-type {
+  margin-top: 0;
+}
+
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -82,17 +94,21 @@
 
 /* `:has()` lets the radios drive the backdrop with no client component.
    Matched on [value], not #id — CSS Modules rewrites ID selectors, which is why
-   an earlier version of this silently did nothing. */
-.page:has(input[value="white"]:checked) .grid {
+   an earlier version of this silently did nothing.
+
+   [name] is part of every selector because the unfurl section's theme radios use
+   value="dark" too: matching on the value alone made the client theme switch
+   repaint the contact sheet behind it. */
+.page:has(input[name="bg"][value="white"]:checked) .grid {
   --sheet-bg: #ffffff;
 }
 
-.page:has(input[value="dark"]:checked) .grid {
+.page:has(input[name="bg"][value="dark"]:checked) .grid {
   --sheet-bg: #101014;
 }
 
 /* Checkerboard reveals the transparent surround as real transparency. */
-.page:has(input[value="checker"]:checked) .grid img {
+.page:has(input[name="bg"][value="checker"]:checked) .grid img {
   background-image:
     linear-gradient(
       45deg,
@@ -141,4 +157,206 @@
   color: #b00020;
   font-style: normal;
   font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+   Unfurl mock: what the link looks like pasted into a chat client, beside the
+   tags that produce it. Hard-coded hexes rather than the site's theme tokens on
+   purpose — these are Discord's colours, and they must not follow this site's
+   light/dark mode. The radios drive them instead.
+   --------------------------------------------------------------------------- */
+
+.unfurls {
+  display: grid;
+  gap: 2.5rem;
+}
+
+/* 540px is not arbitrary: it is the 432px embed plus the avatar column and the
+   client's own padding, so the mock is never the thing that decides where the
+   description wraps. Narrower and the embed shrinks, which is exactly the
+   mistake this page exists to catch. */
+.unfurl {
+  display: grid;
+  grid-template-columns: minmax(0, 540px) minmax(0, 1fr);
+  gap: 0.75rem 1.75rem;
+  align-items: start;
+}
+
+.unfurlTitle {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--glass-border);
+  color: var(--text-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .unfurl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.client {
+  --chat-bg: #313338;
+  --chat-author: #f2f3f5;
+  --chat-stamp: #949ba4;
+  --chat-link: #00a8fc;
+  --chat-body: #dbdee1;
+  --embed-bg: #2b2d31;
+  /* Discord's embed always reserves this 4px edge. It takes the site's
+     theme-color when one is set; grey is what "no colour declared" looks like. */
+  --embed-edge: #4e5058;
+  --avatar-bg: #5865f2;
+
+  padding: 1rem;
+  border-radius: 10px;
+  background: var(--chat-bg);
+  /* Approximating Discord's gg sans, which we obviously do not ship. */
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.page:has(input[name="client-theme"][value="light"]:checked) .client {
+  --chat-bg: #ffffff;
+  --chat-author: #060607;
+  --chat-stamp: #5c5e66;
+  --chat-link: #006ce7;
+  --chat-body: #4e5058;
+  --embed-bg: #f2f3f5;
+  --embed-edge: #c4c9ce;
+}
+
+.message {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.avatar {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--avatar-bg);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.messageBody {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+}
+
+.messageHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.author {
+  color: var(--chat-author);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.stamp {
+  color: var(--chat-stamp);
+  font-size: 0.75rem;
+}
+
+.pastedLink {
+  color: var(--chat-link);
+  font-size: 1rem;
+  line-height: 1.375;
+  overflow-wrap: anywhere;
+}
+
+.embed {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  /* Fixed, not fit-to-content: Discord gives a large-image embed a 432px content
+     column regardless of how short the copy is, and the wrap point is the whole
+     point of looking at this. */
+  width: 432px;
+  max-width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.6rem 1rem 1rem 0.75rem;
+  border-left: 4px solid var(--embed-edge);
+  border-radius: 4px;
+  background: var(--embed-bg);
+}
+
+.embedSite {
+  color: var(--chat-body);
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+
+.embedTitle {
+  color: var(--chat-link);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.375;
+}
+
+.embedDescription {
+  color: var(--chat-body);
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  white-space: pre-wrap;
+}
+
+.embedImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.tags {
+  display: grid;
+  gap: 0.3rem 0;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.tagRow {
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.tagRow dt {
+  color: var(--text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.tagRow dd {
+  margin: 0;
+  color: var(--text-body);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+  .tagRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
 }
