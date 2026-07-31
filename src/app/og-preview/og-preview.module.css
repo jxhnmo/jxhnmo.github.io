@@ -1,0 +1,144 @@
+/* Dev-only styles for the OG contact sheet. Deliberately plain — this page is a
+   tool, not part of the site's design. */
+
+.page {
+  --sheet-bg: #6f6f76;
+}
+
+.wrap {
+  width: min(1400px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+}
+
+.legend {
+  padding-inline: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.control input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.control span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 0.85rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  color: var(--text-body);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.control input:checked + span {
+  color: var(--text-strong);
+  border-color: var(--glass-border-hi);
+  background: var(--glass-bg-strong);
+}
+
+.control input:focus-visible + span {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.note {
+  margin: 0 0 1.25rem;
+  max-width: 70ch;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.note code {
+  font-size: 0.85em;
+  color: var(--text-body);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr));
+  padding: 1.25rem;
+  border-radius: 14px;
+  background: var(--sheet-bg);
+}
+
+/* `:has()` lets the radios drive the backdrop with no client component.
+   Matched on [value], not #id — CSS Modules rewrites ID selectors, which is why
+   an earlier version of this silently did nothing. */
+.page:has(input[value="white"]:checked) .grid {
+  --sheet-bg: #ffffff;
+}
+
+.page:has(input[value="dark"]:checked) .grid {
+  --sheet-bg: #101014;
+}
+
+/* Checkerboard reveals the transparent surround as real transparency. */
+.page:has(input[value="checker"]:checked) .grid img {
+  background-image:
+    linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.14) 25%,
+      transparent 25% 75%,
+      rgba(0, 0, 0, 0.14) 75%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.14) 25%,
+      transparent 25% 75%,
+      rgba(0, 0, 0, 0.14) 75%
+    );
+  background-size: 24px 24px;
+  background-position:
+    0 0,
+    12px 12px;
+}
+
+.card {
+  margin: 0;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: baseline;
+  margin-top: 0.5rem;
+  color: #14141a;
+  font-size: 0.85rem;
+}
+
+.card figcaption code {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+.missing {
+  color: #b00020;
+  font-style: normal;
+  font-weight: 600;
+}
