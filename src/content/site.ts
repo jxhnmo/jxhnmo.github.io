@@ -4,9 +4,13 @@ import type { NavItem, NavMenu } from "./types";
 export const siteConfig = {
   name: "John Mo",
   /**
-   * Browser-tab title only (the App Router `title.default`, so in practice just
-   * the 404 page) — lowercase on purpose. `og:site_name` deliberately uses
-   * `name` instead; see the note in seo.ts.
+   * The site's name in browser tabs and search results — lowercase on purpose,
+   * it is the house style. Every page's <title> ends in it: "john mo's site",
+   * "about | john mo's site".
+   *
+   * Share cards deliberately do NOT use it: `og:site_name` and `og:title` use
+   * proper case via `name`, because a platform prints those as an attribution
+   * line in a feed where lowercase reads as a typo. See seo.ts.
    *
    * There is no `description` here any more: the site description now lives once,
    * as the "/" entry in routes.json, and feeds both the homepage

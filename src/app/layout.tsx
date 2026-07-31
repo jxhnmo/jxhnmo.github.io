@@ -35,11 +35,18 @@ export const metadata: Metadata = {
   // og:url, and og:image are page-specific rather than inherited — previously
   // every page advertised the homepage URL.
   ...siteDefaultMetadata(),
-  // Must come after the spread: buildMetadata returns an absolute title, which
-  // would drop the template that renders child titles as "Projects | John Mo".
+  // Must come after the spread, which carries an absolute title that would
+  // otherwise replace this whole object.
+  //
+  // `default` is what the 404 page shows. The template is only a fallback for a
+  // route that sets a bare string title instead of going through
+  // buildMetadata() — every real route uses an absolute title, so in practice it
+  // never fires. It suffixes the site title rather than the person's name so
+  // that if it ever does fire, it matches the lowercase house style of every
+  // other tab.
   title: {
     default: siteConfig.title,
-    template: `%s | ${siteConfig.name}`,
+    template: `%s | ${siteConfig.title}`,
   },
   icons: {
     icon: "/jm_logo.ico",

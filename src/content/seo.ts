@@ -5,8 +5,12 @@ import { siteConfig } from "./site";
 
 export type RouteSeo = {
   path: string;
+  /**
+   * The page's name in proper case ("About"). Used verbatim in share titles and
+   * lowercased for the document title; see shareTitle() and documentTitle().
+   */
   title: string;
-  /** Home page: use the title verbatim instead of the `%s | John Mo` template. */
+  /** Home page: its title is a full share title already, not a page name. */
   useTitleAsIs?: boolean;
   description: string;
   sitemapPriority?: number;
@@ -65,11 +69,40 @@ export function ogImagePath(routePath: string): string {
   return `${canonicalPath(routePath)}og.png`;
 }
 
-/** Full title as it appears in a share card, mirroring the layout's template. */
+/**
+ * Full title as it appears in a share card (og:title, twitter:title). Proper
+ * case, and suffixed with the person's name rather than the site's, because a
+ * platform prints this as an attribution line in a feed.
+ *
+ * Deliberately different from documentTitle() below. These were one value; the
+ * lowercase house style is wanted in a browser tab and not in a LinkedIn feed,
+ * and og:title is a separate tag from <title>, so they can differ.
+ */
 function shareTitle(route: RouteSeo): string {
   return route.useTitleAsIs
     ? route.title
     : `${route.title} | ${siteConfig.name}`;
+}
+
+/**
+ * The <title> element: browser tab, and the link text Google prints in results.
+ * Lowercase, because that is the site's house style — "john mo's site",
+ * "about | john mo's site".
+ *
+ * Note that <title> does both of those jobs with one string, so this is not a
+ * purely cosmetic choice: it is also the strongest on-page signal of what the
+ * page is. The homepage trades the "software engineer" keyword here for the
+ * house style, and keeps the keyword in og:title and in the meta description.
+ *
+ * Inner pages lowercase their route title. Every current title is one ordinary
+ * word, so that is safe; a route whose name carries meaningful capitals (an
+ * acronym, a product name) should get an explicit lowercase form in routes.json
+ * rather than be mangled here.
+ */
+function documentTitle(route: RouteSeo): string {
+  return route.path === "/"
+    ? siteConfig.title
+    : `${route.title.toLowerCase()} | ${siteConfig.title}`;
 }
 
 /**
@@ -92,7 +125,9 @@ export function buildMetadata(path: string): Metadata {
   };
 
   return {
-    title: route.useTitleAsIs ? { absolute: route.title } : route.title,
+    // Always absolute: documentTitle() composes the whole string, so the
+    // layout's `%s | ...` template must not also be applied on top of it.
+    title: { absolute: documentTitle(route) },
     description: route.description,
     alternates: { canonical: url },
     openGraph: {
