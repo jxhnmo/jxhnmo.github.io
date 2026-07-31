@@ -1,7 +1,11 @@
 "use client";
 
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import { CaretDownIcon, Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import {
+  CaretDownIcon,
+  Cross2Icon,
+  HamburgerMenuIcon,
+} from "@radix-ui/react-icons";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
@@ -53,7 +57,8 @@ export function Header() {
       const rootRect = root.getBoundingClientRect();
       const triggerRect = trigger.getBoundingClientRect();
       const triggerBottom = triggerRect.bottom - rootRect.top;
-      const triggerCenter = triggerRect.left + triggerRect.width / 2 - rootRect.left;
+      const triggerCenter =
+        triggerRect.left + triggerRect.width / 2 - rootRect.left;
       root.style.setProperty("--viewport-top", `${triggerBottom}px`);
       root.style.setProperty("--viewport-anchor-x", `${triggerCenter}px`);
 
@@ -67,7 +72,9 @@ export function Header() {
       // and seed the size vars synchronously — the first painted frame is
       // then already full-size. Radix overwrites these with identical values
       // a tick later, so there's no conflict.
-      const viewport = root.querySelector<HTMLElement>(".NavigationMenuViewport");
+      const viewport = root.querySelector<HTMLElement>(
+        ".NavigationMenuViewport",
+      );
       const content = viewport?.firstElementChild as HTMLElement | null;
       if (viewport && content && content.offsetWidth > 0) {
         viewport.style.setProperty(
@@ -88,7 +95,9 @@ export function Header() {
     // tween from the previously open menu); keep the glide for trigger moves.
     let wasOpen = false;
     const handleMutation = () => {
-      const viewport = root.querySelector<HTMLElement>(".NavigationMenuViewport");
+      const viewport = root.querySelector<HTMLElement>(
+        ".NavigationMenuViewport",
+      );
       const isOpen = viewport?.getAttribute("data-state") === "open";
       if (viewport && isOpen && !wasOpen) {
         viewport.classList.add("snapSize");
@@ -118,7 +127,7 @@ export function Header() {
       wasOpenRef.current = true;
       const overlay = overlayRef.current;
       const firstFocusable = overlay?.querySelector<HTMLElement>(
-        'a[href], button:not([disabled])',
+        "a[href], button:not([disabled])",
       );
       firstFocusable?.focus();
     } else if (wasOpenRef.current) {
@@ -190,8 +199,12 @@ export function Header() {
         <button
           type="button"
           ref={burgerButtonRef}
-          className={classNames("MobileMenuButton", { isOpen: isMobileMenuOpen })}
-          aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          className={classNames("MobileMenuButton", {
+            isOpen: isMobileMenuOpen,
+          })}
+          aria-label={
+            isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={isMobileMenuOpen}
           aria-controls="site-nav-overlay"
           onClick={() => setIsMobileMenuOpen((open) => !open)}
@@ -273,78 +286,78 @@ export function Header() {
         <div className="MobileNavOverlayInner">
           <div className="MobileNavBody">
             <nav className="MobileNavSections" aria-label="Site sections">
-            {navMenus.map((menu) => {
-              const subItems = [
-                ...(menu.callout
-                  ? [{ label: menu.callout.label, href: menu.callout.href }]
-                  : []),
-                ...menu.items.filter((item) => item.href !== menu.href),
-              ];
-              return (
-                <section key={menu.href} className="MobileNavSection">
-                  <Link
-                    href={menu.href}
-                    className="MobileNavSectionHeading"
-                    onClick={closeMobileMenu}
-                  >
-                    {menu.label}
-                  </Link>
-                  {subItems.length > 0 ? (
-                    <ul className="MobileNavSubList">
-                      {subItems.map((item) => (
-                        <li key={item.href}>
-                          <Link
-                            href={item.href}
-                            className="MobileNavSubLink"
-                            onClick={closeMobileMenu}
-                          >
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </section>
-              );
-            })}
+              {navMenus.map((menu) => {
+                const subItems = [
+                  ...(menu.callout
+                    ? [{ label: menu.callout.label, href: menu.callout.href }]
+                    : []),
+                  ...menu.items.filter((item) => item.href !== menu.href),
+                ];
+                return (
+                  <section key={menu.href} className="MobileNavSection">
+                    <Link
+                      href={menu.href}
+                      className="MobileNavSectionHeading"
+                      onClick={closeMobileMenu}
+                    >
+                      {menu.label}
+                    </Link>
+                    {subItems.length > 0 ? (
+                      <ul className="MobileNavSubList">
+                        {subItems.map((item) => (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              className="MobileNavSubLink"
+                              onClick={closeMobileMenu}
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </section>
+                );
+              })}
 
-            <Link
-              href="/projects"
-              className="MobileNavSectionHeading MobileNavStandalone"
-              onClick={closeMobileMenu}
-            >
-              Projects
-            </Link>
-          </nav>
-
-          <div className="MobileNavFooter">
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="MobileNavContact"
-              onClick={closeMobileMenu}
-            >
-              <svg
-                className="MobileNavContactIcon"
-                viewBox="0 0 24 24"
-                width="20"
-                height="20"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
+              <Link
+                href="/projects"
+                className="MobileNavSectionHeading MobileNavStandalone"
+                onClick={closeMobileMenu}
               >
-                <rect x="3" y="5" width="18" height="14" rx="2.5" />
-                <path d="m4 7 8 6 8-6" />
-              </svg>
-              {siteConfig.email}
-            </a>
-            <div className="MobileNavTheme">
-              <span className="MobileNavThemeLabel">Theme</span>
-              <ThemeToggle />
+                Projects
+              </Link>
+            </nav>
+
+            <div className="MobileNavFooter">
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="MobileNavContact"
+                onClick={closeMobileMenu}
+              >
+                <svg
+                  className="MobileNavContactIcon"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="2.5" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+                {siteConfig.email}
+              </a>
+              <div className="MobileNavTheme">
+                <span className="MobileNavThemeLabel">Theme</span>
+                <ThemeToggle />
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>

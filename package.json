@@ -14,17 +14,25 @@
     "classnames": "^2.5.1",
     "next": "^16.2.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-social-icons": "^6.26.0"
+    "react-dom": "^19.0.0"
   },
+  "_packageManagerComment": "npm is the only package manager here, and package-lock.json is the only lockfile. The repo previously tracked all three of package-lock.json, yarn.lock, and pnpm-lock.yaml; they drifted, and pnpm-lock.yaml sat five weeks stale still resolving a dependency that had been removed. Declaring it here keeps a stray `yarn add` from reintroducing a second lockfile. Recover the deleted ones with `git show <sha>:yarn.lock` if ever needed.",
+  "packageManager": "npm@11.6.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "rm -rf out/og-preview",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
-    "check": "npm run typecheck && npm run lint && npm run build",
+    "format:check": "prettier --check .",
+    "images": "python3 scripts/optimize-images.py",
+    "og": "node scripts/generate-og.mjs && python3 scripts/optimize-images.py",
+    "og:watch": "node --watch-path=scripts/generate-og.mjs --watch-path=src/content/routes.json scripts/generate-og.mjs",
+    "verify:assets": "python3 scripts/optimize-images.py --check && node scripts/generate-og.mjs --check",
+    "check": "npm run verify:assets && npm run format:check && npm run typecheck && npm run lint && npm run build",
+    "predeploy": "rm -rf out/og-preview",
     "deploy": "gh-pages -d out"
   },
   "browserslist": {

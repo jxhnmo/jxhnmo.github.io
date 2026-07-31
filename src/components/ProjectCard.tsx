@@ -75,7 +75,9 @@ function ProjectCard({ item }: { item: ProjectItem }) {
                 <b>{section.heading}</b>
                 <br />
                 {section.body}
-                {section.links?.length ? <LinkRun links={section.links} /> : null}
+                {section.links?.length ? (
+                  <LinkRun links={section.links} />
+                ) : null}
                 {section.images?.length ? (
                   <ImageRow images={section.images} />
                 ) : null}
