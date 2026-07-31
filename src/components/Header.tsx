@@ -291,8 +291,11 @@ export function Header() {
                   ...(menu.callout
                     ? [{ label: menu.callout.label, href: menu.callout.href }]
                     : []),
-                  ...menu.items.filter((item) => item.href !== menu.href),
-                ];
+                  ...menu.items,
+                  // Drop links that duplicate somewhere the overlay already
+                  // goes: the section heading itself, and the home page the
+                  // logo covers.
+                ].filter((item) => item.href !== menu.href && item.href !== "/");
                 return (
                   <section key={menu.href} className="MobileNavSection">
                     <Link
