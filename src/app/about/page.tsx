@@ -1,19 +1,21 @@
-"use client";
-
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import Me from "@/assets/me1.jpg";
+import Link from "next/link";
+import Me from "@/assets/opt/me1.webp";
+import { buildMetadata } from "@/content/seo";
+
+// This page was `"use client"` only so three buttons could call router.push(),
+// which meant it could not export metadata at all and shipped the generic site
+// title/description. Plain <Link>s make it a server component again.
+export const metadata = buildMetadata("/about");
 
 export default function AboutPage() {
-  const router = useRouter();
-
   return (
-    <div id="page-container" className="my-3">
-      <h2>About</h2>
+    <main id="page-container" className="my-3">
+      <h1 className="pageTitle">About</h1>
       <div className="pageColumn">
         <div className="row">
           <div className="col-md-8half pt-3">
-            <h3 className="heads">Hey! I&apos;m John Mo :D</h3>
+            <h2 className="heads">Hey! I&apos;m John Mo :D</h2>
 
             <div id="darkTxt">
               <p>
@@ -61,28 +63,19 @@ export default function AboutPage() {
             </div>
 
             <div className="btnContainer">
-              <button
-                onClick={() => router.push("/links")}
-                className="btnSecondary"
-              >
+              <Link href="/links" className="btnSecondary">
                 &gt;&gt; links
-              </button>
-              <button
-                onClick={() => router.push("/experience")}
-                className="btnSecondary"
-              >
+              </Link>
+              <Link href="/experience" className="btnSecondary">
                 &gt;&gt; work
-              </button>
-              <button
-                onClick={() => router.push("/projects")}
-                className="btnSecondary"
-              >
+              </Link>
+              <Link href="/projects" className="btnSecondary">
                 &gt;&gt; projects
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

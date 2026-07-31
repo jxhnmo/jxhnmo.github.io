@@ -12,6 +12,16 @@ type TypewriterTextProps = {
   minVisibleLength?: number;
   nextStringDelay?: number | [number, number];
   speed?: number;
+  /**
+   * Render the first string in full on the server instead of starting empty.
+   *
+   * Used by the homepage <h1>, whose greeting is a typewriter: with an empty
+   * initial state the exported HTML read only "it's John Mo", so crawlers never
+   * saw a complete heading. The animation then continues from "fully typed",
+   * which is the same state the loop settles into anyway. Hydration is safe
+   * because the client's first render uses this same initial state.
+   */
+  startComplete?: boolean;
 };
 
 function getDelay(
@@ -35,10 +45,13 @@ export function TypewriterText({
   minVisibleLength = 0,
   nextStringDelay = 750,
   speed = 80,
+  startComplete = false,
 }: TypewriterTextProps) {
   const safeStrings = useMemo(() => strings.filter(Boolean), [strings]);
   const [index, setIndex] = useState(0);
-  const [visibleLength, setVisibleLength] = useState(0);
+  const [visibleLength, setVisibleLength] = useState(() =>
+    startComplete ? (safeStrings[0]?.length ?? 0) : 0,
+  );
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
   const current = safeStrings[index] ?? "";

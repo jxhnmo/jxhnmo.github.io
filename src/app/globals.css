@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Rubik:wght@300;500;700&display=swap");
+/* Fonts are self-hosted through next/font in src/app/layout.tsx (see the
+   comment there). Adding an @import back here would reintroduce a
+   render-blocking round trip to fonts.googleapis.com. */
 
 :root,
 body {
@@ -125,7 +127,7 @@ body {
   position: relative;
   margin: 0;
   background: var(--dark);
-  font-family: "Rubik", sans-serif;
+  font-family: var(--font-rubik), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -213,6 +215,16 @@ h2 {
   text-shadow: var(--text-glow);
 }
 
+/* Section pages (/about, /experience, ...) title themselves with an <h1> for a
+   single top-level heading per page, but should keep the smaller look the <h2>
+   they replaced had — the oversized h1 above is the homepage hero treatment. */
+h1.pageTitle {
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  margin: 0 5% 8px;
+  line-height: 1.3;
+}
+
 h2.linkHead {
   color: var(--accent-soft);
   font-weight: 500;
@@ -223,12 +235,18 @@ h2.linkHead {
   text-shadow: var(--text-glow);
 }
 
+/* `h2.heads` is included so a page whose title is now the <h1> can use an <h2>
+   for its first content heading — keeping heading order sequential — without
+   inheriting the large uppercase page-title treatment above. */
+h2.heads,
 h3,
 h3.heads {
   color: var(--text-strong);
   font-weight: 500;
   font-size: clamp(1.1rem, 1.4vw, 1.5rem);
   margin: 0 0 8px;
+  text-transform: none;
+  text-shadow: none;
 }
 
 p {
@@ -985,7 +1003,7 @@ body.hasOpenMobileMenu .footer {
   display: block;
   padding: 6px 0;
   color: var(--light);
-  font-family: "Raleway", "Rubik", sans-serif;
+  font-family: var(--font-raleway), var(--font-rubik), sans-serif;
   font-size: clamp(1.7rem, 7.5vw, 2.1rem);
   font-weight: 600;
   line-height: 1.1;
@@ -1321,14 +1339,24 @@ body[data-theme="light"].hasOpenMobileMenu .footer {
   font-weight: 300;
   color: var(--text-body);
   background: var(--glass-bg-strong);
-  will-change: height;
+  /* No `will-change: height` here. Height is not a compositable property, so it
+     bought nothing, and now that `forceMount` keeps every panel in the DOM it
+     would ask the browser to hold compositing resources for all of them at once
+     rather than just the open one. */
 }
 
 .AccordionContent[data-state="open"] {
   animation: slideDown 500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* `height: 0` is load-bearing now that Accordion.Content uses `forceMount`
+   (see AccordionList.tsx). Radix keeps force-mounted panels rendered and stops
+   setting `hidden`, so without an explicit resting height a closed panel would
+   snap back to its natural height the moment slideUp finished — i.e. every panel
+   would sit open. Collapsing via height (rather than `display: none`) keeps the
+   close animation, which has nothing to animate if the box vanishes instantly. */
 .AccordionContent[data-state="closed"] {
+  height: 0;
   animation: slideUp 400ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -2012,6 +2040,7 @@ div.location {
   }
 
   /* Align the page title with the centered content column gutter on mobile */
+  #page-container > h1.pageTitle,
   #page-container > h2 {
     margin-inline: clamp(0.75rem, 2vw, 1.5rem);
   }

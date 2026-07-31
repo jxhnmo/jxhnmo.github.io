@@ -1,11 +1,19 @@
-import logo from "@/assets/jm_logo.png";
+import logo from "@/assets/opt/jm_logo.png";
 import type { NavItem, NavMenu } from "./types";
 
 export const siteConfig = {
   name: "John Mo",
+  /**
+   * Browser-tab title only (the App Router `title.default`, so in practice just
+   * the 404 page) — lowercase on purpose. `og:site_name` deliberately uses
+   * `name` instead; see the note in seo.ts.
+   *
+   * There is no `description` here any more: the site description now lives once,
+   * as the "/" entry in routes.json, and feeds both the homepage
+   * <meta name="description"> and the Person JSON-LD. Two copies had already
+   * drifted apart.
+   */
   title: "john mo's site",
-  description:
-    "John Mo is a software engineer, builder, gamer, and foodie based in San Francisco working on startups, games, and applied AI.",
   url: "https://jxhnmo.github.io",
   email: "peikaimo@gmail.com",
   linkedIn: "https://www.linkedin.com/in/john-mo/",

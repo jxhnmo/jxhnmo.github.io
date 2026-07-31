@@ -1,15 +1,14 @@
 import { AccordionList } from "@/components/AccordionList";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { experienceItems } from "@/content/experience";
+import { buildMetadata } from "@/content/seo";
 
-export const metadata = {
-  title: "Experience",
-};
+export const metadata = buildMetadata("/experience");
 
 export default function ExperiencePage() {
   return (
-    <div id="page-container" className="my-3">
-      <h2>Experience</h2>
+    <main id="page-container" className="my-3">
+      <h1 className="pageTitle">Experience</h1>
       <div className="pageColumn">
         <AccordionList
           items={experienceItems.map((item) => ({
@@ -27,6 +26,6 @@ export default function ExperiencePage() {
           }))}
         />
       </div>
-    </div>
+    </main>
   );
 }

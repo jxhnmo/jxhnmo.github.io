@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { TypewriterText } from "@/components/TypewriterText";
+import { buildMetadata } from "@/content/seo";
 import { siteConfig } from "@/content/site";
+
+export const metadata = buildMetadata("/");
 
 export default function HomePage() {
   return (
-    <main
-      id="page-container"
-      className="homeHeroPage"
-    >
+    <main id="page-container" className="homeHeroPage">
       <section className="homeHero" aria-labelledby="home-hero-title">
         <div className="homeHeroCopy">
           <h1 id="home-hero-title" className="homeHeroTitle">
@@ -19,7 +19,15 @@ export default function HomePage() {
                   nextStringDelay={1200}
                   loopDelay={250}
                   speed={500}
-                  strings={["Hey,", "你好,", "안녕,", "Hai,", "Ciao,", "!اهلا,"]}
+                  startComplete
+                  strings={[
+                    "Hey,",
+                    "你好,",
+                    "안녕,",
+                    "Hai,",
+                    "Ciao,",
+                    "!اهلا,",
+                  ]}
                 />
               </span>
             </span>
@@ -54,7 +62,10 @@ export default function HomePage() {
           </p>
 
           <div className="homeHeroActions" aria-label="Landing page actions">
-            <Link href="/about" className="homeHeroButton homeHeroButtonPrimary">
+            <Link
+              href="/about"
+              className="homeHeroButton homeHeroButtonPrimary"
+            >
               Learn more about me
               <span aria-hidden="true">→</span>
             </Link>

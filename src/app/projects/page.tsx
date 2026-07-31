@@ -1,15 +1,14 @@
 import { AccordionList } from "@/components/AccordionList";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projectItems } from "@/content/projects";
+import { buildMetadata } from "@/content/seo";
 
-export const metadata = {
-  title: "Projects",
-};
+export const metadata = buildMetadata("/projects");
 
 export default function ProjectsPage() {
   return (
-    <div id="page-container" className="my-3">
-      <h2>Projects</h2>
+    <main id="page-container" className="my-3">
+      <h1 className="pageTitle">Projects</h1>
       <div className="pageColumn">
         <AccordionList
           defaultValue="react-portfolio"
@@ -26,6 +25,6 @@ export default function ProjectsPage() {
           }))}
         />
       </div>
-    </div>
+    </main>
   );
 }

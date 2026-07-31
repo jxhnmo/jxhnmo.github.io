@@ -1,0 +1,73 @@
+{
+  "$comment": "Single source of truth for per-route SEO. Consumed by src/content/seo.ts (page metadata, sitemap, robots) and by scripts/generate-og.mjs (OG card rendering). Plain JSON so the .mjs build script and the TypeScript app can share it without duplication. Card blurbs (og.blurb) intentionally carry no trailing period; other terminal punctuation such as ! is fine. The / entry's description is the site description: it feeds both the homepage meta description tag and the Person JSON-LD description, so there is only one string to keep current.",
+  "routes": [
+    {
+      "path": "/",
+      "title": "John Mo — Software Engineer",
+      "useTitleAsIs": true,
+      "description": "John Mo is a software engineer, builder, gamer, and foodie based in San Francisco working on startups, games, and applied AI.",
+      "sitemapPriority": 1.0,
+      "$ogComment": "Home deliberately leaves eyebrow/blurb empty: the renderer skips empty fields, collapsing the card to logo + bar + name as a clean brand card. Fill either in to get the same treatment as the inner pages.",
+      "og": {
+        "eyebrow": "",
+        "heading": "John Mo",
+        "blurb": ""
+      }
+    },
+    {
+      "path": "/about",
+      "title": "About",
+      "description": "Houston-born and raised across Oman, Brunei, China, South Korea, and Singapore. CS grad, ex-collegiate Rainbow Six player, BJJ practitioner, and relentless foodie.",
+      "sitemapPriority": 0.8,
+      "og": {
+        "eyebrow": "John Mo",
+        "heading": "About",
+        "blurb": "Software, product, games, and food"
+      }
+    },
+    {
+      "path": "/experience",
+      "title": "Experience",
+      "description": "Software engineering and product roles at Creator Games, Morsl, First Fun, PowerDB, Sam's Club, Supersocial, Mercy Ships, and the UNT CNS Lab.",
+      "sitemapPriority": 0.9,
+      "og": {
+        "eyebrow": "John Mo",
+        "heading": "Experience",
+        "blurb": "Creator Games, First Fun, Sam's Club, Supersocial, and more"
+      }
+    },
+    {
+      "path": "/projects",
+      "title": "Projects",
+      "description": "Hackathon wins, game studio work, and national lab pitch competitions — DJ Bestie, iNterview Pro, Sandia, Los Alamos, and NSA data visualization.",
+      "sitemapPriority": 0.9,
+      "og": {
+        "eyebrow": "John Mo",
+        "heading": "Projects",
+        "blurb": "2x hackathon winner, web designs, and machine learning experiments"
+      }
+    },
+    {
+      "path": "/links",
+      "title": "Links",
+      "description": "Find John Mo on LinkedIn, GitHub, Instagram, Spotify, Discord, and Twitch — or book a 15-minute chat on Calendly.",
+      "sitemapPriority": 0.7,
+      "og": {
+        "eyebrow": "John Mo",
+        "heading": "Links",
+        "blurb": "LinkedIn, GitHub, Calendly, and more"
+      }
+    },
+    {
+      "path": "/resume",
+      "title": "Resume",
+      "description": "John Mo's resume, behind a soft passcode gate. Contact me for the code.",
+      "noindex": true,
+      "og": {
+        "eyebrow": "John Mo",
+        "heading": "Resume",
+        "blurb": "Contact me for the code!"
+      }
+    }
+  ]
+}
