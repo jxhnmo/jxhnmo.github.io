@@ -1,5 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:
+User-Agent: *
+Allow: /
+Disallow: /John_Mo_Resume.pdf
 
 Sitemap: https://jxhnmo.github.io/sitemap.xml
