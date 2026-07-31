@@ -1,20 +1,20 @@
-import aadata from "@/assets/projects/aadata.png";
-import djbestie from "@/assets/projects/djbestie.jpg";
-import djbestieteam from "@/assets/projects/djbestieteam.jpg";
-import facial from "@/assets/projects/facial.png";
-import fn1 from "@/assets/projects/fn1.jpg";
-import interviewpro from "@/assets/projects/interviewpro.png";
-import interviewprodata from "@/assets/projects/interviewprodata.png";
-import losalamos1 from "@/assets/projects/losalamos1.png";
-import losalamos2 from "@/assets/projects/losalamos2.png";
-import nsa1 from "@/assets/projects/nsa1.png";
-import nsa2 from "@/assets/projects/nsa2.png";
-import nsa3 from "@/assets/projects/nsa3.png";
-import personalsite from "@/assets/projects/personalsite.png";
-import personalsite1 from "@/assets/projects/personalsite1.png";
-import personalsite2 from "@/assets/projects/personalsite2.png";
-import sandia from "@/assets/projects/sandia.png";
-import usnavy from "@/assets/projects/usnavy.png";
+import aadata from "@/assets/opt/projects/aadata.webp";
+import djbestie from "@/assets/opt/projects/djbestie.webp";
+import djbestieteam from "@/assets/opt/projects/djbestieteam.webp";
+import facial from "@/assets/opt/projects/facial.webp";
+import fn1 from "@/assets/opt/projects/fn1.webp";
+import interviewpro from "@/assets/opt/projects/interviewpro.webp";
+import interviewprodata from "@/assets/opt/projects/interviewprodata.webp";
+import losalamos1 from "@/assets/opt/projects/losalamos1.webp";
+import losalamos2 from "@/assets/opt/projects/losalamos2.webp";
+import nsa1 from "@/assets/opt/projects/nsa1.webp";
+import nsa2 from "@/assets/opt/projects/nsa2.webp";
+import nsa3 from "@/assets/opt/projects/nsa3.webp";
+import personalsite from "@/assets/opt/projects/personalsite.webp";
+import personalsite1 from "@/assets/opt/projects/personalsite1.webp";
+import personalsite2 from "@/assets/opt/projects/personalsite2.webp";
+import sandia from "@/assets/opt/projects/sandia.webp";
+import usnavy from "@/assets/opt/projects/usnavy.webp";
 import type { ProjectItem } from "./types";
 
 export const projectItems: ProjectItem[] = [
@@ -135,9 +135,15 @@ export const projectItems: ProjectItem[] = [
         label: "https://vishwas-saini-portfolio.vercel.app/",
         href: "https://vishwas-saini-portfolio.vercel.app/",
       },
-      { label: "https://www.rubens.design/", href: "https://www.rubens.design/" },
+      {
+        label: "https://www.rubens.design/",
+        href: "https://www.rubens.design/",
+      },
       { label: "https://caseypei.me/", href: "https://caseypei.me/" },
-      { label: "https://lukeypookster.com/", href: "https://lukeypookster.com/" },
+      {
+        label: "https://lukeypookster.com/",
+        href: "https://lukeypookster.com/",
+      },
       {
         label: "https://webflow.com/made-in-webflow/website/COLIN-MOY",
         href: "https://webflow.com/made-in-webflow/website/COLIN-MOY",
@@ -202,7 +208,8 @@ export const projectItems: ProjectItem[] = [
         images: [{ src: usnavy, alt: "VTOL aircraft concept" }],
       },
       {
-        heading: "Los Alamos National Laboratory: Nuclear Security — Oct 23, 2022",
+        heading:
+          "Los Alamos National Laboratory: Nuclear Security — Oct 23, 2022",
         body: 'Designed "Spy Kids," a spy-bot swarm that detects nuclear radiation and other potential threats.',
         links: [
           {
@@ -216,7 +223,8 @@ export const projectItems: ProjectItem[] = [
         ],
       },
       {
-        heading: "National Security Agency: Informational Viz — 4th Place — Sep 25, 2022",
+        heading:
+          "National Security Agency: Informational Viz — 4th Place — Sep 25, 2022",
         body: 'Designed "Mediator," an extension and app that evaluates the credibility of social media posts through machine learning.',
         links: [
           {

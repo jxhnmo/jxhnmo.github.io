@@ -1,11 +1,11 @@
-import creatorgames from "@/assets/work/creatorgames.png";
-import firstfun from "@/assets/work/firstfunlogo.jpeg";
-import mercyships from "@/assets/work/Mercy_Ships_Logo.jpg";
-import morsl from "@/assets/work/morsl.png";
-import powerdb from "@/assets/work/powerdb.png";
-import samsclub from "@/assets/work/samsclub.png";
-import supersocial from "@/assets/work/supersocial_inc_logo.jpeg";
-import unt from "@/assets/work/unt.png";
+import creatorgames from "@/assets/opt/work/creatorgames.webp";
+import firstfun from "@/assets/opt/work/firstfunlogo.webp";
+import mercyships from "@/assets/opt/work/Mercy_Ships_Logo.webp";
+import morsl from "@/assets/opt/work/morsl.webp";
+import powerdb from "@/assets/opt/work/powerdb.webp";
+import samsclub from "@/assets/opt/work/samsclub.webp";
+import supersocial from "@/assets/opt/work/supersocial_inc_logo.webp";
+import unt from "@/assets/opt/work/unt.webp";
 import type { ExperienceItem } from "./types";
 
 export const experienceItems: ExperienceItem[] = [

@@ -1,4 +1,4 @@
-import portrait from "@/assets/john_mo_supersocial.jpg";
+import portrait from "@/assets/opt/john_mo_supersocial.webp";
 
 export const resumeConfig = {
   prompt: "Contact me for the code.",
