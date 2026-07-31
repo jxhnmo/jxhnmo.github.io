@@ -18,11 +18,13 @@
   },
   "_packageManagerComment": "npm is the only package manager here, and package-lock.json is the only lockfile. The repo previously tracked all three of package-lock.json, yarn.lock, and pnpm-lock.yaml; they drifted, and pnpm-lock.yaml sat five weeks stale still resolving a dependency that had been removed. Declaring it here keeps a stray `yarn add` from reintroducing a second lockfile. Recover the deleted ones with `git show <sha>:yarn.lock` if ever needed.",
   "packageManager": "npm@11.6.2",
+  "_startComment": "`npm start` previews the exported site, because `next start` cannot run here at all: output: \"export\" emits out/ and no server, so the old script only ever printed an error telling you to use serve. prestart builds first, so what you preview is always the bytes `npm run deploy` would push. serve matches GitHub Pages on the part that matters — a miss falls through to out/404.html with a real 404 status. Reach for `npm run dev` for day-to-day work; reach for this to check what only exists after export: trailingSlash routing, the 404 page, and the per-route OG cards. The port is pinned because serve falls back to a random high port when its default 3000 is taken, and 3000 is exactly where `next dev` already is — so the two run side by side and preview is always on 4000.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "postbuild": "rm -rf out/og-preview",
-    "start": "next start",
+    "prestart": "npm run build",
+    "start": "serve out -l 4000",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
@@ -55,6 +57,7 @@
     "eslint-config-next": "^16.2.6",
     "gh-pages": "^6.3.0",
     "prettier": "^3.8.3",
+    "serve": "^14.2.6",
     "typescript": "^5.9.3"
   },
   "overrides": {
