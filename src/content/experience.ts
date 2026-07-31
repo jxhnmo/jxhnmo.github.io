@@ -34,7 +34,7 @@ export const experienceItems: ExperienceItem[] = [
     period: "2025",
     company: "First Fun",
     role: "AI Software Engineer",
-    location: "Santa Clara, CA",
+    location: "Santa Clara, CA / Hybrid",
     bullets: [
       "Founding engineer led AI tool development, game production, and sprint execution for the U.S. team.",
       "Prototyped a 0 to 1 automated mobile game QA system using multilayer ML and computer vision, reducing manual QA effort and enabling faster iteration cycles.",
@@ -58,7 +58,7 @@ export const experienceItems: ExperienceItem[] = [
   },
   {
     id: "sams-club",
-    period: "2023-2024",
+    period: "2023",
     company: "Sam's Club",
     role: "Product Manager Intern",
     location: "Bentonville, AR",
@@ -70,10 +70,10 @@ export const experienceItems: ExperienceItem[] = [
   },
   {
     id: "supersocial",
-    period: "2022-2023",
+    period: "2022",
     company: "Supersocial",
     role: "Game Developer Intern",
-    location: "Los Angeles, CA",
+    location: "Los Angeles, CA / Remote",
     bullets: [
       "Spearheaded a full IP prototype using Unreal Engine (UEFN/Verse) with Agile sprints",
       "Led programming, game balancing, playtesting, and documentation.",
@@ -82,7 +82,7 @@ export const experienceItems: ExperienceItem[] = [
   },
   {
     id: "mercy-ships",
-    period: "2021-2022",
+    period: "2021",
     company: "Mercy Ships",
     role: "Product Engineering Intern",
     location: "Remote",
@@ -93,7 +93,7 @@ export const experienceItems: ExperienceItem[] = [
   },
   {
     id: "unt-cns-lab",
-    period: "2020-2021",
+    period: "2020",
     company: "UNT CNS Lab",
     role: "Research Assistant",
     location: "Denton, TX",
