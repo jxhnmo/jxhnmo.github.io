@@ -27,7 +27,7 @@ import json
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "assets"
@@ -139,11 +139,27 @@ FAVICON_SPECS: list[tuple[int, float, float, float]] = [
     (48, 0.11, 0.250, 1.05),
 ]
 
+# Corner radius of the .ico tiles, as a fraction of the tile. 22% is the app-icon
+# convention, and at 16px it is about the smallest radius that still reads as
+# rounded rather than as a chipped square. The OG card's 28px is ~5% of its short
+# edge; that proportion is a sub-pixel nick here, which is why the two do not
+# share a number.
+#
+# Drawn at 8x and downsampled with the tile, so the curve is antialiased rather
+# than stair-stepped, and it makes the corners transparent — a tab's own
+# background shows through them, which is what every rounded favicon does.
+FAVICON_RADIUS = 0.22
+
 # Apple touch icon: iOS rounds and (on older versions) adds its own gloss, so it
 # gets the most padding of the set to keep the glyph clear of the corner radius.
 # 180 is the largest size iOS asks for; it downscales this for the rest. At this
 # size the glyph's own stroke is already ~2px, so it needs no gain — the dilation
 # is only there to keep the hairlines from looking accidental.
+#
+# Deliberately NOT rounded, unlike the .ico: iOS applies its own superellipse
+# mask and composites what is left over black, so pre-rounded corners show up as
+# four dark notches outside the system curve. Home screen icons are supposed to
+# be full-bleed squares with no alpha.
 APPLE_ICON = (180, 0.15, 0.250, 1.0)
 
 
@@ -202,13 +218,21 @@ def og_mark(source: Path, dest: Path) -> None:
 
 
 def favicon_tile(
-    source: Path, size: int, pad: float, dilate_px: float, gain: float
+    source: Path,
+    size: int,
+    pad: float,
+    dilate_px: float,
+    gain: float,
+    radius: float = 0.0,
 ) -> Image.Image:
     """Paint the logo glyph white, centred, on an opaque FAVICON_BG tile.
 
     Only the source's alpha channel is used: the glyph is pure white already, so
     its alpha *is* the shape, and reading it as a mask means the white is applied
     at full strength rather than composited from a resized RGBA bitmap.
+
+    Returns RGB, or RGBA with rounded corners when `radius` (a fraction of the
+    tile) is non-zero.
     """
     with Image.open(source) as im:
         alpha = im.convert("RGBA").getchannel("A")
@@ -224,9 +248,9 @@ def favicon_tile(
         Image.LANCZOS,
     )
 
-    radius = round(dilate_px * FAVICON_SUPERSAMPLE)
-    if radius >= 1:
-        resized = resized.filter(ImageFilter.MaxFilter(2 * radius + 1))
+    dilate_radius = round(dilate_px * FAVICON_SUPERSAMPLE)
+    if dilate_radius >= 1:
+        resized = resized.filter(ImageFilter.MaxFilter(2 * dilate_radius + 1))
 
     mask = Image.new("L", (work, work), 0)
     mask.paste(
@@ -239,7 +263,19 @@ def favicon_tile(
 
     tile = Image.new("RGB", (size, size), FAVICON_BG)
     tile.paste(Image.new("RGB", (size, size), (255, 255, 255)), (0, 0), mask)
-    return tile
+    if not radius:
+        return tile
+
+    # The corner curve is drawn at working resolution and downsampled for the
+    # same reason the glyph is: at 16px a radius is 3.5px, and a hard-edged arc
+    # that small reads as three chipped pixels.
+    corners = Image.new("L", (work, work), 0)
+    ImageDraw.Draw(corners).rounded_rectangle(
+        (0, 0, work - 1, work - 1), radius=radius * work, fill=255
+    )
+    rounded = tile.convert("RGBA")
+    rounded.putalpha(corners.resize((size, size), Image.LANCZOS))
+    return rounded
 
 
 def write_favicon(source: Path, dest: Path) -> None:
@@ -250,7 +286,9 @@ def write_favicon(source: Path, dest: Path) -> None:
     whole point of FAVICON_SPECS is that each size is dilated differently. So the
     tiles are rendered independently and handed over via append_images.
     """
-    tiles = [favicon_tile(source, *spec) for spec in FAVICON_SPECS]
+    tiles = [
+        favicon_tile(source, *spec, radius=FAVICON_RADIUS) for spec in FAVICON_SPECS
+    ]
     largest, *rest = sorted(tiles, key=lambda t: t.width, reverse=True)
     dest.parent.mkdir(parents=True, exist_ok=True)
     largest.save(
@@ -408,7 +446,8 @@ def main() -> int:
     # retuning FAVICON_SPECS or repainting the background rebuilds the files even
     # though jm_logo.png has not changed.
     recipe = hashlib.sha256(
-        f"{FAVICON_BG}:{FAVICON_SPECS}:{APPLE_ICON}:{FAVICON_SUPERSAMPLE}".encode()
+        f"{FAVICON_BG}:{FAVICON_SPECS}:{APPLE_ICON}:{FAVICON_SUPERSAMPLE}"
+        f":{FAVICON_RADIUS}".encode()
     ).hexdigest()[:8]
     # Named rather than inherited from the loop above: both blocks happen to read
     # the same file, and a silent dependency on a leftover loop variable would
@@ -419,7 +458,7 @@ def main() -> int:
     # switching the touch icon to a palette PNG would otherwise leave the old
     # RGB one on disk looking fresh.
     for dest, kind, build in (
-        (PUBLIC_DIR / "favicon.ico", "favicon:ico16-32-48", write_favicon),
+        (PUBLIC_DIR / "favicon.ico", "favicon:ico16-32-48:rgba-rounded", write_favicon),
         (PUBLIC_DIR / "apple-touch-icon.png", "apple:p256", write_apple_icon),
     ):
         key = dest.relative_to(ROOT).as_posix()
