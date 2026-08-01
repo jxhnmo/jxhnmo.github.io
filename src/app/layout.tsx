@@ -48,8 +48,17 @@ export const metadata: Metadata = {
     default: siteConfig.title,
     template: `%s | ${siteConfig.title}`,
   },
+  // The white-on-transparent logo was unusable as a tab icon: Safari draws
+  // favicons on a light plate, so a white glyph on nothing left an empty square.
+  // Both files are the same glyph painted onto an opaque purple tile, generated
+  // per size by scripts/optimize-images.py.
+  //
+  // Named favicon.ico rather than jm_logo.ico because browsers fall back to
+  // GET /favicon.ico on their own — that request used to 404 here, which is the
+  // other half of why the tab looked blank.
   icons: {
-    icon: "/jm_logo.ico",
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 

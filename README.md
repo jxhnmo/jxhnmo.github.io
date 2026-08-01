@@ -61,7 +61,11 @@ the deploy build has no Python available:
 - `scripts/optimize-images.py` writes web-sized WebP derivatives from
   `src/assets/**` into `src/assets/opt/**`. Originals are never modified; they
   stay the lossless source for future re-processing. Components import from
-  `opt/`. This script also losslessly re-compresses the OG cards in place.
+  `opt/`. This script also losslessly re-compresses the OG cards in place, and
+  builds the favicon set (`public/favicon.ico`, `public/apple-touch-icon.png`)
+  by painting the logo glyph onto an opaque `#2a1a38` tile — one hand-tuned
+  render per size, because the glyph is thin line art that a plain downscale
+  turns into faint grey at 16px.
 - `scripts/generate-og.mjs` renders one 1200x630 Open Graph card per route,
   written beside the page it belongs to, using the copy in
   `src/content/routes.json`.

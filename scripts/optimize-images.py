@@ -10,6 +10,9 @@ derivatives can be regenerated at different sizes later. The app imports from
 src/assets/opt/**, and those derivatives are committed because the deploy build
 has no Python/Pillow available.
 
+The favicon set in public/ is built here too — same source logo, same manifest,
+so `--check` covers it as well.
+
 Usage: python3 scripts/optimize-images.py [--check]
        --check exits non-zero if any derivative is missing or stale, judged
        by the content hashes in src/assets/opt/manifest.json.
@@ -24,7 +27,7 @@ import json
 import sys
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "assets"
@@ -93,6 +96,56 @@ LOGO = ("jm_logo.png", 200, 150)
 # there is no reason to hand satori a bitmap it might have to upscale.
 OG_MARK_SIZE = 512
 
+# --- Favicon -----------------------------------------------------------------
+#
+# The logo is white line art on transparency, which is the worst possible
+# favicon: white-on-nothing vanished against Safari's light tab plate, so the tab
+# read as an empty square. Painting the glyph onto an opaque purple tile fixes
+# it in every browser chrome, light or dark, and it is the same figure/ground as
+# the OG card (white mark on a purple panel).
+#
+# #2a1a38 is the dark theme's --dark from globals.css — the site's own page
+# background, and the same plum the OG card is painted on, so a tab, a shared
+# link, and the site itself all show the mark on one colour.
+FAVICON_BG = (42, 26, 56)
+
+# The glyph is dilated and downsampled at 8x, so a dilation of a fraction of an
+# output pixel is still a whole-pixel morphological op at working resolution.
+# It also means `dilate_px` below quantises to eighths — 0.10 and 0.14 are the
+# same file. Widening a stroke is only expressible in 1/8px steps.
+FAVICON_SUPERSAMPLE = 8
+
+# (output size, padding as a fraction of the tile, stroke dilation in output px,
+# alpha gain).
+#
+# The glyph's stroke is ~1.5% of its height, so a straight downscale leaves a
+# sub-pixel line that LANCZOS renders as barely-there grey. Each size therefore
+# gets its strokes dilated before the downsample and its alpha lifted after. The
+# two do different jobs and are traded off by eye: dilation adds real weight but
+# closes the loops of a script monogram, gain adds contrast without touching the
+# shape. So weight comes from dilation while the loops still have room for it,
+# and from gain once they do not — which is why 16px, where the loops are ~1px
+# apart, gets the *least* dilation of the set and by far the most gain.
+#
+# Resulting stroke widths: 0.47px at 16, 0.90px at 32, 1.08px at 48.
+#
+# 16px cannot resolve "Jm" no matter how it is tuned. It is tuned to keep the
+# swash and the lower loop distinguishable as a mark; 32px up is where it reads
+# as the signature. Padding shrinks as the tile does, because at 16px every pixel
+# of margin is 6% of the width.
+FAVICON_SPECS: list[tuple[int, float, float, float]] = [
+    (16, 0.06, 0.125, 1.70),
+    (32, 0.10, 0.250, 1.15),
+    (48, 0.11, 0.250, 1.05),
+]
+
+# Apple touch icon: iOS rounds and (on older versions) adds its own gloss, so it
+# gets the most padding of the set to keep the glyph clear of the corner radius.
+# 180 is the largest size iOS asks for; it downscales this for the rest. At this
+# size the glyph's own stroke is already ~2px, so it needs no gain — the dilation
+# is only there to keep the hairlines from looking accidental.
+APPLE_ICON = (180, 0.15, 0.250, 1.0)
+
 
 def resize(im: Image.Image, max_edge: int) -> Image.Image:
     w, h = im.size
@@ -146,6 +199,80 @@ def og_mark(source: Path, dest: Path) -> None:
 
     dest.parent.mkdir(parents=True, exist_ok=True)
     glyph.resize(target, Image.LANCZOS).save(dest, "PNG", optimize=True)
+
+
+def favicon_tile(
+    source: Path, size: int, pad: float, dilate_px: float, gain: float
+) -> Image.Image:
+    """Paint the logo glyph white, centred, on an opaque FAVICON_BG tile.
+
+    Only the source's alpha channel is used: the glyph is pure white already, so
+    its alpha *is* the shape, and reading it as a mask means the white is applied
+    at full strength rather than composited from a resized RGBA bitmap.
+    """
+    with Image.open(source) as im:
+        alpha = im.convert("RGBA").getchannel("A")
+    box = alpha.getbbox()
+    glyph = alpha.crop(box) if box else alpha
+
+    # Fit the glyph into the padded box at 8x, dilate, then downsample once.
+    work = size * FAVICON_SUPERSAMPLE
+    target_edge = int(work * (1 - 2 * pad))
+    scale = target_edge / max(glyph.size)
+    resized = glyph.resize(
+        (max(1, round(glyph.width * scale)), max(1, round(glyph.height * scale))),
+        Image.LANCZOS,
+    )
+
+    radius = round(dilate_px * FAVICON_SUPERSAMPLE)
+    if radius >= 1:
+        resized = resized.filter(ImageFilter.MaxFilter(2 * radius + 1))
+
+    mask = Image.new("L", (work, work), 0)
+    mask.paste(
+        resized,
+        ((work - resized.width) // 2, (work - resized.height) // 2),
+    )
+    mask = mask.resize((size, size), Image.LANCZOS)
+    if gain != 1.0:
+        mask = mask.point(lambda v: min(255, round(v * gain)))
+
+    tile = Image.new("RGB", (size, size), FAVICON_BG)
+    tile.paste(Image.new("RGB", (size, size), (255, 255, 255)), (0, 0), mask)
+    return tile
+
+
+def write_favicon(source: Path, dest: Path) -> None:
+    """Write a multi-resolution .ico, one hand-tuned tile per size.
+
+    Pillow's ICO writer will happily generate the smaller sizes itself by
+    resizing the largest, which is exactly what has to be avoided here — the
+    whole point of FAVICON_SPECS is that each size is dilated differently. So the
+    tiles are rendered independently and handed over via append_images.
+    """
+    tiles = [favicon_tile(source, *spec) for spec in FAVICON_SPECS]
+    largest, *rest = sorted(tiles, key=lambda t: t.width, reverse=True)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    largest.save(
+        dest,
+        "ICO",
+        sizes=[(t.width, t.height) for t in tiles],
+        append_images=rest,
+    )
+
+
+def write_apple_icon(source: Path, dest: Path) -> None:
+    """Write the 180x180 tile as a palette PNG.
+
+    Two colours blended over ~64 antialiasing levels is well under 256 distinct
+    values, so ADAPTIVE quantisation is lossless here (verified: zero channel
+    delta against the RGB encode) while halving the file, 8.4KB -> 4.3KB.
+    """
+    tile = favicon_tile(source, *APPLE_ICON)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    tile.convert("P", palette=Image.ADAPTIVE, colors=256).save(
+        dest, "PNG", optimize=True
+    )
 
 
 def optimize_og_cards() -> tuple[int, int]:
@@ -273,6 +400,46 @@ def main() -> int:
         print(
             f"  {key:44} {before / 1024:8.0f} KB -> {after / 1024:7.0f} KB"
         )
+
+    # Favicon set: same logo source, but the output is a browser asset rather than
+    # something the app imports, so it lands in public/ and is keyed from ROOT.
+    #
+    # The stamp folds in a digest of the tile recipe as well as the source, so
+    # retuning FAVICON_SPECS or repainting the background rebuilds the files even
+    # though jm_logo.png has not changed.
+    recipe = hashlib.sha256(
+        f"{FAVICON_BG}:{FAVICON_SPECS}:{APPLE_ICON}:{FAVICON_SUPERSAMPLE}".encode()
+    ).hexdigest()[:8]
+    # Named rather than inherited from the loop above: both blocks happen to read
+    # the same file, and a silent dependency on a leftover loop variable would
+    # hash the wrong source the moment either block moves.
+    logo_source = SRC / LOGO[0]
+    # As with the OG mark above, `kind` names how the file was produced, not just
+    # what it is: `recipe` covers the tile geometry but not the encoder, so
+    # switching the touch icon to a palette PNG would otherwise leave the old
+    # RGB one on disk looking fresh.
+    for dest, kind, build in (
+        (PUBLIC_DIR / "favicon.ico", "favicon:ico16-32-48", write_favicon),
+        (PUBLIC_DIR / "apple-touch-icon.png", "apple:p256", write_apple_icon),
+    ):
+        key = dest.relative_to(ROOT).as_posix()
+        stamp = f"{source_digest(logo_source)}:{kind}:{recipe}"
+        expected[key] = stamp
+        fresh = dest.exists() and manifest.get(key) == stamp
+
+        if check_only:
+            if not fresh:
+                stale.append(key)
+            continue
+        if fresh:
+            continue
+
+        build(logo_source, dest)
+        # No before/after: these are tiles rendered from scratch, not
+        # re-encodings of the source, so a saving against 208KB of logo would be
+        # a meaningless number in the total below. Padded to land in the same
+        # column as every other line's output size.
+        print(f"  {key:44} {dest.stat().st_size / 1024:22.0f} KB")
 
     if not check_only:
         save_manifest(expected)
