@@ -243,6 +243,10 @@ h1.pageTitle {
   line-height: 1.3;
 }
 
+/* `h1.linkHead` is for a page whose only heading is this one (the resume gate),
+   so it stays the page's single top-level heading without growing to page-title
+   size. */
+h1.linkHead,
 h2.linkHead {
   color: var(--accent-soft);
   font-weight: 500;
@@ -491,6 +495,10 @@ a.links:hover {
 
 .Input {
   width: 40%;
+  /* Padding and border inside the width: the gate sets width: 100% and its
+     column is narrow, so a content-box input overflowed it by its 26px of
+     padding + border. */
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1556,6 +1564,48 @@ div.location {
     width: clamp(72px, 30%, 110px);
     margin-left: 0;
   }
+}
+
+/* Locked resume gate. Sized to its controls rather than the page column, and
+   centered in the space left between the navbar and the footer — the 200px
+   covers their combined height (the homepage hero reserves the same way), with
+   a few px of slack so the footer never pushes a scrollbar onto a page that is
+   supposed to fit; the stack reads as centered either way.
+   min-height only sets a floor, so a short window still grows and scrolls
+   instead of clipping the stack. svh rather than the hero's vh: vh is the
+   URL-bar-collapsed height on mobile, which would overflow the visible area and
+   leave the stack sitting off-center behind a scroll. */
+.resumeGate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  width: min(340px, calc(100% - var(--page-gutter)));
+  min-height: calc(100svh - 200px);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.resumeGate .imageBorder {
+  /* Vertical rhythm is the parent's gap here, so drop the shared image margin. */
+  width: clamp(124px, 46%, 176px);
+  margin-block: 0;
+}
+
+.resumeGate .imageBorder img {
+  /* The site-wide 5px/40px treatment reads as a thick ring at this size. */
+  border-width: 3px;
+  border-radius: 24px;
+}
+
+.resumeGate h1.linkHead {
+  font-size: clamp(1.3rem, 1.15rem + 1.1vw, 1.85rem);
+  margin: 0;
+}
+
+.resumeGate .Input {
+  width: 100%;
 }
 
 .resumeFrame {

@@ -30,71 +30,69 @@ export function ResumeGate() {
 
   if (isVerified) {
     return (
-      <div className="pageColumn">
-        <div className="row">
-          <div className="col-md-3half pt-3 pb-3 text-center">
-            <p>
-              Don&apos;t forget to save my resume!
-              <br />
-              Last updated: {resumeConfig.lastUpdated}
-            </p>
+      <>
+        {/* Direct child of #page-container, like every other .pageTitle, so it
+            insets itself to the content column rather than nesting inside it. */}
+        <h1 className="pageTitle">Resume</h1>
+        <div className="pageColumn">
+          <div className="row">
+            <div className="col-md-3half pt-3 pb-3 text-center">
+              <p>
+                Don&apos;t forget to save my resume!
+                <br />
+                Last updated: {resumeConfig.lastUpdated}
+              </p>
 
-            <p>Download:</p>
-            <a href={resumeConfig.pdf} download="John Mo Resume">
-              Download PDF
-            </a>
-          </div>
+              <p>Download:</p>
+              <a href={resumeConfig.pdf} download="John Mo Resume">
+                Download PDF
+              </a>
+            </div>
 
-          <div className="col-md-8half pt-3 pb-3">
-            <iframe
-              className="resumeFrame"
-              title="Resume"
-              src={resumeConfig.pdf}
-            />
+            <div className="col-md-8half pt-3 pb-3">
+              <iframe
+                className="resumeFrame"
+                title="Resume"
+                src={resumeConfig.pdf}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 
+  // The locked state is only a portrait, a line of copy, and two controls, so it
+  // skips .pageColumn and centers itself in the viewport instead — the spacing
+  // between rows comes from .resumeGate's gap, not per-element margins.
   return (
-    <form onSubmit={onSubmit} className="pageColumn">
+    <form onSubmit={onSubmit} className="resumeGate">
       <div className="imageBorder">
-        <div className="parent center">
-          <Image
-            src={resumeConfig.portrait}
-            alt="Me @ Supersocial"
-            width={320}
-            height={320}
-            style={{ width: "35%", height: "auto" }}
-          />
-        </div>
-      </div>
-
-      <div className="parent center">
-        <h2 className="linkHead mt-3">Protected Page</h2>
-      </div>
-
-      <div className="parent center mb-1">
-        <div id="darkTxt">
-          <p>Contact me for the code!</p>
-        </div>
-      </div>
-
-      <div className="parent center mb-3">
-        <input
-          className="Input"
-          type="password"
-          name="password"
-          placeholder="Magic word?"
+        <Image
+          src={resumeConfig.portrait}
+          alt="Me @ Supersocial"
+          width={320}
+          height={320}
+          style={{ width: "100%", height: "auto" }}
         />
       </div>
 
-      <div className="parent center">
-        <button className="btnPrimary" type="submit">
-          SUBMIT
-        </button>
+      <h1 className="linkHead">Protected Page</h1>
+
+      <div id="darkTxt">
+        <p>Contact me for the code!</p>
       </div>
+
+      <input
+        className="Input"
+        type="password"
+        name="password"
+        placeholder="Magic word?"
+      />
+
+      <button className="btnPrimary" type="submit">
+        SUBMIT
+      </button>
     </form>
   );
 }
