@@ -35,8 +35,8 @@ export default function HomePage() {
           </h1>
 
           <p className="homeHeroIntro">
-            Welcome to my site! I&apos;m John, a recent CS grad with a passion
-            for gaming, food, and startups.
+            Welcome to my site! I&apos;m John, a PM/Software Engineer with a
+            passion for gaming, food, and startups.
           </p>
 
           <p className="homeHeroStatus">
