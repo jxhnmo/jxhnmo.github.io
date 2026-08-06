@@ -58,7 +58,7 @@ export const experienceItems: ExperienceItem[] = [
   },
   {
     id: "sams-club",
-    period: "2023",
+    period: "2024",
     company: "Sam's Club",
     role: "Product Manager Intern",
     location: "Bentonville, AR",
@@ -70,7 +70,7 @@ export const experienceItems: ExperienceItem[] = [
   },
   {
     id: "supersocial",
-    period: "2022",
+    period: "2023",
     company: "Supersocial",
     role: "Game Developer Intern",
     location: "Los Angeles, CA / Remote",
@@ -82,7 +82,7 @@ export const experienceItems: ExperienceItem[] = [
   },
   {
     id: "mercy-ships",
-    period: "2021",
+    period: "2022",
     company: "Mercy Ships",
     role: "Product Engineering Intern",
     location: "Remote",
@@ -93,7 +93,7 @@ export const experienceItems: ExperienceItem[] = [
   },
   {
     id: "unt-cns-lab",
-    period: "2020",
+    period: "2021",
     company: "UNT CNS Lab",
     role: "Research Assistant",
     location: "Denton, TX",
