@@ -1,0 +1,26 @@
+# Check every text file out with LF, on every platform.
+#
+# Not a style preference — `scripts/generate-og.mjs` fingerprints its own raw
+# bytes into RENDER_DIGEST so that editing the card layout invalidates every
+# card. Under Git's default `core.autocrlf=true` on Windows that file lands on
+# disk with CRLF, the digest no longer matches the one recorded in
+# scripts/og-manifest.json on an LF machine, and `npm run verify:assets` reports
+# all six cards permanently stale. Regenerating there would bake the CRLF digest
+# into the manifest and break the LF machines instead, so the manifest would
+# ping-pong on every commit. Pinning eol=lf removes the platform from the hash.
+#
+# Same reasoning keeps `npm run format:check` honest: Prettier enforces LF, so
+# a CRLF checkout fails the check on files nobody touched.
+* text=auto eol=lf
+
+# Binary assets: never touch these, and don't try to diff them as text.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.pdf binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
