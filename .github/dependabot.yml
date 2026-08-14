@@ -1,7 +1,9 @@
 # Four high-severity advisories (nanoid, fast-uri, js-yaml, sharp via libvips)
-# piled up here before anyone looked, and every one of them was already fixed in
-# a version the existing ranges allowed — the lockfile was just stale. Weekly
-# update PRs keep that backlog from forming again.
+# piled up here before anyone looked. Three of them were fixed in versions the
+# existing ranges already allowed — the lockfile was just stale. sharp was not:
+# it is an optional dependency of next, and next 16.2 pinned it to ^0.34.5, so
+# reaching the patched 0.35.3 meant moving next itself to 16.3. Weekly update
+# PRs surface both kinds before they pile up.
 #
 # Grouped into one PR per ecosystem run: every dependency here is transitive or
 # dev tooling, so reviewing them together beats a PR per package. `npm run
