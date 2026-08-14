@@ -2,12 +2,18 @@
 # piled up here before anyone looked. Three of them were fixed in versions the
 # existing ranges already allowed — the lockfile was just stale. sharp was not:
 # it is an optional dependency of next, and next 16.2 pinned it to ^0.34.5, so
-# reaching the patched 0.35.3 meant moving next itself to 16.3. Weekly update
-# PRs surface both kinds before they pile up.
+# reaching the patched 0.35.3 meant moving next itself to 16.3.
+#
+# Weekly updates here only surface the sharp kind. Version updates open PRs for
+# what package.json declares, and `dependency-type: indirect` is unsupported for
+# npm, so the three lockfile-stale transitive ones produce no PR at all until a
+# direct parent publishes. .github/workflows/audit.yml is the other half: it runs
+# `npm audit` against the lockfile on this same cadence, which does catch those.
 #
 # Grouped into one PR per ecosystem run: every dependency here is transitive or
-# dev tooling, so reviewing them together beats a PR per package. `npm run
-# check` is the gate — it typechecks, lints, and does a full static build.
+# dev tooling, so reviewing them together beats a PR per package.
+# .github/workflows/check.yml is the gate on those PRs — it verifies asset
+# freshness, then format, typecheck, lint, and a full static build.
 version: 2
 updates:
   - package-ecosystem: "npm"
@@ -16,5 +22,15 @@ updates:
       interval: "weekly"
     groups:
       npm:
+        patterns:
+          - "*"
+  # Those two workflows pin action majors, which is a second ecosystem that would
+  # otherwise go stale the same way this file exists to prevent.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      actions:
         patterns:
           - "*"
