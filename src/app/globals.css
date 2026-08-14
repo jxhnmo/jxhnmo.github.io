@@ -1265,6 +1265,15 @@ body[data-theme="light"].hasOpenMobileMenu .footer {
   line-height: 1.5;
 }
 
+/* Build-stamped in Footer.tsx; quieter than the sign-off it sits under. */
+.footerUpdated {
+  display: block;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  font-size: clamp(0.7rem, 0.5vw + 0.55rem, 0.85rem);
+  line-height: 1.5;
+}
+
 .footerContent a {
   text-decoration: underline;
   color: var(--white);
@@ -1298,6 +1307,11 @@ body[data-theme="light"].hasOpenMobileMenu .footer {
   .footerContent p,
   .footerContent a {
     font-size: clamp(0.7rem, 2.6vw, 0.85rem);
+    line-height: 1.4;
+  }
+
+  .footerUpdated {
+    font-size: clamp(0.65rem, 2.3vw, 0.8rem);
     line-height: 1.4;
   }
 }
