@@ -1268,6 +1268,7 @@ body[data-theme="light"].hasOpenMobileMenu .footer {
 /* Build-stamped in Footer.tsx; quieter than the sign-off it sits under. */
 .footerUpdated {
   display: block;
+  color: var(--text-body);
   margin-top: 0.35rem;
   font-size: clamp(0.7rem, 0.5vw + 0.55rem, 0.85rem);
   line-height: 1.5;
