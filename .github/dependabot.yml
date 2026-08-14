@@ -1,0 +1,18 @@
+# Four high-severity advisories (nanoid, fast-uri, js-yaml, sharp via libvips)
+# piled up here before anyone looked, and every one of them was already fixed in
+# a version the existing ranges allowed — the lockfile was just stale. Weekly
+# update PRs keep that backlog from forming again.
+#
+# Grouped into one PR per ecosystem run: every dependency here is transitive or
+# dev tooling, so reviewing them together beats a PR per package. `npm run
+# check` is the gate — it typechecks, lints, and does a full static build.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      npm:
+        patterns:
+          - "*"
