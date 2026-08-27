@@ -1,0 +1,33 @@
+# `npm run check` is the gate — this is what makes that true for code arriving
+# by PR, including the weekly Dependabot group PR, which nothing would otherwise
+# typecheck, lint, or build before merge.
+#
+# Python and Pillow are installed because `check` begins with `verify:assets`,
+# and scripts/optimize-images.py imports PIL even under --check. That flag only
+# compares the content hashes recorded in the committed manifests, so the Pillow
+# version here cannot change the verdict.
+name: check
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          cache: "npm"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install Pillow
+      - run: npm ci
+      - run: npm run check
