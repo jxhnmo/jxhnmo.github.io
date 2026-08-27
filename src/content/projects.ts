@@ -21,11 +21,11 @@ export const projectItems: ProjectItem[] = [
   {
     id: "carely",
     year: "2026",
-    group: "Personal Project",
+    group: "Morsl",
     title: "Carely",
     summary:
       "Social journal made to keep in touch with my friends across the globe.",
-    bullets: ["Has found some organic traction and paying users."],
+    bullets: ["Organic traction and paying users."],
     links: [{ label: "Site", href: "https://carely.morsl.ai/" }],
   },
   {
