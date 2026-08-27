@@ -6,9 +6,15 @@
 # `npm audit` resolves straight from package-lock.json, so it sees exactly those.
 #
 # Same weekly cadence as .github/dependabot.yml, so the two arrive together.
-# A failure here clears with `npm audit fix`, which refreshes the lockfile in
-# place; when no in-range fix exists, with an `overrides` entry in package.json.
-# No install step — `npm audit` needs only the manifest and the lockfile.
+# .github/workflows/check.yml runs this same command on every PR; what is unique
+# here is the case that produced the original backlog — an advisory published
+# against code nobody is touching, which no PR-triggered job will ever see.
+#
+# A failure opens an issue rather than only mailing the owner, because a red
+# scheduled run on a repo that goes quiet for weeks is a notification with
+# nowhere to land. It clears with `npm audit fix`, which refreshes the lockfile
+# in place; when no in-range fix exists, with an `overrides` entry in
+# package.json. No install step — `npm audit` needs only the manifest and lock.
 name: audit
 
 on:
@@ -18,13 +24,32 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
   audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: "22.x"
       - run: npm audit --audit-level=high
+      # One issue per outbreak, not one per week: a still-open issue gets a
+      # comment instead, so a Monday that keeps failing does not bury the repo.
+      - name: Report the failure as an issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title='Weekly npm audit is failing'
+          existing=$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "Still failing as of $RUN_URL"
+          else
+            gh issue create --title "$title" --body "\`npm audit --audit-level=high\` failed on the weekly run: $RUN_URL
+
+          Fix with \`npm audit fix\` (refreshes package-lock.json in place), or an \`overrides\` entry in package.json when no in-range fix exists yet."
+          fi

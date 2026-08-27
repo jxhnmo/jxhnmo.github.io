@@ -10,10 +10,17 @@
 # direct parent publishes. .github/workflows/audit.yml is the other half: it runs
 # `npm audit` against the lockfile on this same cadence, which does catch those.
 #
-# Grouped into one PR per ecosystem run: every dependency here is transitive or
-# dev tooling, so reviewing them together beats a PR per package.
-# .github/workflows/check.yml is the gate on those PRs — it verifies asset
-# freshness, then format, typecheck, lint, and a full static build.
+# Grouped one PR per ecosystem, but split on update-types. Everything here is
+# transitive or dev tooling, so minors and patches are worth reviewing together;
+# a major in that same PR is not, because the whole group then waits on whichever
+# single bump broke the build. The first group PR this config opened bundled
+# eslint 9→10, typescript 5→7 and @types/node 22→26 in with ten patch bumps —
+# that is the shape being split. Security updates stay ungrouped: `applies-to`
+# defaults to version updates, so an advisory still arrives as its own PR.
+#
+# .github/workflows/check.yml is the gate on all of them — it verifies asset
+# freshness, then format, typecheck, lint, and a full static build, and audits
+# the lockfile the PR proposes.
 version: 2
 updates:
   - package-ecosystem: "npm"
@@ -22,15 +29,36 @@ updates:
       interval: "weekly"
     groups:
       npm:
+        applies-to: version-updates
         patterns:
           - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      npm-major:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "major"
   # Those two workflows pin action majors, which is a second ecosystem that would
-  # otherwise go stale the same way this file exists to prevent.
+  # otherwise go stale the same way this file exists to prevent. Split the same
+  # way: an action major is the one that changes runner behaviour under you.
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
     groups:
       actions:
+        applies-to: version-updates
         patterns:
           - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      actions-major:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "major"

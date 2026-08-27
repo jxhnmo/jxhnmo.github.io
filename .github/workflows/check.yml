@@ -2,10 +2,19 @@
 # by PR, including the weekly Dependabot group PR, which nothing would otherwise
 # typecheck, lint, or build before merge.
 #
+# The audit step runs first and against the lockfile alone: `npm audit` resolves
+# from package-lock.json with no install, so it costs a few seconds and it is the
+# only thing here that inspects the tree a Dependabot PR is proposing rather than
+# just compiling it. .github/workflows/audit.yml runs the same command weekly,
+# for the advisories that land while nobody is pushing. A failure clears with
+# `npm audit fix`, or an `overrides` entry when no in-range fix exists yet.
+#
 # Python and Pillow are installed because `check` begins with `verify:assets`,
 # and scripts/optimize-images.py imports PIL even under --check. That flag only
 # compares the content hashes recorded in the committed manifests, so the Pillow
-# version here cannot change the verdict.
+# version here cannot change the verdict — the bound is there to keep a major
+# release from moving an import out from under the script, since no Dependabot
+# ecosystem is watching this pin.
 name: check
 
 on:
@@ -16,18 +25,25 @@ on:
 permissions:
   contents: read
 
+# A PR that gets three pushes in a minute needs one green run, not three.
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: "22.x"
           cache: "npm"
-      - uses: actions/setup-python@v5
+      - run: npm audit --audit-level=high
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - run: pip install Pillow
+      - run: pip install "Pillow~=12.1"
       - run: npm ci
       - run: npm run check

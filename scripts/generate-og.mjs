@@ -477,14 +477,35 @@ const fonts = [
   },
 ];
 
+/*
+ * The renderer itself is a render input too: cards are laid out by the satori
+ * build bundled inside next/og, so a Next upgrade can move glyphs without a
+ * single byte of this repo changing. Read straight from node_modules — npm is
+ * the only package manager here (see package.json) so the path is stable, and
+ * `next/og.js` has already been imported above, so a miss here means something
+ * stranger than a missing install.
+ *
+ * Major.minor, not the full version: Next ships patches most weeks, and folding
+ * those in would mark all six cards stale in every weekly Dependabot group PR
+ * until someone re-ran `npm run og`. Renderer swaps ride in minor releases; a
+ * patch that quietly moves satori is the residual risk this trade accepts.
+ */
+const NEXT_RENDERER = JSON.parse(
+  readFileSync(join(ROOT, "node_modules", "next", "package.json"), "utf8"),
+)
+  .version.split(".")
+  .slice(0, 2)
+  .join(".");
+
 /**
  * Everything that changes what a card looks like *except* its own copy: this
- * script (all the geometry lives in it), the mark, and the font files. Folding
- * these in means editing the layout invalidates every card, not just the ones
- * whose text changed.
+ * script (all the geometry lives in it), the mark, the font files, and the
+ * renderer version. Folding these in means editing the layout invalidates every
+ * card, not just the ones whose text changed.
  */
 const RENDER_DIGEST = createHash("sha256")
   .update(readFileSync(SCRIPT))
+  .update(NEXT_RENDERER)
   .update(mark)
   .update(Buffer.concat(fonts.map((font) => font.data)))
   .digest("hex")
