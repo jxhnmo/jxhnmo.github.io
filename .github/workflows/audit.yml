@@ -1,0 +1,30 @@
+# The half of the backlog that Dependabot cannot report. Version updates only
+# open PRs for what package.json declares, and `dependency-type: indirect` is
+# unsupported for npm, so a transitive dependency whose fix is already inside an
+# allowed range — nanoid under postcss, fast-uri and js-yaml under eslint — sits
+# stale in the lockfile with no PR until a direct parent happens to publish.
+# `npm audit` resolves straight from package-lock.json, so it sees exactly those.
+#
+# Same weekly cadence as .github/dependabot.yml, so the two arrive together.
+# A failure here clears with `npm audit fix`, which refreshes the lockfile in
+# place; when no in-range fix exists, with an `overrides` entry in package.json.
+# No install step — `npm audit` needs only the manifest and the lockfile.
+name: audit
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+      - run: npm audit --audit-level=high
