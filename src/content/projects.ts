@@ -19,6 +19,68 @@ import type { ProjectItem } from "./types";
 
 export const projectItems: ProjectItem[] = [
   {
+    id: "carely",
+    year: "2026",
+    group: "Personal Project",
+    title: "Carely",
+    summary:
+      "Social journal made to keep in touch with my friends across the globe.",
+    bullets: ["Has found some organic traction and paying users."],
+    links: [{ label: "Site", href: "https://carely.morsl.ai/" }],
+  },
+  {
+    id: "morsl-agents",
+    year: "2025-2026",
+    group: "Morsl",
+    title: "Morsl Agents",
+    summary:
+      "AI phone agent for restaurants that I went full-time on in December 2025.",
+    bullets: [
+      "Spent four months building it, meeting 50+ restaurant owners, and initiating pilots with restaurants and jewellery stores.",
+      "Stopped after realising voice AI models weren't where I wanted them to be yet — which they probably are now, as of August 2026.",
+    ],
+    links: [
+      { label: "Site", href: "https://agents.morsl.ai/" },
+      {
+        label: "Demo Video",
+        href: "https://www.youtube.com/watch?v=BwVtTzUGZhI",
+      },
+    ],
+  },
+  {
+    id: "sling-health-alumni-tracker",
+    year: "2025",
+    group: "CSCE 431",
+    title: "Sling Health Alumni Tracker",
+    summary: "Built the alumni tracker site for TAMU Sling Health.",
+    bullets: ["I designed and developed the entire front end."],
+    links: [
+      {
+        label: "Demo Video",
+        href: "https://www.youtube.com/watch?v=BGJRsMsZ9Kw",
+      },
+      {
+        label: "Sling Health TAMU site",
+        href: "https://www.slinghealthtamu.org/",
+      },
+    ],
+  },
+  {
+    id: "toots",
+    year: "2025",
+    group: "Product@TAMU Ideathon",
+    title: "Toots",
+    summary:
+      "Won Best Use of Notion with a campus app that connects toots (tutors) and tootees (tutees) while making study room booking smarter and more social.",
+    links: [
+      {
+        label: "Demo Video",
+        href: "https://www.youtube.com/watch?v=E3GC6NGcN1M",
+      },
+      { label: "Devpost", href: "https://devpost.com/software/nerds-wgzxn6" },
+    ],
+  },
+  {
     id: "dj-bestie",
     year: "2025",
     group: "TAMUhack 2025",
