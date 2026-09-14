@@ -12,9 +12,9 @@
     "@radix-ui/react-navigation-menu": "^1.2.22",
     "@radix-ui/react-switch": "^1.3.7",
     "classnames": "^2.5.1",
-    "next": "^16.3.2",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "next": "^16.3.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "_packageManagerComment": "npm is the only package manager here, and package-lock.json is the only lockfile. The repo previously tracked all three of package-lock.json, yarn.lock, and pnpm-lock.yaml; they drifted, and pnpm-lock.yaml sat five weeks stale still resolving a dependency that had been removed. Declaring it here keeps a stray `yarn add` from reintroducing a second lockfile. Recover the deleted ones with `git show <sha>:yarn.lock` if ever needed.",
   "packageManager": "npm@11.6.2",
@@ -51,10 +51,10 @@
   },
   "devDependencies": {
     "@types/node": "^22.19.18",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.4",
-    "eslint-config-next": "^16.3.2",
+    "eslint-config-next": "^16.3.4",
     "gh-pages": "^6.3.0",
     "prettier": "^3.9.6",
     "serve": "^14.2.6",
